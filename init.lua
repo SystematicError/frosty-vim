@@ -4,21 +4,32 @@ vim.opt.rtp:prepend(FROSTY_PACKAGES["folke/lazy.nvim"])
 require "general"
 require "mappings"
 
+local function ensure_table(object)
+    return type(object) == "table" and object or {object}
+end
+
+local function make_spec_local(spec)
+    if FROSTY_PACKAGES[spec[1]] then
+        spec.dir = FROSTY_PACKAGES[spec[1]]
+        spec.name = spec.name or spec[1]:match("^.+/(.+)$")
+    end
+
+    return spec
+end
+
 -- Try to load plugins and their dependencies locally if installed via flake
+-- This algorithm only traverses 2 deep, theoretically sub-dependencies could exist
+-- Maybe implement recursively in the future?
+
 local function load_local_plugins(plugins)
     for i, plugin in ipairs(plugins) do
-        plugin = type(plugin) == "table" and plugin or {plugin}
-
-        if FROSTY_PACKAGES[plugin[1]] then
-            plugin.dir = FROSTY_PACKAGES[plugin[1]]
-            plugin.name = plugin.name or plugin[1]:match("^.+/(.+)$")        
-
-            if plugin.dependencies then
-                plugin.dependencies = type(plugin.dependencies) == "table" and plugin.dependencies or {plugin.dependencies}
-                
-                for _, dependency in ipairs(plugin.dependencies) do
-                    table.insert(plugins, dependency)
-                end
+        plugin = make_spec_local(ensure_table(plugin))
+        
+        if plugin.dependencies then
+            plugin.dependencies = ensure_table(plugin.dependencies)
+            
+            for j, dependency in ipairs(plugin.dependencies) do
+                plugin.dependencies[j] = make_spec_local(ensure_table(dependency))
             end
         end
 
