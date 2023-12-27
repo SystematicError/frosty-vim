@@ -29,6 +29,36 @@
       flake = false;
     };
 
+    "hrsh7th/nvim-cmp" = {
+      url = "github:hrsh7th/nvim-cmp";
+      flake = false;
+    };
+
+    "neovim/nvim-lspconfig" = {
+      url = "github:neovim/nvim-lspconfig";
+      flake = false;
+    };
+
+    "hrsh7th/cmp-nvim-lsp" = {
+      url = "github:hrsh7th/cmp-nvim-lsp";
+      flake = false;
+    };
+
+    "hrsh7th/cmp-buffer" = {
+      url = "github:hrsh7th/cmp-buffer";
+      flake = false;
+    };
+
+    "hrsh7th/cmp-path" = {
+      url = "github:hrsh7th/cmp-path";
+      flake = false;
+    };
+
+    "hrsh7th/cmp-cmdline" = {
+      url = "github:hrsh7th/cmp-cmdline";
+      flake = false;
+    };
+
     "lukas-reineke/indent-blankline.nvim" = {
       url = "github:lukas-reineke/indent-blankline.nvim";
       flake = false;
