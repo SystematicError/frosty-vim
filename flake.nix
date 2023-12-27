@@ -58,6 +58,7 @@
     );
 
     runtimeDeps = with pkgs; [
+      wl-clipboard
       lua-language-server
     ];
   in {
