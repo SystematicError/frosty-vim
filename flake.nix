@@ -95,9 +95,9 @@
     packages.${system}.default = pkgs.wrapNeovimUnstable pkgs.neovim-unwrapped (
       pkgs.neovimUtils.makeNeovimConfig {
         customRC = ''
-          set runtimepath^=${./.}
-          source ${packageList}
-          source ${./.}/init.lua
+          lua package.path = package.path .. ";${./lua}/?.lua"
+          luafile ${packageList}
+          luafile ${./init.lua}
         '';
       }
       // {

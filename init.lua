@@ -71,7 +71,7 @@ require("lazy").setup(
                 "hrsh7th/cmp-path",
                 "hrsh7th/cmp-cmdline"
             },
-            config = function() require "lua.plugins.completion"  end
+            config = function() require "plugins.completion"  end
         },
 
         {
