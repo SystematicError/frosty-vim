@@ -1,0 +1,146 @@
+{
+  "nodes": {
+    "akinsho/bufferline.nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1702475933,
+        "narHash": "sha256-xguFDEZVEVbIjdd0XnvRBjgB20Ym2ci1F+zw5jcVThk=",
+        "owner": "akinsho",
+        "repo": "bufferline.nvim",
+        "rev": "e48ce1805697e4bb97bc171c081e849a65859244",
+        "type": "github"
+      },
+      "original": {
+        "owner": "akinsho",
+        "repo": "bufferline.nvim",
+        "type": "github"
+      }
+    },
+    "folke/lazy.nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1699092727,
+        "narHash": "sha256-adBcg8iSSO5eRLuZJnmU6m7IiRJXjoMDzN6yH2JrQIc=",
+        "owner": "folke",
+        "repo": "lazy.nvim",
+        "rev": "96584866b9c5e998cbae300594d0ccfd0c464627",
+        "type": "github"
+      },
+      "original": {
+        "owner": "folke",
+        "repo": "lazy.nvim",
+        "type": "github"
+      }
+    },
+    "lukas-reineke/indent-blankline.nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1703637772,
+        "narHash": "sha256-O6uD7dqlMbDt2exxlCdr5rirGJqsw8oL7Iwx12RrpGk=",
+        "owner": "lukas-reineke",
+        "repo": "indent-blankline.nvim",
+        "rev": "5da5546947f3125dfd6aa85ab21074dc83f776d5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "lukas-reineke",
+        "repo": "indent-blankline.nvim",
+        "type": "github"
+      }
+    },
+    "navarasu/onedark.nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1701844102,
+        "narHash": "sha256-UtC8OJw62xYkAyTcwIEbg0tBWttaXeGhFw7Ux8Yu5/0=",
+        "owner": "navarasu",
+        "repo": "onedark.nvim",
+        "rev": "c5476a091b0f1b4e853db91c91ff941f848a1cdd",
+        "type": "github"
+      },
+      "original": {
+        "owner": "navarasu",
+        "repo": "onedark.nvim",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1703255338,
+        "narHash": "sha256-Z6wfYJQKmDN9xciTwU3cOiOk+NElxdZwy/FiHctCzjU=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "6df37dc6a77654682fe9f071c62b4242b5342e04",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nvim-tree/nvim-tree.lua": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1702981741,
+        "narHash": "sha256-u4JjV0Qwr5ESQ54Ae6SDotCeOil6+2iGC/Uwu0D+Yis=",
+        "owner": "nvim-tree",
+        "repo": "nvim-tree.lua",
+        "rev": "50f30bcd8c62ac4a83d133d738f268279f2c2ce2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nvim-tree",
+        "repo": "nvim-tree.lua",
+        "type": "github"
+      }
+    },
+    "nvim-tree/nvim-web-devicons": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1703387926,
+        "narHash": "sha256-FonYAQphOWxF+X3W1z5OS2MwX4bldcow/43HSMfcouM=",
+        "owner": "nvim-tree",
+        "repo": "nvim-web-devicons",
+        "rev": "43aa2ddf476012a2155f5f969ee55ab17174da7a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nvim-tree",
+        "repo": "nvim-web-devicons",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "akinsho/bufferline.nvim": "akinsho/bufferline.nvim",
+        "folke/lazy.nvim": "folke/lazy.nvim",
+        "lukas-reineke/indent-blankline.nvim": "lukas-reineke/indent-blankline.nvim",
+        "navarasu/onedark.nvim": "navarasu/onedark.nvim",
+        "nixpkgs": "nixpkgs",
+        "nvim-tree/nvim-tree.lua": "nvim-tree/nvim-tree.lua",
+        "nvim-tree/nvim-web-devicons": "nvim-tree/nvim-web-devicons",
+        "windwp/nvim-autopairs": "windwp/nvim-autopairs"
+      }
+    },
+    "windwp/nvim-autopairs": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1703044435,
+        "narHash": "sha256-H4wCE3snCBQVkiA4+r5VaUrd4bWOhF1lwafngGThm/c=",
+        "owner": "windwp",
+        "repo": "nvim-autopairs",
+        "rev": "9fd41181693dd4106b3e414a822bb6569924de81",
+        "type": "github"
+      },
+      "original": {
+        "owner": "windwp",
+        "repo": "nvim-autopairs",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
