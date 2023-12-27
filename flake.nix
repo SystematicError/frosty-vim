@@ -1,5 +1,5 @@
 {
-  description = "Hacky package manager for neovim";
+  description = "Neovim configuration with a side of flakes";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
