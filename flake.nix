@@ -40,11 +40,14 @@
     };
   };
 
-  outputs = {nixpkgs, ...} @ inputs: {
-    # Generates a package list based off of flake inputs importable from lua
+  outputs = {nixpkgs, ...} @ inputs: let
+    system = "x86_64-linux";
+    pkgs = nixpkgs.legacyPackages.${system};
+    lib = nixpkgs.lib;
+
     packageList = builtins.toFile "package_list.lua" (
-      "-- Automatically generated\n-- Do not modify or reuse across systems\n\nreturn "
-      + nixpkgs.lib.generators.toLua {
+      "FROSTY_PACKAGES="
+      + lib.generators.toLua {
         multiline = false;
         indent = false;
       }
@@ -52,6 +55,28 @@
         name = name;
         value = inputs.${name}.outPath;
       }) (builtins.filter (input: !builtins.elem input ["self" "nixpkgs"]) (builtins.attrNames inputs))))
+    );
+
+    runtimeDeps = with pkgs; [
+      lua-language-server
+    ];
+  in {
+    packages.${system}.default = pkgs.wrapNeovimUnstable pkgs.neovim-unwrapped (
+      pkgs.neovimUtils.makeNeovimConfig {
+        customRC = ''
+          set runtimepath^=${./.}
+          source ${packageList}
+          source ${./.}/init.lua
+        '';
+      }
+      // {
+        wrapperArgs = [
+          "--prefix"
+          "PATH"
+          ":"
+          "${lib.makeBinPath runtimeDeps}"
+        ];
+      }
     );
   };
 }
