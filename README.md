@@ -13,8 +13,8 @@ This primarily aims to provide a unified way for me to manage **my specific set 
 return {
     package_1 = "/nix/store/...",
     package_2 = "/nix/store/...",
-    package_3 = "/nix/store/...",
+    package_3 = "/nix/store/..."
 }
 ```
-3. Neovim thens reads this `package_list.lua` file and a plugin manager like [lazy.nvim](https://github.com/folke/lazy.nvim) can load the plugins from the absolute nix store paths
+3. Neovim then reads this `package_list.lua` file and a plugin manager like [lazy.nvim](https://github.com/folke/lazy.nvim) can load the plugins from the absolute nix store paths
 4. When run on a system where `frosty` isn't present, `lazy.nvim` can simply fallback to downloading the required plugins itself
