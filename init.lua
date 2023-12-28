@@ -24,10 +24,10 @@ end
 local function load_local_plugins(plugins)
     for i, plugin in ipairs(plugins) do
         plugin = make_spec_local(ensure_table(plugin))
-        
+
         if plugin.dependencies then
             plugin.dependencies = ensure_table(plugin.dependencies)
-            
+
             for j, dependency in ipairs(plugin.dependencies) do
                 plugin.dependencies[j] = make_spec_local(ensure_table(dependency))
             end
@@ -102,7 +102,7 @@ require("lazy").setup(
 
         install = {
             colorscheme = { "onedark" }
-        }   
+        }
     }
 )
 

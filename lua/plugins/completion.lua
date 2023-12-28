@@ -2,9 +2,9 @@ local lspconfig = require "lspconfig"
 local cmp = require "cmp"
 local luasnip = require "luasnip"
 
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
 -- LSP config
+
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 local servers = {
     lua_ls = {}
@@ -12,7 +12,15 @@ local servers = {
 
 for server, options in pairs(servers) do
     options.capabilities = capabilities
+    options.root_dir = function() return vim.fn.getcwd() end
     lspconfig[server].setup(options)
+end
+
+local diagnostic_signs = {Error = " ", Warn = " ", Hint = "󰌵 ", Info = " "}
+
+for name, icon in pairs(diagnostic_signs) do
+   local hl = "DiagnosticSign" .. name
+   vim.fn.sign_define(hl, {text = icon, texthl = hl, numhl = hl})
 end
 
 -- Cmp config
