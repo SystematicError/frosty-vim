@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "L3MON4D3/LuaSnip": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1703710161,
+        "narHash": "sha256-9QsPFAPzKbE36llPK0AdfQLUiDOWvyeD8YM65V+da2k=",
+        "owner": "L3MON4D3",
+        "repo": "LuaSnip",
+        "rev": "2463d687fe704b76eb0aa3bb34e95f69a5bb0362",
+        "type": "github"
+      },
+      "original": {
+        "owner": "L3MON4D3",
+        "repo": "LuaSnip",
+        "type": "github"
+      }
+    },
     "akinsho/bufferline.nvim": {
       "flake": false,
       "locked": {
@@ -208,8 +224,25 @@
         "type": "github"
       }
     },
+    "rafamadriz/friendly-snippets": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1701065358,
+        "narHash": "sha256-6a1JMW+iZjqopnzFhC7vMamnW2iWhMHqi1Xs45d+7x8=",
+        "owner": "rafamadriz",
+        "repo": "friendly-snippets",
+        "rev": "53d3df271d031c405255e99410628c26a8f0d2b0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "rafamadriz",
+        "repo": "friendly-snippets",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
+        "L3MON4D3/LuaSnip": "L3MON4D3/LuaSnip",
         "akinsho/bufferline.nvim": "akinsho/bufferline.nvim",
         "folke/lazy.nvim": "folke/lazy.nvim",
         "hrsh7th/cmp-buffer": "hrsh7th/cmp-buffer",
@@ -223,7 +256,25 @@
         "nixpkgs": "nixpkgs",
         "nvim-tree/nvim-tree.lua": "nvim-tree/nvim-tree.lua",
         "nvim-tree/nvim-web-devicons": "nvim-tree/nvim-web-devicons",
+        "rafamadriz/friendly-snippets": "rafamadriz/friendly-snippets",
+        "saadparwaiz1/cmp_luasnip": "saadparwaiz1/cmp_luasnip",
         "windwp/nvim-autopairs": "windwp/nvim-autopairs"
+      }
+    },
+    "saadparwaiz1/cmp_luasnip": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1696878902,
+        "narHash": "sha256-nUJJl2zyK/oSwz5RzI9j3gf9zpDfCImCYbPbVsyXgz8=",
+        "owner": "saadparwaiz1",
+        "repo": "cmp_luasnip",
+        "rev": "05a9ab28b53f71d1aece421ef32fee2cb857a843",
+        "type": "github"
+      },
+      "original": {
+        "owner": "saadparwaiz1",
+        "repo": "cmp_luasnip",
+        "type": "github"
       }
     },
     "windwp/nvim-autopairs": {

@@ -44,6 +44,21 @@
       flake = false;
     };
 
+    "L3MON4D3/LuaSnip" = {
+      url = "github:L3MON4D3/LuaSnip";
+      flake = false;
+    };
+
+    "saadparwaiz1/cmp_luasnip" = {
+      url = "github:saadparwaiz1/cmp_luasnip";
+      flake = false;
+    };
+
+    "rafamadriz/friendly-snippets" = {
+      url = "github:rafamadriz/friendly-snippets";
+      flake = false;
+    };
+
     "hrsh7th/cmp-buffer" = {
       url = "github:hrsh7th/cmp-buffer";
       flake = false;
