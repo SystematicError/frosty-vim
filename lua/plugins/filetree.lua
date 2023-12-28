@@ -1,4 +1,4 @@
-return {
+local config = {
     hijack_cursor = true,
     disable_netrw = true,
     sync_root_with_cwd = true,
@@ -31,5 +31,13 @@ return {
 
     filters = {
         git_ignored = false
+    }
+}
+
+return {
+    {
+        "nvim-tree/nvim-tree.lua",
+        dependencies = "nvim-tree/nvim-web-devicons",
+        opts = config
     }
 }
