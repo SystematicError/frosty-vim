@@ -9,6 +9,8 @@ opt.mouse = "a"
 
 opt.clipboard = "unnamedplus"
 
+opt.signcolumn = "yes"
+
 opt.fillchars = {eob = " "}
 
 opt.laststatus = 3

@@ -9,8 +9,12 @@ local config = {
         special_files = {},
 
         icons = {
+            git_placement = "after",
             symlink_arrow = "  ",
+
             glyphs = {
+                bookmark = "",
+
                 folder = {
                     arrow_open = " ",
                     arrow_closed = " ",
@@ -20,6 +24,16 @@ local config = {
                     empty_open = "",
                     symlink = "󰉒",
                     symlink_open = ""
+                },
+
+                git = {
+                    unstaged = "○",
+                    staged = "●",
+                    unmerged = "",
+                    renamed = "󰏫",
+                    untracked = "",
+                    deleted = "",
+                    ignored = "󱙝"
                 }
             }
         }

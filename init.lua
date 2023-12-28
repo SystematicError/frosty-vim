@@ -48,6 +48,7 @@ require("lazy").setup(
         "colorscheme",
         "filetree",
         "tabs",
+        "git",
         "completion",
         "indent",
         "pairs"

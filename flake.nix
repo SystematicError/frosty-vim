@@ -29,6 +29,11 @@
       flake = false;
     };
 
+    "lewis6991/gitsigns.nvim" = {
+      url = "github:lewis6991/gitsigns.nvim";
+      flake = false;
+    };
+
     "hrsh7th/nvim-cmp" = {
       url = "github:hrsh7th/nvim-cmp";
       flake = false;

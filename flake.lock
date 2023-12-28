@@ -128,6 +128,22 @@
         "type": "github"
       }
     },
+    "lewis6991/gitsigns.nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1702378585,
+        "narHash": "sha256-lzL+1OOS0bpMeB9SCkc147/OdweI206r0yPFBmhsN1g=",
+        "owner": "lewis6991",
+        "repo": "gitsigns.nvim",
+        "rev": "d195f0c35ced5174d3ecce1c4c8ebb3b5bc23fa9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "lewis6991",
+        "repo": "gitsigns.nvim",
+        "type": "github"
+      }
+    },
     "lukas-reineke/indent-blankline.nvim": {
       "flake": false,
       "locked": {
@@ -250,6 +266,7 @@
         "hrsh7th/cmp-nvim-lsp": "hrsh7th/cmp-nvim-lsp",
         "hrsh7th/cmp-path": "hrsh7th/cmp-path",
         "hrsh7th/nvim-cmp": "hrsh7th/nvim-cmp",
+        "lewis6991/gitsigns.nvim": "lewis6991/gitsigns.nvim",
         "lukas-reineke/indent-blankline.nvim": "lukas-reineke/indent-blankline.nvim",
         "navarasu/onedark.nvim": "navarasu/onedark.nvim",
         "neovim/nvim-lspconfig": "neovim/nvim-lspconfig",
