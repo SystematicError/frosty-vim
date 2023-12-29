@@ -48,6 +48,22 @@
         "type": "github"
       }
     },
+    "freddiehaddad/feline.nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1703708629,
+        "narHash": "sha256-HovbNBnUP1UcLXrFf4AHrZPTONi/eFUlp5wAVsWeZRQ=",
+        "owner": "freddiehaddad",
+        "repo": "feline.nvim",
+        "rev": "0f6c531ac928bcff4cccc08b7fff3b5b2657359f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "freddiehaddad",
+        "repo": "feline.nvim",
+        "type": "github"
+      }
+    },
     "hrsh7th/cmp-buffer": {
       "flake": false,
       "locked": {
@@ -208,6 +224,38 @@
         "type": "github"
       }
     },
+    "nvim-lua/plenary.nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1701343040,
+        "narHash": "sha256-f8YVaXMG0ZyW6iotAgnftaYULnL69UPolRad6RTG27g=",
+        "owner": "nvim-lua",
+        "repo": "plenary.nvim",
+        "rev": "55d9fe89e33efd26f532ef20223e5f9430c8b0c0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nvim-lua",
+        "repo": "plenary.nvim",
+        "type": "github"
+      }
+    },
+    "nvim-telescope/telescope.nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1703812721,
+        "narHash": "sha256-l6YIrnMzuLw0Xtd3Vm2hi5AVIO+k3PQZjpKOmGnvZOE=",
+        "owner": "nvim-telescope",
+        "repo": "telescope.nvim",
+        "rev": "3466159b0fcc1876483f6f53587562628664d850",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nvim-telescope",
+        "repo": "telescope.nvim",
+        "type": "github"
+      }
+    },
     "nvim-tree/nvim-tree.lua": {
       "flake": false,
       "locked": {
@@ -261,6 +309,7 @@
         "L3MON4D3/LuaSnip": "L3MON4D3/LuaSnip",
         "akinsho/bufferline.nvim": "akinsho/bufferline.nvim",
         "folke/lazy.nvim": "folke/lazy.nvim",
+        "freddiehaddad/feline.nvim": "freddiehaddad/feline.nvim",
         "hrsh7th/cmp-buffer": "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-cmdline": "hrsh7th/cmp-cmdline",
         "hrsh7th/cmp-nvim-lsp": "hrsh7th/cmp-nvim-lsp",
@@ -271,6 +320,8 @@
         "navarasu/onedark.nvim": "navarasu/onedark.nvim",
         "neovim/nvim-lspconfig": "neovim/nvim-lspconfig",
         "nixpkgs": "nixpkgs",
+        "nvim-lua/plenary.nvim": "nvim-lua/plenary.nvim",
+        "nvim-telescope/telescope.nvim": "nvim-telescope/telescope.nvim",
         "nvim-tree/nvim-tree.lua": "nvim-tree/nvim-tree.lua",
         "nvim-tree/nvim-web-devicons": "nvim-tree/nvim-web-devicons",
         "rafamadriz/friendly-snippets": "rafamadriz/friendly-snippets",

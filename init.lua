@@ -48,8 +48,10 @@ require("lazy").setup(
         "colorscheme",
         "nvim-tree",
         "bufferline",
+        "feline",
         "gitsigns",
         "completion",
+        "telescope",
         "indent-blankline",
         "autopairs"
     },

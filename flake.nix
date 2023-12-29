@@ -29,6 +29,11 @@
       flake = false;
     };
 
+    "freddiehaddad/feline.nvim" = {
+      url = "github:freddiehaddad/feline.nvim";
+      flake = false;
+    };
+
     "lewis6991/gitsigns.nvim" = {
       url = "github:lewis6991/gitsigns.nvim";
       flake = false;
@@ -79,6 +84,16 @@
       flake = false;
     };
 
+    "nvim-telescope/telescope.nvim" = {
+      url = "github:nvim-telescope/telescope.nvim";
+      flake = false;
+    };
+
+    "nvim-lua/plenary.nvim" = {
+      url = "github:nvim-lua/plenary.nvim";
+      flake = false;
+    };
+
     "lukas-reineke/indent-blankline.nvim" = {
       url = "github:lukas-reineke/indent-blankline.nvim";
       flake = false;
@@ -109,7 +124,10 @@
 
     runtimeDeps = with pkgs; [
       wl-clipboard
+      ripgrep
+
       lua-language-server
+      nil
     ];
   in {
     packages.${system}.default = pkgs.wrapNeovimUnstable pkgs.neovim-unwrapped (
