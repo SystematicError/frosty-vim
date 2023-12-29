@@ -46,12 +46,12 @@ require "mappings"
 require("lazy").setup(
     fetch_plugin_configs {
         "colorscheme",
-        "filetree",
-        "tabs",
-        "git",
+        "nvim-tree",
+        "bufferline",
+        "gitsigns",
         "completion",
-        "indent",
-        "pairs"
+        "indent-blankline",
+        "autopairs"
     },
 
     {
