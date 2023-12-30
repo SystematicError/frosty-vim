@@ -1,6 +1,14 @@
 local vi_mode = {
     icon = "",
-    right_sep = "  ",
+
+    left_sep = "block",
+    right_sep = "█ ",
+
+    hl = {
+        fg = "bg",
+        bg = "#42a5f5",
+        style = "bold"
+    },
 
     provider = {
         name = "vi_mode",
@@ -11,7 +19,8 @@ local vi_mode = {
 }
 
 local file_info = {
-    right_sep = "  ",
+    left_sep = " ",
+    right_sep = " ",
 
     provider = {
         name = "file_info",
@@ -23,15 +32,38 @@ local file_info = {
 }
 
 local git_branch = {
+    left_sep = " ",
+    right_sep = " ",
+
+    hl = {
+        fg = "#606060";
+    },
+
     provider = "git_branch"
 }
 
+local lsp_client_names = {
+    left_sep = " ",
+    right_sep = " ",
+
+    hl = {
+        fg = "#606060"
+    },
+
+    provider = "lsp_client_names"
+}
+
 local position = {
+    left_sep = "  ",
+    right_sep = "  ",
+
     provider = "position"
 }
 
 local line_percentage = {
     left_sep = "  ",
+    right_sep = "  ",
+
     provider = "line_percentage"
 }
 
@@ -42,6 +74,7 @@ local left = {
 }
 
 local right = {
+    lsp_client_names,
     position,
     line_percentage
 }
