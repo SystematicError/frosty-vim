@@ -11,8 +11,8 @@ local config = {
 
         offsets = {
             {
-                filetype = "NvimTree",
-                highlight = "NvimTreeNormal",
+                filetype = "neo-tree",
+                highlight = "NeoTreeNormal",
                 text = "",
                 padding = 1,
                 separator = false

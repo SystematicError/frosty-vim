@@ -14,8 +14,18 @@
       flake = false;
     };
 
-    "nvim-tree/nvim-tree.lua" = {
-      url = "github:nvim-tree/nvim-tree.lua";
+    "nvim-neo-tree/neo-tree.nvim" = {
+      url = "github:nvim-neo-tree/neo-tree.nvim";
+      flake = false;
+    };
+
+    "nvim-lua/plenary.nvim" = {
+      url = "github:nvim-lua/plenary.nvim";
+      flake = false;
+    };
+
+    "MunifTanjim/nui.nvim" = {
+      url = "github:MunifTanjim/nui.nvim";
       flake = false;
     };
 
@@ -86,11 +96,6 @@
 
     "nvim-telescope/telescope.nvim" = {
       url = "github:nvim-telescope/telescope.nvim";
-      flake = false;
-    };
-
-    "nvim-lua/plenary.nvim" = {
-      url = "github:nvim-lua/plenary.nvim";
       flake = false;
     };
 

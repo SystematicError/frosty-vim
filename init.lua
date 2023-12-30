@@ -46,7 +46,7 @@ require "mappings"
 require("lazy").setup(
     fetch_plugin_configs {
         "colorscheme",
-        "nvim-tree",
+        "neo-tree",
         "bufferline",
         "feline",
         "gitsigns",
@@ -69,4 +69,4 @@ require("lazy").setup(
 
 
 -- TODO: Remove later
-vim.cmd "hi NvimTreeWinSeparator guifg=#181b20 guibg=#181b20"
+vim.cmd "hi NeoTreeWinSeparator guifg=#181b20 guibg=#181b20"

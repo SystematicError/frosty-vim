@@ -16,6 +16,22 @@
         "type": "github"
       }
     },
+    "MunifTanjim/nui.nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1703741685,
+        "narHash": "sha256-vzkn2qnT2WZMoZ+mExIGmfjTmFWZsISdZAIcXYJ/DBw=",
+        "owner": "MunifTanjim",
+        "repo": "nui.nvim",
+        "rev": "80445d015d2b5f9af0d9e8bce63d303bc86eda8a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "MunifTanjim",
+        "repo": "nui.nvim",
+        "type": "github"
+      }
+    },
     "akinsho/bufferline.nvim": {
       "flake": false,
       "locked": {
@@ -240,6 +256,22 @@
         "type": "github"
       }
     },
+    "nvim-neo-tree/neo-tree.nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1703814652,
+        "narHash": "sha256-lMTLSEERNT9mW5mgjvfQZ+T3VO4N1Jr436OnWce0uQs=",
+        "owner": "nvim-neo-tree",
+        "repo": "neo-tree.nvim",
+        "rev": "953313ecf0a92a8e9f2a4afc603731f1fcb331b4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nvim-neo-tree",
+        "repo": "neo-tree.nvim",
+        "type": "github"
+      }
+    },
     "nvim-telescope/telescope.nvim": {
       "flake": false,
       "locked": {
@@ -253,22 +285,6 @@
       "original": {
         "owner": "nvim-telescope",
         "repo": "telescope.nvim",
-        "type": "github"
-      }
-    },
-    "nvim-tree/nvim-tree.lua": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1702981741,
-        "narHash": "sha256-u4JjV0Qwr5ESQ54Ae6SDotCeOil6+2iGC/Uwu0D+Yis=",
-        "owner": "nvim-tree",
-        "repo": "nvim-tree.lua",
-        "rev": "50f30bcd8c62ac4a83d133d738f268279f2c2ce2",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nvim-tree",
-        "repo": "nvim-tree.lua",
         "type": "github"
       }
     },
@@ -307,6 +323,7 @@
     "root": {
       "inputs": {
         "L3MON4D3/LuaSnip": "L3MON4D3/LuaSnip",
+        "MunifTanjim/nui.nvim": "MunifTanjim/nui.nvim",
         "akinsho/bufferline.nvim": "akinsho/bufferline.nvim",
         "folke/lazy.nvim": "folke/lazy.nvim",
         "freddiehaddad/feline.nvim": "freddiehaddad/feline.nvim",
@@ -321,8 +338,8 @@
         "neovim/nvim-lspconfig": "neovim/nvim-lspconfig",
         "nixpkgs": "nixpkgs",
         "nvim-lua/plenary.nvim": "nvim-lua/plenary.nvim",
+        "nvim-neo-tree/neo-tree.nvim": "nvim-neo-tree/neo-tree.nvim",
         "nvim-telescope/telescope.nvim": "nvim-telescope/telescope.nvim",
-        "nvim-tree/nvim-tree.lua": "nvim-tree/nvim-tree.lua",
         "nvim-tree/nvim-web-devicons": "nvim-tree/nvim-web-devicons",
         "rafamadriz/friendly-snippets": "rafamadriz/friendly-snippets",
         "saadparwaiz1/cmp_luasnip": "saadparwaiz1/cmp_luasnip",
