@@ -139,6 +139,26 @@
       lua-language-server
       nil
     ];
+
+    treesitterParsers = with pkgs.vimPlugins.nvim-treesitter-parsers; [
+      bash
+      css
+      diff
+      dockerfile
+      html
+      javascript
+      json
+      latex
+      lua
+      markdown
+      nix
+      python
+      toml
+      vim
+      vimdoc
+      xml
+      yaml
+    ];
   in {
     packages.${system}.default = pkgs.wrapNeovimUnstable pkgs.neovim-unwrapped (
       pkgs.neovimUtils.makeNeovimConfig {
@@ -146,6 +166,7 @@
           lua package.path = package.path .. ";${./lua}/?.lua"
           luafile ${packageList}
           luafile ${./init.lua}
+          set runtimepath^=${builtins.concatStringsSep "," treesitterParsers}
         '';
       }
       // {
