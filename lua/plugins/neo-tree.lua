@@ -18,10 +18,10 @@ local config = {
             symbols = {
                 added     = "",
                 modified  = "",
-                deleted   = "✖",
-                renamed   = "󰁕",
+                deleted   = "",
+                renamed   = "󰏫",
 
-                untracked = "",
+                untracked = "",
                 ignored   = "󱙝",
                 unstaged  = "○",
                 staged    = "●",

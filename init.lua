@@ -47,6 +47,7 @@ require("lazy").setup(
     fetch_plugin_configs {
         "colorscheme",
         "neo-tree",
+        "nvim-web-devicons",
         "bufferline",
         "feline",
         "gitsigns",
