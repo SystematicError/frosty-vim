@@ -1,19 +1,17 @@
-local function config()
-    require("telescope").setup {
-        defaults = {
-            sorting_strategy = "ascending",
-            prompt_prefix = "   ",
-            selection_caret = " ",
-            entry_prefix = " ",
+local config = {
+    defaults = {
+        sorting_strategy = "ascending",
+        prompt_prefix = "   ",
+        selection_caret = " ",
+        entry_prefix = " ",
 
-            layout_config = {
-                horizontal = {
-                    prompt_position = "top"
-                }
+        layout_config = {
+            horizontal = {
+                prompt_position = "top"
             }
         }
     }
-end
+}
 
 return {
     {

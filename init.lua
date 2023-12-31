@@ -51,6 +51,7 @@ require("lazy").setup(
         "bufferline",
         "feline",
         "gitsigns",
+        "treesitter",
         "completion",
         "telescope",
         "indent-blankline",

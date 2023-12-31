@@ -304,6 +304,22 @@
         "type": "github"
       }
     },
+    "nvim-treesitter/nvim-treesitter": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1703930904,
+        "narHash": "sha256-3G5qOgqjZMrUkM7LaI02GTpwra6w+l97cIpFh4DHbgY=",
+        "owner": "nvim-treesitter",
+        "repo": "nvim-treesitter",
+        "rev": "e49f1e8ef3e8450a8446cb1f2bbb53c919f60b6d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nvim-treesitter",
+        "repo": "nvim-treesitter",
+        "type": "github"
+      }
+    },
     "rafamadriz/friendly-snippets": {
       "flake": false,
       "locked": {
@@ -341,6 +357,7 @@
         "nvim-neo-tree/neo-tree.nvim": "nvim-neo-tree/neo-tree.nvim",
         "nvim-telescope/telescope.nvim": "nvim-telescope/telescope.nvim",
         "nvim-tree/nvim-web-devicons": "nvim-tree/nvim-web-devicons",
+        "nvim-treesitter/nvim-treesitter": "nvim-treesitter/nvim-treesitter",
         "rafamadriz/friendly-snippets": "rafamadriz/friendly-snippets",
         "saadparwaiz1/cmp_luasnip": "saadparwaiz1/cmp_luasnip",
         "windwp/nvim-autopairs": "windwp/nvim-autopairs"

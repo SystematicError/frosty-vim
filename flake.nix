@@ -49,6 +49,11 @@
       flake = false;
     };
 
+    "nvim-treesitter/nvim-treesitter" = {
+        url = "github:nvim-treesitter/nvim-treesitter";
+        flake = false;
+    };
+
     "hrsh7th/nvim-cmp" = {
       url = "github:hrsh7th/nvim-cmp";
       flake = false;
