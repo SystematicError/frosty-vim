@@ -1,8 +1,5 @@
 local config = {
     options = {
-        right_mouse_command = "",
-        middle_mouse_command = "bdelete! %d",
-
         separator_style = {" ", " "},
 
         indicator = {
