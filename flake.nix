@@ -119,6 +119,11 @@
       flake = false;
     };
 
+    "NMAC427/guess-indent.nvim" = {
+      url = "github:NMAC427/guess-indent.nvim";
+      flake = false;
+    };
+
     "windwp/nvim-autopairs" = {
       url = "github:windwp/nvim-autopairs";
       flake = false;

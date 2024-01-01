@@ -57,6 +57,7 @@ require("lazy").setup(
         "conform",
         "telescope",
         "indent-blankline",
+        "guess-indent",
         "autopairs",
     },
 

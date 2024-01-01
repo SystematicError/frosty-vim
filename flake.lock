@@ -32,6 +32,22 @@
         "type": "github"
       }
     },
+    "NMAC427/guess-indent.nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1680539465,
+        "narHash": "sha256-fqQfyUaQBcVZ7bcFeWbLyse9spw97Dqt/B4JGPnaYcQ=",
+        "owner": "NMAC427",
+        "repo": "guess-indent.nvim",
+        "rev": "b8ae749fce17aa4c267eec80a6984130b94f80b2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NMAC427",
+        "repo": "guess-indent.nvim",
+        "type": "github"
+      }
+    },
     "NvChad/nvim-colorizer.lua": {
       "flake": false,
       "locked": {
@@ -356,6 +372,7 @@
       "inputs": {
         "L3MON4D3/LuaSnip": "L3MON4D3/LuaSnip",
         "MunifTanjim/nui.nvim": "MunifTanjim/nui.nvim",
+        "NMAC427/guess-indent.nvim": "NMAC427/guess-indent.nvim",
         "NvChad/nvim-colorizer.lua": "NvChad/nvim-colorizer.lua",
         "akinsho/bufferline.nvim": "akinsho/bufferline.nvim",
         "catppuccin/nvim": "catppuccin/nvim",
