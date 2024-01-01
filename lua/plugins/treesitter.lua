@@ -4,7 +4,10 @@ return {
         main = "nvim-treesitter.configs",
         opts = {
             highlight = {
-                enable = true
+                enable = true,
+
+                -- HACK: Ignore broken parser shipped by nixpkgs
+                disable = {"vimdoc"}
             }
         }
     }
