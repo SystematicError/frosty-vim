@@ -48,6 +48,22 @@
         "type": "github"
       }
     },
+    "catppuccin/nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1704034563,
+        "narHash": "sha256-3fe+Tc1rl1FSFdMyRKfDv7+/piIpj5RgWYgKeN1jx6s=",
+        "owner": "catppuccin",
+        "repo": "nvim",
+        "rev": "5e36ca599f4aa41bdd87fbf2c5aae4397ac55074",
+        "type": "github"
+      },
+      "original": {
+        "owner": "catppuccin",
+        "repo": "nvim",
+        "type": "github"
+      }
+    },
     "folke/lazy.nvim": {
       "flake": false,
       "locked": {
@@ -192,22 +208,6 @@
         "type": "github"
       }
     },
-    "navarasu/onedark.nvim": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1701844102,
-        "narHash": "sha256-UtC8OJw62xYkAyTcwIEbg0tBWttaXeGhFw7Ux8Yu5/0=",
-        "owner": "navarasu",
-        "repo": "onedark.nvim",
-        "rev": "c5476a091b0f1b4e853db91c91ff941f848a1cdd",
-        "type": "github"
-      },
-      "original": {
-        "owner": "navarasu",
-        "repo": "onedark.nvim",
-        "type": "github"
-      }
-    },
     "neovim/nvim-lspconfig": {
       "flake": false,
       "locked": {
@@ -341,6 +341,7 @@
         "L3MON4D3/LuaSnip": "L3MON4D3/LuaSnip",
         "MunifTanjim/nui.nvim": "MunifTanjim/nui.nvim",
         "akinsho/bufferline.nvim": "akinsho/bufferline.nvim",
+        "catppuccin/nvim": "catppuccin/nvim",
         "folke/lazy.nvim": "folke/lazy.nvim",
         "freddiehaddad/feline.nvim": "freddiehaddad/feline.nvim",
         "hrsh7th/cmp-buffer": "hrsh7th/cmp-buffer",
@@ -350,7 +351,6 @@
         "hrsh7th/nvim-cmp": "hrsh7th/nvim-cmp",
         "lewis6991/gitsigns.nvim": "lewis6991/gitsigns.nvim",
         "lukas-reineke/indent-blankline.nvim": "lukas-reineke/indent-blankline.nvim",
-        "navarasu/onedark.nvim": "navarasu/onedark.nvim",
         "neovim/nvim-lspconfig": "neovim/nvim-lspconfig",
         "nixpkgs": "nixpkgs",
         "nvim-lua/plenary.nvim": "nvim-lua/plenary.nvim",

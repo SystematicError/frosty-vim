@@ -9,8 +9,8 @@
       flake = false;
     };
 
-    "navarasu/onedark.nvim" = {
-      url = "github:navarasu/onedark.nvim";
+    "catppuccin/nvim" = {
+      url = "github:catppuccin/nvim";
       flake = false;
     };
 

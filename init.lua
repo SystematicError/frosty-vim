@@ -64,11 +64,8 @@ require("lazy").setup(
         },
 
         install = {
-            colorscheme = {"onedark"}
+            colorscheme = {"catppuccin"}
         }
     }
 )
 
-
--- TODO: Remove later
-vim.cmd "hi NeoTreeWinSeparator guifg=#181b20 guibg=#181b20"
