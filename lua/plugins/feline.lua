@@ -19,12 +19,11 @@ local function icon(str, color, condition)
     }
 end
 
-local function block(component, color)
+local function block(component)
     component.left_sep = "block"
     component.right_sep = "right_rounded"
 
     component.hl = {
-        fg = color,
         bg = "#323232",
         style = "bold"
     }
