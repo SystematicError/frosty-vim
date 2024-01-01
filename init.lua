@@ -47,12 +47,14 @@ require("lazy").setup(
     fetch_plugin_configs {
         "colorscheme",
         "neo-tree",
-        "nvim-web-devicons",
+        "web-devicons",
         "bufferline",
         "feline",
         "gitsigns",
+        "colorizer",
         "treesitter",
         "completion",
+        "conform",
         "telescope",
         "indent-blankline",
         "autopairs"

@@ -32,6 +32,22 @@
         "type": "github"
       }
     },
+    "NvChad/nvim-colorizer.lua": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1703321305,
+        "narHash": "sha256-oKvFN2K+ASlPNwj2rhptR/ErYgo6XKBPhXSZotDdCP0=",
+        "owner": "NvChad",
+        "repo": "nvim-colorizer.lua",
+        "rev": "85855b38011114929f4058efc97af1059ab3e41d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NvChad",
+        "repo": "nvim-colorizer.lua",
+        "type": "github"
+      }
+    },
     "akinsho/bufferline.nvim": {
       "flake": false,
       "locked": {
@@ -340,6 +356,7 @@
       "inputs": {
         "L3MON4D3/LuaSnip": "L3MON4D3/LuaSnip",
         "MunifTanjim/nui.nvim": "MunifTanjim/nui.nvim",
+        "NvChad/nvim-colorizer.lua": "NvChad/nvim-colorizer.lua",
         "akinsho/bufferline.nvim": "akinsho/bufferline.nvim",
         "catppuccin/nvim": "catppuccin/nvim",
         "folke/lazy.nvim": "folke/lazy.nvim",
@@ -360,6 +377,7 @@
         "nvim-treesitter/nvim-treesitter": "nvim-treesitter/nvim-treesitter",
         "rafamadriz/friendly-snippets": "rafamadriz/friendly-snippets",
         "saadparwaiz1/cmp_luasnip": "saadparwaiz1/cmp_luasnip",
+        "stevearc/conform.nvim": "stevearc/conform.nvim",
         "windwp/nvim-autopairs": "windwp/nvim-autopairs"
       }
     },
@@ -376,6 +394,22 @@
       "original": {
         "owner": "saadparwaiz1",
         "repo": "cmp_luasnip",
+        "type": "github"
+      }
+    },
+    "stevearc/conform.nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1703796426,
+        "narHash": "sha256-+hIWmbXl4Z3S30B60ufYKG0jOOurA8opumFkp4iK770=",
+        "owner": "stevearc",
+        "repo": "conform.nvim",
+        "rev": "ad2b5ecd907128ed1b66b1cf4bed57902ef836ee",
+        "type": "github"
+      },
+      "original": {
+        "owner": "stevearc",
+        "repo": "conform.nvim",
         "type": "github"
       }
     },

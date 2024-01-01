@@ -150,7 +150,7 @@ local diagnostic_info = {
     }
 }
 
-local function is_lsp_attached()
+local function lsp_enabled()
    return next(vim.lsp.get_active_clients {bufnr = 0}) ~= nil
 end
 
@@ -175,7 +175,7 @@ local left = {
 local right = {
     diagnostic_errors, diagnostic_warnings, diagnostic_hints, diagnostic_info,
     gap,
-    icon("", "#fc4e4e", is_lsp_attached), block(lsp_client_names),
+    icon("", "#fc4e4e", lsp_enabled), block(lsp_client_names),
     gap,
     icon("󰦨", "#bbef6e"), block(position),
 }

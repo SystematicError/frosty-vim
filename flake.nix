@@ -49,9 +49,14 @@
       flake = false;
     };
 
+    "NvChad/nvim-colorizer.lua" = {
+      url = "github:NvChad/nvim-colorizer.lua";
+      flake = false;
+    };
+
     "nvim-treesitter/nvim-treesitter" = {
-        url = "github:nvim-treesitter/nvim-treesitter";
-        flake = false;
+      url = "github:nvim-treesitter/nvim-treesitter";
+      flake = false;
     };
 
     "hrsh7th/nvim-cmp" = {
@@ -99,6 +104,11 @@
       flake = false;
     };
 
+    "stevearc/conform.nvim" = {
+      url = "github:stevearc/conform.nvim";
+      flake = false;
+    };
+
     "nvim-telescope/telescope.nvim" = {
       url = "github:nvim-telescope/telescope.nvim";
       flake = false;
@@ -138,10 +148,14 @@
 
       lua-language-server
       nil
+
+      stylua
+      alejandra
     ];
 
     treesitterParsers = with pkgs.vimPlugins.nvim-treesitter-parsers; [
       bash
+      c
       css
       diff
       dockerfile
