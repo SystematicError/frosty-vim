@@ -7,35 +7,35 @@ local config = {
         icon = {
             folder_closed = "",
             folder_open = "",
-            folder_empty = ""
+            folder_empty = "",
         },
 
         name = {
-            use_git_status_colors = false
+            use_git_status_colors = false,
         },
 
         git_status = {
             symbols = {
-                added     = "",
-                modified  = "",
-                deleted   = "",
-                renamed   = "󰏫",
+                added = "",
+                modified = "",
+                deleted = "",
+                renamed = "󰏫",
 
                 untracked = "",
-                ignored   = "󱙝",
-                unstaged  = "○",
-                staged    = "●",
-                conflict  = "",
-            }
+                ignored = "󱙝",
+                unstaged = "○",
+                staged = "●",
+                conflict = "",
+            },
         },
 
         symlink_target = {
-            enabled = true
-        }
+            enabled = true,
+        },
     },
 
     window = {
-        width = 35
+        width = 35,
     },
 
     filesystem = {
@@ -44,11 +44,10 @@ local config = {
 
         filtered_items = {
             hide_dotfiles = false,
-            hide_gitignored = false
-        }
-    }
+            hide_gitignored = false,
+        },
+    },
 }
-
 
 return {
     {
@@ -56,8 +55,8 @@ return {
         dependencies = {
             "nvim-lua/plenary.nvim",
             "MunifTanjim/nui.nvim",
-            "nvim-tree/nvim-web-devicons"
+            "nvim-tree/nvim-web-devicons",
         },
-        opts = config
-    }
+        opts = config,
+    },
 }

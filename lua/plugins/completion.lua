@@ -12,7 +12,7 @@ local function config()
 
     local servers = {
         lua_ls = {},
-        nil_ls = {}
+        nil_ls = {},
     }
 
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -31,11 +31,11 @@ local function config()
         lspconfig[server].setup(options)
     end
 
-    local diagnostic_signs = {Error = " ", Warn = " ", Hint = "󰌵 ", Info = " "}
+    local diagnostic_signs = { Error = " ", Warn = " ", Hint = "󰌵 ", Info = " " }
 
     for name, icon in pairs(diagnostic_signs) do
         local hl = "DiagnosticSign" .. name
-        vim.fn.sign_define(hl, {text = icon, texthl = hl, numhl = hl})
+        vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
     end
 
     -- Cmp config
@@ -65,17 +65,16 @@ local function config()
         Struct = "",
         Event = "",
         Operator = "󰆕",
-        TypeParameter = "󰅲"
+        TypeParameter = "󰅲",
     }
-
 
     cmp.setup {
         sources = cmp.config.sources({
-            {name = "nvim_lsp"},
-            {name = "luasnip"}
+            { name = "nvim_lsp" },
+            { name = "luasnip" },
         }, {
-            {name = "buffer"},
-            {name = "path"}
+            { name = "buffer" },
+            { name = "path" },
         }),
 
         mapping = {
@@ -86,28 +85,28 @@ local function config()
 
             ["<Tab>"] = cmp.mapping(function(fallback)
                 if cmp.visible() then
-                cmp.select_next_item()
+                    cmp.select_next_item()
                 elseif luasnip.expand_or_jumpable() then
                     luasnip.expand_or_jump()
                 else
                     fallback()
                 end
-            end, {"i", "s"}),
+            end, { "i", "s" }),
 
             ["<S-Tab>"] = cmp.mapping(function(fallback)
                 if cmp.visible() then
-                cmp.select_prev_item()
+                    cmp.select_prev_item()
                 elseif luasnip.jumpable(-1) then
                     luasnip.jump(-1)
                 else
                     fallback()
                 end
-            end, {"i", "s"})
+            end, { "i", "s" }),
         },
 
         formatting = {
             format = function(entry, vim_item)
-                vim_item.kind = string.format('%s %s', lspkind_icons[vim_item.kind], vim_item.kind)
+                vim_item.kind = string.format("%s %s", lspkind_icons[vim_item.kind], vim_item.kind)
 
                 vim_item.menu = ({
                     nvim_lsp = "[LSP]",
@@ -118,31 +117,31 @@ local function config()
                 })[entry.source.name]
 
                 return vim_item
-            end
+            end,
         },
 
         snippet = {
             expand = function(args)
                 require("luasnip").lsp_expand(args.body)
-            end
+            end,
         },
 
         experimental = {
-            ghost_text = true
-        }
+            ghost_text = true,
+        },
     }
 
-    cmp.setup.cmdline({"/", "?"}, {
+    cmp.setup.cmdline({ "/", "?" }, {
         sources = {
-            {name = "buffer"}
-        }
+            { name = "buffer" },
+        },
     })
 
     cmp.setup.cmdline(":", {
         sources = {
-            {name = "cmdline"},
-            {name = "path"}
-        }
+            { name = "cmdline" },
+            { name = "path" },
+        },
     })
 
     -- Snippet config
@@ -161,8 +160,8 @@ return {
             "rafamadriz/friendly-snippets",
             "hrsh7th/cmp-buffer",
             "hrsh7th/cmp-path",
-            "hrsh7th/cmp-cmdline"
+            "hrsh7th/cmp-cmdline",
         },
-        config = config
-    }
+        config = config,
+    },
 }

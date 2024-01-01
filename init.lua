@@ -2,13 +2,13 @@ FROSTY_PACKAGES = FROSTY_PACKAGES or {}
 vim.opt.rtp:prepend(FROSTY_PACKAGES["folke/lazy.nvim"])
 
 local function ensure_table(object)
-    return type(object) == "table" and object or {object}
+    return type(object) == "table" and object or { object }
 end
 
 local function make_spec_local(spec)
     if FROSTY_PACKAGES[spec[1]] then
         spec.dir = FROSTY_PACKAGES[spec[1]]
-        spec.name = spec.name or spec[1]:match("^.+/(.+)$")
+        spec.name = spec.name or spec[1]:match "^.+/(.+)$"
     end
 
     return spec
@@ -57,7 +57,7 @@ require("lazy").setup(
         "conform",
         "telescope",
         "indent-blankline",
-        "autopairs"
+        "autopairs",
     },
 
     {
@@ -66,8 +66,7 @@ require("lazy").setup(
         },
 
         install = {
-            colorscheme = {"catppuccin"}
-        }
+            colorscheme = { "catppuccin" },
+        },
     }
 )
-

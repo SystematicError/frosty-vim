@@ -9,8 +9,8 @@ local config = {
         cmp = true,
         -- native_lsp
         treesitter = true,
-        telescope = true
-    }
+        telescope = true,
+    },
 }
 
 return {
@@ -20,6 +20,6 @@ return {
         config = function()
             require("catppuccin").setup(config)
             vim.cmd.colorscheme "catppuccin"
-        end
-    }
+        end,
+    },
 }

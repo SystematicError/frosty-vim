@@ -8,14 +8,14 @@ local function icon(str, color, condition)
         right_sep = {
             str = " ",
             hl = {
-                bg = color
-            }
+                bg = color,
+            },
         },
 
         hl = {
             fg = "bg",
-            bg = color
-        }
+            bg = color,
+        },
     }
 end
 
@@ -25,14 +25,14 @@ local function block(component)
 
     component.hl = {
         bg = "#323232",
-        style = "bold"
+        style = "bold",
     }
 
     return component
 end
 
 local gap = {
-    provider = " "
+    provider = " ",
 }
 
 local vi_mode = {
@@ -41,13 +41,13 @@ local vi_mode = {
     provider = {
         name = "vi_mode",
         opts = {
-            show_mode_name = true
-        }
-    }
+            show_mode_name = true,
+        },
+    },
 }
 
 local function file_icon()
-    local devicon, _ = require("nvim-web-devicons").get_icon(vim.fn.expand("%:t"))
+    local devicon, _ = require("nvim-web-devicons").get_icon(vim.fn.expand "%:t")
     return devicon
 end
 
@@ -58,9 +58,9 @@ local file_info = {
         name = "file_info",
         opts = {
             file_modified_icon = "",
-            file_readonly_icon = " "
-        }
-    }
+            file_readonly_icon = " ",
+        },
+    },
 }
 
 local git_branch = {
@@ -69,8 +69,8 @@ local git_branch = {
     right_sep = " ",
 
     hl = {
-        fg = "#606060"
-    }
+        fg = "#606060",
+    },
 }
 
 local git_diff_added = {
@@ -80,8 +80,8 @@ local git_diff_added = {
     right_sep = " ",
 
     hl = {
-        fg = "#606060"
-    }
+        fg = "#606060",
+    },
 }
 
 local git_diff_removed = {
@@ -91,8 +91,8 @@ local git_diff_removed = {
     right_sep = " ",
 
     hl = {
-        fg = "#606060"
-    }
+        fg = "#606060",
+    },
 }
 
 local git_diff_changed = {
@@ -102,8 +102,8 @@ local git_diff_changed = {
     right_sep = " ",
 
     hl = {
-        fg = "#606060"
-    }
+        fg = "#606060",
+    },
 }
 
 local diagnostic_errors = {
@@ -113,8 +113,8 @@ local diagnostic_errors = {
     left_sep = " ",
 
     hl = {
-        fg = "#606060"
-    }
+        fg = "#606060",
+    },
 }
 
 local diagnostic_warnings = {
@@ -124,8 +124,8 @@ local diagnostic_warnings = {
     left_sep = " ",
 
     hl = {
-        fg = "#606060"
-    }
+        fg = "#606060",
+    },
 }
 
 local diagnostic_hints = {
@@ -135,8 +135,8 @@ local diagnostic_hints = {
     left_sep = " ",
 
     hl = {
-        fg = "#606060"
-    }
+        fg = "#606060",
+    },
 }
 
 local diagnostic_info = {
@@ -146,40 +146,49 @@ local diagnostic_info = {
     left_sep = " ",
 
     hl = {
-        fg = "#606060"
-    }
+        fg = "#606060",
+    },
 }
 
 local function lsp_enabled()
-   return next(vim.lsp.get_active_clients {bufnr = 0}) ~= nil
+    return next(vim.lsp.get_active_clients { bufnr = 0 }) ~= nil
 end
 
 local lsp_client_names = {
     icon = "",
 
-    provider = "lsp_client_names"
+    provider = "lsp_client_names",
 }
 
 local position = {
-    provider = "position"
+    provider = "position",
 }
 
 local left = {
-    icon("󰆧", "#42a5f5"), block(vi_mode),
+    icon("󰆧", "#42a5f5"),
+    block(vi_mode),
     gap,
-    icon(file_icon, "#ffaf60"), block(file_info),
+    icon(file_icon, "#ffaf60"),
+    block(file_info),
     gap,
-    git_branch, git_diff_added, git_diff_removed, git_diff_changed
+    git_branch,
+    git_diff_added,
+    git_diff_removed,
+    git_diff_changed,
 }
 
 local right = {
-    diagnostic_errors, diagnostic_warnings, diagnostic_hints, diagnostic_info,
+    diagnostic_errors,
+    diagnostic_warnings,
+    diagnostic_hints,
+    diagnostic_info,
     gap,
-    icon("", "#fc4e4e", lsp_enabled), block(lsp_client_names),
+    icon("", "#fc4e4e", lsp_enabled),
+    block(lsp_client_names),
     gap,
-    icon("󰦨", "#bbef6e"), block(position),
+    icon("󰦨", "#bbef6e"),
+    block(position),
 }
-
 
 return {
     {
@@ -187,9 +196,9 @@ return {
         dependencies = "nvim-tree/nvim-web-devicons",
         opts = {
             components = {
-                active = {left, right},
-                inactive = {left, right}
-            }
-        }
-    }
+                active = { left, right },
+                inactive = { left, right },
+            },
+        },
+    },
 }

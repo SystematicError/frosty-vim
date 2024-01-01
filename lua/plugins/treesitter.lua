@@ -7,8 +7,8 @@ return {
                 enable = true,
 
                 -- HACK: Ignore broken parser shipped by nixpkgs
-                disable = {"vimdoc"}
-            }
-        }
-    }
+                disable = { "vimdoc" },
+            },
+        },
+    },
 }

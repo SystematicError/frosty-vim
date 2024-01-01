@@ -1,9 +1,9 @@
 local config = {
     options = {
-        separator_style = {" ", " "},
+        separator_style = { " ", " " },
 
         indicator = {
-            style = "none"
+            style = "none",
         },
 
         offsets = {
@@ -12,16 +12,16 @@ local config = {
                 highlight = "NeoTreeNormal",
                 text = "",
                 padding = 1,
-                separator = false
-            }
-        }
-    }
+                separator = false,
+            },
+        },
+    },
 }
 
 return {
     {
         "akinsho/bufferline.nvim",
         dependencies = "nvim-tree/nvim-web-devicons",
-        opts = config
-    }
+        opts = config,
+    },
 }

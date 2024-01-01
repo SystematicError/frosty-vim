@@ -1,15 +1,15 @@
 local config = {
     format_on_save = {
         timeout_ms = 1000,
-        lsp_fallback = true
+        lsp_fallback = true,
     },
 
     formatters_by_ft = {
-        lua = {"stylua"},
-        nix = {"alejandra"}
+        lua = { "stylua" },
+        nix = { "alejandra" },
     },
 
-    formatters = {}
+    formatters = {},
 }
 
 for formatter, _ in pairs(config.formatters_by_ft) do
@@ -22,6 +22,6 @@ end
 return {
     {
         "stevearc/conform.nvim",
-        opts = config
-    }
+        opts = config,
+    },
 }

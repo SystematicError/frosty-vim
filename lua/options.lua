@@ -11,7 +11,7 @@ opt.clipboard = "unnamedplus"
 
 opt.signcolumn = "yes"
 
-opt.fillchars = {eob = " "}
+opt.fillchars = { eob = " " }
 
 opt.laststatus = 3
 
