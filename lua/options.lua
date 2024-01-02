@@ -2,6 +2,8 @@ local opt = vim.opt
 
 opt.termguicolors = true
 
+opt.lazyredraw = true
+
 opt.wrap = false
 opt.whichwrap = "bshl<>[]~"
 
