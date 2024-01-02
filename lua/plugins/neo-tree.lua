@@ -1,53 +1,57 @@
-local config = {
-    close_if_last_window = true,
-    enable_diagnostics = false,
-    enable_modified_markers = false,
+local function config()
+    local opts = {
+        close_if_last_window = true,
+        enable_diagnostics = false,
+        enable_modified_markers = false,
 
-    default_component_configs = {
-        icon = {
-            folder_closed = "",
-            folder_open = "",
-            folder_empty = "",
-        },
+        default_component_configs = {
+            icon = {
+                folder_closed = "",
+                folder_open = "",
+                folder_empty = "",
+            },
 
-        name = {
-            use_git_status_colors = false,
-        },
+            name = {
+                use_git_status_colors = false,
+            },
 
-        git_status = {
-            symbols = {
-                added = "",
-                modified = "",
-                deleted = "",
-                renamed = "󰏫",
+            git_status = {
+                symbols = {
+                    added = "",
+                    modified = "",
+                    deleted = "",
+                    renamed = "󰏫",
 
-                untracked = "",
-                ignored = "󱙝",
-                unstaged = "○",
-                staged = "●",
-                conflict = "",
+                    untracked = "",
+                    ignored = "󱙝",
+                    unstaged = "○",
+                    staged = "●",
+                    conflict = "",
+                },
+            },
+
+            symlink_target = {
+                enabled = true,
             },
         },
 
-        symlink_target = {
-            enabled = true,
+        window = {
+            width = 35,
         },
-    },
 
-    window = {
-        width = 35,
-    },
+        filesystem = {
+            group_empty_dirs = true,
+            use_libuv_file_watcher = true,
 
-    filesystem = {
-        group_empty_dirs = true,
-        use_libuv_file_watcher = true,
-
-        filtered_items = {
-            hide_dotfiles = false,
-            hide_gitignored = false,
+            filtered_items = {
+                hide_dotfiles = false,
+                hide_gitignored = false,
+            },
         },
-    },
-}
+    }
+
+    require("neo-tree").setup(opts)
+end
 
 return {
     {
@@ -57,6 +61,6 @@ return {
             "MunifTanjim/nui.nvim",
             "nvim-tree/nvim-web-devicons",
         },
-        opts = config,
+        config = config,
     },
 }

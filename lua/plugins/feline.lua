@@ -1,194 +1,212 @@
-local function icon(str, color, condition)
-    return {
-        provider = str,
-        enabled = condition,
+local function config()
+    local palette = require("catppuccin.palettes").get_palette()
 
-        left_sep = "left_rounded",
+    local function icon(str, color, condition)
+        return {
+            provider = str,
+            enabled = condition,
 
-        right_sep = {
-            str = " ",
+            left_sep = "left_rounded",
+
+            right_sep = {
+                str = " ",
+                hl = {
+                    bg = color,
+                },
+            },
+
             hl = {
+                fg = "bg",
                 bg = color,
             },
+        }
+    end
+
+    local function block(component)
+        component.left_sep = "block"
+        component.right_sep = "right_rounded"
+
+        component.hl = {
+            bg = "#2c2c2c",
+            style = "bold",
+        }
+
+        return component
+    end
+
+    local gap = {
+        provider = " ",
+    }
+
+    local vi_mode = {
+        icon = "",
+
+        provider = {
+            name = "vi_mode",
+            opts = {
+                show_mode_name = true,
+            },
         },
+    }
+
+    local function file_icon()
+        local devicon, _ = require("nvim-web-devicons").get_icon(vim.fn.expand "%:t")
+        return devicon
+    end
+
+    local file_info = {
+        icon = "",
+
+        provider = {
+            name = "file_info",
+            opts = {
+                file_modified_icon = "",
+                file_readonly_icon = " ",
+            },
+        },
+    }
+
+    local git_branch = {
+        provider = "git_branch",
+
+        right_sep = " ",
 
         hl = {
-            fg = "bg",
-            bg = color,
+            fg = palette.surface2,
         },
     }
-end
 
-local function block(component)
-    component.left_sep = "block"
-    component.right_sep = "right_rounded"
+    local git_diff_added = {
+        provider = "git_diff_added",
 
-    component.hl = {
-        bg = "black",
-        style = "bold",
+        icon = " ",
+        right_sep = " ",
+
+        hl = {
+            fg = palette.surface2,
+        },
     }
 
-    return component
-end
+    local git_diff_removed = {
+        provider = "git_diff_removed",
 
-local gap = {
-    provider = " ",
-}
+        icon = " ",
+        right_sep = " ",
 
-local vi_mode = {
-    icon = "",
-
-    provider = {
-        name = "vi_mode",
-        opts = {
-            show_mode_name = true,
+        hl = {
+            fg = palette.surface2,
         },
-    },
-}
+    }
 
-local function file_icon()
-    local devicon, _ = require("nvim-web-devicons").get_icon(vim.fn.expand "%:t")
-    return devicon
-end
+    local git_diff_changed = {
+        provider = "git_diff_changed",
 
-local file_info = {
-    icon = "",
+        icon = " ",
+        right_sep = " ",
 
-    provider = {
-        name = "file_info",
-        opts = {
-            file_modified_icon = "",
-            file_readonly_icon = " ",
+        hl = {
+            fg = palette.surface2,
         },
-    },
-}
+    }
 
-local git_branch = {
-    provider = "git_branch",
+    local diagnostic_errors = {
+        provider = "diagnostic_errors",
 
-    right_sep = " ",
+        icon = " ",
+        left_sep = " ",
 
-    hl = {
-        fg = "mute_fg",
-    },
-}
+        hl = {
+            fg = palette.surface2,
+        },
+    }
 
-local git_diff_added = {
-    provider = "git_diff_added",
+    local diagnostic_warnings = {
+        provider = "diagnostic_warnings",
 
-    icon = " ",
-    right_sep = " ",
+        icon = " ",
+        left_sep = " ",
 
-    hl = {
-        fg = "mute_fg",
-    },
-}
+        hl = {
+            fg = palette.surface2,
+        },
+    }
 
-local git_diff_removed = {
-    provider = "git_diff_removed",
+    local diagnostic_hints = {
+        provider = "diagnostic_hints",
 
-    icon = " ",
-    right_sep = " ",
+        icon = "󰌵 ",
+        left_sep = " ",
 
-    hl = {
-        fg = "mute_fg",
-    },
-}
+        hl = {
+            fg = palette.surface2,
+        },
+    }
 
-local git_diff_changed = {
-    provider = "git_diff_changed",
+    local diagnostic_info = {
+        provider = "diagnostic_info",
 
-    icon = " ",
-    right_sep = " ",
+        icon = " ",
+        left_sep = " ",
 
-    hl = {
-        fg = "mute_fg",
-    },
-}
+        hl = {
+            fg = palette.surface2,
+        },
+    }
 
-local diagnostic_errors = {
-    provider = "diagnostic_errors",
+    local function lsp_enabled()
+        return next(vim.lsp.get_active_clients { bufnr = 0 }) ~= nil
+    end
 
-    icon = " ",
-    left_sep = " ",
+    local lsp_client_names = {
+        icon = "",
 
-    hl = {
-        fg = "mute_fg",
-    },
-}
+        provider = "lsp_client_names",
+    }
 
-local diagnostic_warnings = {
-    provider = "diagnostic_warnings",
+    local position = {
+        provider = "position",
+    }
 
-    icon = " ",
-    left_sep = " ",
+    local left = {
+        icon("󰆧", palette.blue),
+        block(vi_mode),
+        gap,
+        icon(file_icon, palette.peach),
+        block(file_info),
+        gap,
+        git_branch,
+        git_diff_added,
+        git_diff_removed,
+        git_diff_changed,
+    }
 
-    hl = {
-        fg = "mute_fg",
-    },
-}
+    local right = {
+        diagnostic_errors,
+        diagnostic_warnings,
+        diagnostic_hints,
+        diagnostic_info,
+        gap,
+        icon("", palette.red, lsp_enabled),
+        block(lsp_client_names),
+        gap,
+        icon("󰦨", palette.green),
+        block(position),
+    }
 
-local diagnostic_hints = {
-    provider = "diagnostic_hints",
+    local opts = {
+        components = {
+            active = { left, right },
+            inactive = { left, right },
+        },
 
-    icon = "󰌵 ",
-    left_sep = " ",
+        theme = {
+            fg = palette.text,
+            bg = palette.base,
+        },
+    }
 
-    hl = {
-        fg = "mute_fg",
-    },
-}
-
-local diagnostic_info = {
-    provider = "diagnostic_info",
-
-    icon = " ",
-    left_sep = " ",
-
-    hl = {
-        fg = "mute_fg",
-    },
-}
-
-local function lsp_enabled()
-    return next(vim.lsp.get_active_clients { bufnr = 0 }) ~= nil
+    require("feline").setup(opts)
 end
-
-local lsp_client_names = {
-    icon = "",
-
-    provider = "lsp_client_names",
-}
-
-local position = {
-    provider = "position",
-}
-
-local left = {
-    icon("󰆧", "oceanblue"),
-    block(vi_mode),
-    gap,
-    icon(file_icon, "orange"),
-    block(file_info),
-    gap,
-    git_branch,
-    git_diff_added,
-    git_diff_removed,
-    git_diff_changed,
-}
-
-local right = {
-    diagnostic_errors,
-    diagnostic_warnings,
-    diagnostic_hints,
-    diagnostic_info,
-    gap,
-    icon("", "red", lsp_enabled),
-    block(lsp_client_names),
-    gap,
-    icon("󰦨", "green"),
-    block(position),
-}
 
 return {
     {
@@ -197,34 +215,6 @@ return {
             "nvim-tree/nvim-web-devicons",
             "catppuccin/nvim",
         },
-        config = function()
-            local palette = require("catppuccin.palettes").get_palette()
-
-            require("feline").setup {
-                components = {
-                    active = { left, right },
-                    inactive = { left, right },
-                },
-
-                theme = {
-                    fg = palette.text,
-                    bg = palette.base,
-                    black = "#2c2c2c",
-                    skyblue = palette.sky,
-                    cyan = palette.teal,
-                    green = palette.green,
-                    oceanblue = palette.blue,
-                    magenta = palette.pink,
-                    orange = palette.peach,
-                    red = palette.red,
-                    violet = palette.mauve,
-                    white = "#ffffff",
-                    yellow = palette.yellow,
-
-                    -- Extra
-                    mute_fg = palette.surface2,
-                },
-            }
-        end,
+        config = config,
     },
 }

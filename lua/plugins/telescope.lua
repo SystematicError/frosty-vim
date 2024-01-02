@@ -1,17 +1,21 @@
-local config = {
-    defaults = {
-        sorting_strategy = "ascending",
-        prompt_prefix = "   ",
-        selection_caret = " ",
-        entry_prefix = " ",
+local function config()
+    local opts = {
+        defaults = {
+            sorting_strategy = "ascending",
+            prompt_prefix = "   ",
+            selection_caret = " ",
+            entry_prefix = " ",
 
-        layout_config = {
-            horizontal = {
-                prompt_position = "top",
+            layout_config = {
+                horizontal = {
+                    prompt_position = "top",
+                },
             },
         },
-    },
-}
+    }
+
+    require("telescope").setup(opts)
+end
 
 return {
     {
@@ -20,6 +24,6 @@ return {
             "nvim-lua/plenary.nvim",
             "nvim-tree/nvim-web-devicons",
         },
-        opts = config,
+        config = config,
     },
 }

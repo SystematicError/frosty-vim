@@ -1,5 +1,5 @@
 local function config()
-    return {
+    local opts = {
         options = {
             highlights = require("catppuccin.groups.integrations.bufferline").get(),
 
@@ -20,6 +20,8 @@ local function config()
             },
         },
     }
+
+    require("bufferline").setup(opts)
 end
 
 return {
@@ -29,6 +31,6 @@ return {
             "nvim-tree/nvim-web-devicons",
             "catppuccin/nvim",
         },
-        opts = config,
+        config = config,
     },
 }
