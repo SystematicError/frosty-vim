@@ -50,6 +50,7 @@ require("lazy").setup(
         "web-devicons",
         "bufferline",
         "feline",
+        "notify",
         "gitsigns",
         "colorizer",
         "treesitter",

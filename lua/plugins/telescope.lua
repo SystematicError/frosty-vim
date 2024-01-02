@@ -11,6 +11,12 @@ local function config()
                     prompt_position = "top",
                 },
             },
+
+            mappings = {
+                n = {
+                    q = require("telescope.actions").close,
+                },
+            },
         },
     }
 
