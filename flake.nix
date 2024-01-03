@@ -44,6 +44,11 @@
       flake = false;
     };
 
+    "rcarriga/nvim-notify" = {
+      url = "github:rcarriga/nvim-notify";
+      flake = false;
+    };
+
     "lewis6991/gitsigns.nvim" = {
       url = "github:lewis6991/gitsigns.nvim";
       flake = false;

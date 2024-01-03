@@ -368,6 +368,22 @@
         "type": "github"
       }
     },
+    "rcarriga/nvim-notify": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1703761431,
+        "narHash": "sha256-PC4Bo4H8H0fdZ5iqdfi3OoB9H/S8+NzBY9YCKn2HCro=",
+        "owner": "rcarriga",
+        "repo": "nvim-notify",
+        "rev": "ebcdd8219e2a2cbc0a4bef68002f6867f1fde269",
+        "type": "github"
+      },
+      "original": {
+        "owner": "rcarriga",
+        "repo": "nvim-notify",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "L3MON4D3/LuaSnip": "L3MON4D3/LuaSnip",
@@ -393,6 +409,7 @@
         "nvim-tree/nvim-web-devicons": "nvim-tree/nvim-web-devicons",
         "nvim-treesitter/nvim-treesitter": "nvim-treesitter/nvim-treesitter",
         "rafamadriz/friendly-snippets": "rafamadriz/friendly-snippets",
+        "rcarriga/nvim-notify": "rcarriga/nvim-notify",
         "saadparwaiz1/cmp_luasnip": "saadparwaiz1/cmp_luasnip",
         "stevearc/conform.nvim": "stevearc/conform.nvim",
         "windwp/nvim-autopairs": "windwp/nvim-autopairs"

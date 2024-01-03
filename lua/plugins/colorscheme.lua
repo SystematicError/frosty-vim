@@ -6,6 +6,7 @@ local function config()
             gitsigns = true,
             indent_blankline = true,
             neotree = true,
+            notify = true,
             cmp = true,
             treesitter = true,
             telescope = true,

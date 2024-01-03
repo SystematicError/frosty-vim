@@ -1,5 +1,18 @@
 local function config()
-    vim.notify = require "notify"
+    local notify = require "notify"
+
+    local opts = {
+        icons = {
+            DEBUG = "",
+            ERROR = "",
+            INFO = "",
+            TRACE = "󰏫",
+            WARN = "",
+        },
+    }
+
+    vim.notify = notify
+    notify.setup(opts)
 end
 
 return {

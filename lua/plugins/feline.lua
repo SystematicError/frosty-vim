@@ -145,7 +145,7 @@ local function config()
     local diagnostic_info = {
         provider = "diagnostic_info",
 
-        icon = " ",
+        icon = " ",
         left_sep = " ",
 
         hl = {

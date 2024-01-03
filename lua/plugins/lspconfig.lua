@@ -21,7 +21,7 @@ local function config()
         lspconfig[server].setup(options)
     end
 
-    local diagnostic_signs = { Error = " ", Warn = " ", Hint = "󰌵 ", Info = " " }
+    local diagnostic_signs = { Error = " ", Warn = " ", Hint = "󰌵 ", Info = " " }
 
     for name, icon in pairs(diagnostic_signs) do
         local hl = "DiagnosticSign" .. name
