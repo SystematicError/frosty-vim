@@ -10,6 +10,7 @@ local function config()
             cmp = true,
             treesitter = true,
             telescope = true,
+            which_key = true,
         },
 
         color_overrides = {

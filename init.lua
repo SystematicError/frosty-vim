@@ -41,7 +41,6 @@ local function fetch_plugin_configs(files)
 end
 
 require "options"
-require "mappings"
 
 require("lazy").setup(
     fetch_plugin_configs {
