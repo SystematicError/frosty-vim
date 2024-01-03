@@ -59,6 +59,7 @@ require("lazy").setup(
         "luasnip",
         "conform",
         "telescope",
+        "which-key",
         "indent-blankline",
         "guess-indent",
         "autopairs",

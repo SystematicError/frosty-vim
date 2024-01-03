@@ -119,6 +119,11 @@
       flake = false;
     };
 
+    "folke/which-key.nvim" = {
+      url = "github:folke/which-key.nvim";
+      flake = false;
+    };
+
     "lukas-reineke/indent-blankline.nvim" = {
       url = "github:lukas-reineke/indent-blankline.nvim";
       flake = false;
