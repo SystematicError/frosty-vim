@@ -4,6 +4,8 @@ opt.termguicolors = true
 
 opt.lazyredraw = true
 
+opt.timeoutlen = 500
+
 opt.wrap = false
 opt.whichwrap = "bshl<>[]~"
 
@@ -12,7 +14,6 @@ opt.mouse = "a"
 opt.clipboard = "unnamedplus"
 
 opt.signcolumn = "yes"
-
 opt.fillchars = { eob = " " }
 
 opt.laststatus = 3
