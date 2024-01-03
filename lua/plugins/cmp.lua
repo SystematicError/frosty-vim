@@ -30,6 +30,19 @@ local function config()
         TypeParameter = "󰅲",
     }
 
+    local function border(highlight)
+        return {
+            { "╭", highlight },
+            { "─", highlight },
+            { "╮", highlight },
+            { "│", highlight },
+            { "╯", highlight },
+            { "─", highlight },
+            { "╰", highlight },
+            { "│", highlight },
+        }
+    end
+
     cmp.setup {
         sources = cmp.config.sources({
             { name = "nvim_lsp" },
@@ -66,17 +79,33 @@ local function config()
             end, { "i", "s" }),
         },
 
-        formatting = {
-            format = function(entry, vim_item)
-                vim_item.kind = string.format("%s %s", lspkind_icons[vim_item.kind], vim_item.kind)
+        window = {
+            completion = {
+                scrollbar = false,
+                border = border "CmpBorder",
+                winhighlight = "Normal:CmpPmenu,Search:None",
+            },
 
-                vim_item.menu = ({
-                    nvim_lsp = "[LSP]",
-                    luasnip = "[LuaSnip]",
-                    buffer = "[Buffer]",
-                    path = "[Path]",
-                    cmdline = "[Cmdline]",
-                })[entry.source.name]
+            documentation = {
+                border = border "CmpBorder",
+                winhighlight = "Normal:CmpDoc",
+            },
+        },
+
+        formatting = {
+            fields = { "kind", "abbr", "menu" },
+
+            format = function(entry, vim_item)
+                vim_item.kind = lspkind_icons[vim_item.kind] .. " "
+
+                vim_item.menu = "    "
+                    .. ({
+                        nvim_lsp = "LSP",
+                        luasnip = "LuaSnip",
+                        buffer = "Buffer",
+                        path = "Path",
+                        cmdline = "Command",
+                    })[entry.source.name]
 
                 return vim_item
             end,

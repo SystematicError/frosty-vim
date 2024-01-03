@@ -46,6 +46,11 @@ local function config()
 
         custom_highlights = function(colors)
             return {
+                CmpItemAbbrMatch = { fg = colors.blue },
+                CmpItemAbbrMatchFuzzy = { link = "CmpItemAbbrMatch" },
+                CmpItemMenu = { fg = colors.overlay2, style = { "italic" } },
+                CmpBorder = { fg = colors.surface0 },
+
                 NeoTreeWinSeparator = { fg = colors.mantle, bg = colors.mantle },
                 NeoTreeCursorLine = { bg = colors.mantle },
                 NeoTreeIndentMarker = { fg = colors.surface0 },
