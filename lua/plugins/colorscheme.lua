@@ -46,6 +46,10 @@ local function config()
 
         custom_highlights = function(colors)
             return {
+                Search = { bg = colors.surface0, style = { "bold" } },
+                CurSearch = { fg = colors.text, bg = colors.base, style = { "bold", "underline" } },
+                IncSearch = { link = "CurSearch" },
+
                 CmpItemAbbrMatch = { fg = colors.blue },
                 CmpItemAbbrMatchFuzzy = { link = "CmpItemAbbrMatch" },
                 CmpItemMenu = { fg = colors.overlay2, style = { "italic" } },
