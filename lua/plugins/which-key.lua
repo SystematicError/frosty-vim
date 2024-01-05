@@ -20,7 +20,7 @@ local function config()
                 name = "Telescope",
 
                 f = { "<cmd>Telescope find_files<cr>", "Find files" },
-                g = { "<cmd>Telescope live_grep<cr>", "Ripgrep" },
+                g = { "<cmd>Telescope live_grep<cr>", "Live grep" },
             },
         },
     }
