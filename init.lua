@@ -61,6 +61,7 @@ require("lazy").setup(
         "which-key",
         "indent-blankline",
         "guess-indent",
+        "comment",
         "autopairs",
     },
 

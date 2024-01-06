@@ -134,6 +134,11 @@
       flake = false;
     };
 
+    "numToStr/Comment.nvim" = {
+      url = "github:numToStr/Comment.nvim";
+      flake = false;
+    };
+
     "windwp/nvim-autopairs" = {
       url = "github:windwp/nvim-autopairs";
       flake = false;
