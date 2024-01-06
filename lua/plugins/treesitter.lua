@@ -6,6 +6,10 @@ local function config()
             -- HACK: Ignore broken parser shipped by nixpkgs
             disable = { "vimdoc" },
         },
+
+        indent = {
+            enable = true,
+        },
     }
 
     require("nvim-treesitter.configs").setup(opts)
