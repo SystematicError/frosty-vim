@@ -163,9 +163,11 @@
 
       lua-language-server
       nil
+      rust-analyzer
 
       stylua
       alejandra
+      rustfmt
     ];
 
     treesitterParsers = with pkgs.vimPlugins.nvim-treesitter-parsers; [

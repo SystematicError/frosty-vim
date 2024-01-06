@@ -5,6 +5,7 @@ local function config()
     local servers = {
         lua_ls = {},
         nil_ls = {},
+        rust_analyzer = {},
     }
 
     for server, options in pairs(servers) do
