@@ -14,9 +14,15 @@ opt.mouse = "a"
 opt.clipboard = "unnamedplus"
 
 opt.signcolumn = "yes"
+
 opt.fillchars = { eob = " " }
 
 opt.laststatus = 3
+
+opt.showmode = false
+
+opt.splitbelow = true
+opt.splitright = true
 
 opt.number = true
 opt.relativenumber = true
