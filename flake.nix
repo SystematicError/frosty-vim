@@ -145,7 +145,11 @@
     };
   };
 
-  outputs = {nixpkgs, ...} @ inputs: let
+  outputs = {
+    self,
+    nixpkgs,
+    ...
+  } @ inputs: let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
     lib = nixpkgs.lib;
@@ -214,5 +218,9 @@
         ];
       }
     );
+
+    devShells.${system}.default = pkgs.mkShell {
+      buildInputs = runtimeDeps ++ builtins.attrValues self.outputs.packages.${system};
+    };
   };
 }
