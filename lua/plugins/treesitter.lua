@@ -6,9 +6,6 @@ local function config()
 
         highlight = {
             enable = true,
-
-            -- HACK: Ignore broken parser shipped by nixpkgs
-            disable = { "vimdoc" },
         },
 
         indent = {
