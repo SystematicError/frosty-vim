@@ -220,7 +220,7 @@
     );
 
     devShells.${system}.default = pkgs.mkShell {
-      buildInputs = runtimeDeps ++ builtins.attrValues self.outputs.packages.${system};
+      packages = runtimeDeps ++ builtins.attrValues self.outputs.packages.${system};
     };
   };
 }
