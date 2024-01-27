@@ -3,23 +3,32 @@ local function config()
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
     local servers = {
-        lua_ls = {},
+        lua_ls = {
+            Lua = {
+                hint = { enable = true },
+                format = { enable = false },
+                telemetry = { enable = false },
+                completion = { callSnippet = "Both" },
+            },
+        },
+
         nil_ls = {},
         rust_analyzer = {},
     }
 
-    for server, options in pairs(servers) do
-        options.capabilities = capabilities
+    for server, settings in pairs(servers) do
+        lspconfig[server].setup {
+            capabilities = capabilities,
+            settings = settings,
 
-        options.root_dir = function()
-            return vim.fn.getcwd()
-        end
+            root_dir = function()
+                return vim.fn.getcwd()
+            end,
 
-        options.on_attach = function(client)
-            client.server_capabilities.semanticTokensProvider = nil
-        end
-
-        lspconfig[server].setup(options)
+            on_attach = function(client)
+                client.server_capabilities.semanticTokensProvider = nil
+            end,
+        }
     end
 
     local diagnostic_signs = { Error = " ", Warn = " ", Hint = "󰌵 ", Info = " " }
