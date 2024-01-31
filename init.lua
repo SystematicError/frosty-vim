@@ -51,6 +51,7 @@ require("lazy").setup(
         "feline",
         "notify",
         "gitsigns",
+        "neogit",
         "colorizer",
         "treesitter",
         "cmp",

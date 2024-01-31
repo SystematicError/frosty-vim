@@ -48,6 +48,22 @@
         "type": "github"
       }
     },
+    "NeogitOrg/neogit": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1705957016,
+        "narHash": "sha256-wNVcRGOu58Yj66A7isRy9RRaVVP0mkG0M+h8+J43en8=",
+        "owner": "NeogitOrg",
+        "repo": "neogit",
+        "rev": "ce0c369ccdba3f644a3b28f4c053421f435352c9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NeogitOrg",
+        "repo": "neogit",
+        "type": "github"
+      }
+    },
     "NvChad/nvim-colorizer.lua": {
       "flake": false,
       "locked": {
@@ -421,6 +437,7 @@
         "L3MON4D3/LuaSnip": "L3MON4D3/LuaSnip",
         "MunifTanjim/nui.nvim": "MunifTanjim/nui.nvim",
         "NMAC427/guess-indent.nvim": "NMAC427/guess-indent.nvim",
+        "NeogitOrg/neogit": "NeogitOrg/neogit",
         "NvChad/nvim-colorizer.lua": "NvChad/nvim-colorizer.lua",
         "akinsho/bufferline.nvim": "akinsho/bufferline.nvim",
         "catppuccin/nvim": "catppuccin/nvim",
@@ -445,6 +462,7 @@
         "rafamadriz/friendly-snippets": "rafamadriz/friendly-snippets",
         "rcarriga/nvim-notify": "rcarriga/nvim-notify",
         "saadparwaiz1/cmp_luasnip": "saadparwaiz1/cmp_luasnip",
+        "sindrets/diffview.nvim": "sindrets/diffview.nvim",
         "stevearc/conform.nvim": "stevearc/conform.nvim",
         "windwp/nvim-autopairs": "windwp/nvim-autopairs"
       }
@@ -462,6 +480,22 @@
       "original": {
         "owner": "saadparwaiz1",
         "repo": "cmp_luasnip",
+        "type": "github"
+      }
+    },
+    "sindrets/diffview.nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1700506468,
+        "narHash": "sha256-3EdnBUka9Rh5Brl6TWpN6GlD9z32mmY3Ip+wyiKob/8=",
+        "owner": "sindrets",
+        "repo": "diffview.nvim",
+        "rev": "3dc498c9777fe79156f3d32dddd483b8b3dbd95f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "sindrets",
+        "repo": "diffview.nvim",
         "type": "github"
       }
     },

@@ -54,6 +54,16 @@
       flake = false;
     };
 
+    "NeogitOrg/neogit" = {
+      url = "github:NeogitOrg/neogit";
+      flake = false;
+    };
+
+    "sindrets/diffview.nvim" = {
+      url = "github:sindrets/diffview.nvim";
+      flake = false;
+    };
+
     "NvChad/nvim-colorizer.lua" = {
       url = "github:NvChad/nvim-colorizer.lua";
       flake = false;
