@@ -1,3 +1,14 @@
+local function config()
+    local opts = {
+        integrations = {
+            telescope = true,
+            diffview = true,
+        },
+    }
+
+    require("neogit").setup(opts)
+end
+
 return {
     {
         "NeogitOrg/neogit",
@@ -6,6 +17,6 @@ return {
             "sindrets/diffview.nvim",
             "nvim-telescope/telescope.nvim",
         },
-        config = true,
+        config = config,
     },
 }

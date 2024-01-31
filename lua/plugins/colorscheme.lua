@@ -4,6 +4,7 @@ local function config()
 
         integrations = {
             gitsigns = true,
+            neogit = true,
             indent_blankline = true,
             neotree = true,
             notify = true,
