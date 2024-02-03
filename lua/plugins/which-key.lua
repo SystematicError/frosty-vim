@@ -22,6 +22,8 @@ local function config()
                 f = { "<cmd>Telescope find_files<cr>", "Find files" },
                 g = { "<cmd>Telescope live_grep<cr>", "Live grep" },
             },
+
+            g = { "<cmd>Neogit<cr>", "Neogit" },
         },
     }
 
