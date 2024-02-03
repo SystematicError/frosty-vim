@@ -181,11 +181,12 @@
       ripgrep
 
       lua-language-server
-      nil
-      rust-analyzer
-
       stylua
+
+      nil
       alejandra
+
+      rust-analyzer
       rustfmt
     ];
 
@@ -203,6 +204,7 @@
       markdown
       nix
       python
+      rust
       toml
       vim
       vimdoc
