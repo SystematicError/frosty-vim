@@ -149,6 +149,11 @@
       flake = false;
     };
 
+    "kylechui/nvim-surround" = {
+      url = "github:kylechui/nvim-surround";
+      flake = false;
+    };
+
     "windwp/nvim-autopairs" = {
       url = "github:windwp/nvim-autopairs";
       flake = false;

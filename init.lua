@@ -63,6 +63,7 @@ require("lazy").setup(
         "indent-blankline",
         "guess-indent",
         "comment",
+        "surround",
         "autopairs",
     },
 

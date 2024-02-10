@@ -240,6 +240,22 @@
         "type": "github"
       }
     },
+    "kylechui/nvim-surround": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1707511368,
+        "narHash": "sha256-GKnxieiU5UKESbBy06EQNpxq62Eq0aePc0RVWbr4Vnc=",
+        "owner": "kylechui",
+        "repo": "nvim-surround",
+        "rev": "8f2af76134f37058dc4c27a24bc5f86c9cae76dc",
+        "type": "github"
+      },
+      "original": {
+        "owner": "kylechui",
+        "repo": "nvim-surround",
+        "type": "github"
+      }
+    },
     "lewis6991/gitsigns.nvim": {
       "flake": false,
       "locked": {
@@ -449,6 +465,7 @@
         "hrsh7th/cmp-nvim-lsp": "hrsh7th/cmp-nvim-lsp",
         "hrsh7th/cmp-path": "hrsh7th/cmp-path",
         "hrsh7th/nvim-cmp": "hrsh7th/nvim-cmp",
+        "kylechui/nvim-surround": "kylechui/nvim-surround",
         "lewis6991/gitsigns.nvim": "lewis6991/gitsigns.nvim",
         "lukas-reineke/indent-blankline.nvim": "lukas-reineke/indent-blankline.nvim",
         "neovim/nvim-lspconfig": "neovim/nvim-lspconfig",
