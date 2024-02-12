@@ -4,10 +4,10 @@ local function config()
 
     dap.adapters.codelldb = {
         type = "server",
-        port = 13000,
+        port = "${port}",
         executable = {
             command = "codelldb",
-            args = { "--port", "13000" },
+            args = { "--port", "${port}" },
         },
     }
 
@@ -19,7 +19,6 @@ local function config()
             program = function()
                 return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
             end,
-            cwd = "${workspaceFolder}",
         },
     }
 
