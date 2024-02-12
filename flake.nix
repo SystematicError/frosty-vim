@@ -194,6 +194,7 @@
     runtimeDeps = with pkgs; [
       wl-clipboard
       ripgrep
+      vscode-extensions.vadimcn.vscode-lldb.adapter
 
       lua-language-server
       stylua
