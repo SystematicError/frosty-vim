@@ -9,6 +9,8 @@ local function config()
             neotree = true,
             notify = true,
             cmp = true,
+            dap = true,
+            dap_ui = true,
             treesitter = true,
             telescope = true,
             which_key = true,

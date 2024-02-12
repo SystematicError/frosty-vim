@@ -58,6 +58,7 @@ require("lazy").setup(
         "lspconfig",
         "luasnip",
         "conform",
+        "dap",
         "telescope",
         "which-key",
         "indent-blankline",

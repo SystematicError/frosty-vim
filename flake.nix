@@ -124,6 +124,16 @@
       flake = false;
     };
 
+    "mfussenegger/nvim-dap" = {
+      url = "github:mfussenegger/nvim-dap";
+      flake = false;
+    };
+
+    "rcarriga/nvim-dap-ui" = {
+      url = "github:rcarriga/nvim-dap-ui";
+      flake = false;
+    };
+
     "nvim-telescope/telescope.nvim" = {
       url = "github:nvim-telescope/telescope.nvim";
       flake = false;
