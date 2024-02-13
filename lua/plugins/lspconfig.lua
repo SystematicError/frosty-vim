@@ -31,7 +31,12 @@ local function config()
         }
     end
 
-    local diagnostic_signs = { Error = " ", Warn = " ", Hint = "󰌵 ", Info = " " }
+    local diagnostic_signs = {
+        Error = " ",
+        Warn = " ",
+        Hint = "󰌵 ",
+        Info = " ",
+    }
 
     for name, icon in pairs(diagnostic_signs) do
         local hl = "DiagnosticSign" .. name

@@ -22,6 +22,15 @@ local function config()
         },
     }
 
+    local debugger_signs = {
+        Breakpoint = "● ",
+    }
+
+    for name, icon in pairs(debugger_signs) do
+        local hl = "Dap" .. name
+        vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+    end
+
     dap.listeners.before.attach.dapui_config = function()
         dapui.open()
     end
