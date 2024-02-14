@@ -96,6 +96,22 @@
         "type": "github"
       }
     },
+    "andrewferrier/debugprint.nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1705798329,
+        "narHash": "sha256-DD1TRNB7Bjg60MWC84J9031OdMZZ0e2Dug3aOjxK1u8=",
+        "owner": "andrewferrier",
+        "repo": "debugprint.nvim",
+        "rev": "0c81cd2bab372bba99815f505eb1fe759d38dd88",
+        "type": "github"
+      },
+      "original": {
+        "owner": "andrewferrier",
+        "repo": "debugprint.nvim",
+        "type": "github"
+      }
+    },
     "catppuccin/nvim": {
       "flake": false,
       "locked": {
@@ -472,6 +488,7 @@
         "NeogitOrg/neogit": "NeogitOrg/neogit",
         "NvChad/nvim-colorizer.lua": "NvChad/nvim-colorizer.lua",
         "akinsho/bufferline.nvim": "akinsho/bufferline.nvim",
+        "andrewferrier/debugprint.nvim": "andrewferrier/debugprint.nvim",
         "catppuccin/nvim": "catppuccin/nvim",
         "folke/lazy.nvim": "folke/lazy.nvim",
         "folke/which-key.nvim": "folke/which-key.nvim",

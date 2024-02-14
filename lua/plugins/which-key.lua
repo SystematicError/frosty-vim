@@ -7,6 +7,8 @@ local function config()
         ["<c-d>"] = { "<c-d>zz", "Scroll down" },
         ["<c-u>"] = { "<c-u>zz", "Scroll up" },
 
+        ["g?d"] = { "<cmd>DeleteDebugPrints<cr>", "Delete debug prints" },
+
         ["<leader>"] = {
             n = {
                 name = "Neotree",

@@ -129,6 +129,11 @@
       flake = false;
     };
 
+    "andrewferrier/debugprint.nvim" = {
+      url = "github:andrewferrier/debugprint.nvim";
+      flake = false;
+    };
+
     "nvim-telescope/telescope.nvim" = {
       url = "github:nvim-telescope/telescope.nvim";
       flake = false;

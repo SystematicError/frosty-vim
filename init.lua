@@ -59,6 +59,7 @@ require("lazy").setup(
         "lspconfig",
         "luasnip",
         "conform",
+        "debugprint",
         "telescope",
         "which-key",
         "indent-blankline",
