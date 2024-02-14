@@ -69,6 +69,11 @@
       flake = false;
     };
 
+    "jinh0/eyeliner.nvim" = {
+      url = "github:jinh0/eyeliner.nvim";
+      flake = false;
+    };
+
     "nvim-treesitter/nvim-treesitter" = {
       url = "github:nvim-treesitter/nvim-treesitter";
       flake = false;

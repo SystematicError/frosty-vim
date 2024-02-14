@@ -53,6 +53,7 @@ require("lazy").setup(
         "gitsigns",
         "neogit",
         "colorizer",
+        "eyeliner",
         "treesitter",
         "cmp",
         "lspconfig",
