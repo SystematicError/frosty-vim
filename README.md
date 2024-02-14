@@ -4,5 +4,22 @@
 ![Search showcase](https://github.com/SystematicError/frosty-vim/assets/63366086/d7758606-91b1-46bd-ab93-1c4ec0b24a69)
 ![Git showcase](https://github.com/SystematicError/frosty-vim/assets/63366086/307e0922-a604-4b16-a4b3-6292e605bc95)
 
-Frosty is a fully configured development environment for Neovim packaged using Nix flakes. Use the command `nix run github:systematicerror/frosty-vim` to take it for a test run!
+## What is it?
 
+Frosty is a modern and fully configured development environment for neovim with a focus on functionality and looks.
+
+## Installation
+
+### Nix
+
+Make sure that the `flake` and `nix-command` [experimental features](https://nixos.org/manual/nix/unstable/contributing/experimental-features.html) have been enabled.
+
+To try frosty without installing:
+
+```
+nix run github:systematicerror/frosty-vim
+```
+
+### Non-nix
+
+Frosty has been designed with compatibility of non-nix systems in mind, at the moment some boilerplate is yet to be added in order to detect whether it is being run on such a system.
