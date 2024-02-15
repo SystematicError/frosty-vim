@@ -123,7 +123,7 @@ local function config()
     local diagnostic_warnings = {
         provider = "diagnostic_warnings",
 
-        icon = " ",
+        icon = " ",
         left_sep = " ",
 
         hl = {
