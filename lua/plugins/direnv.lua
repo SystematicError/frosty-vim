@@ -1,0 +1,5 @@
+return {
+    {
+        "direnv/direnv.vim",
+    },
+}

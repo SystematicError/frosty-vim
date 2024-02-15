@@ -154,6 +154,11 @@
       flake = false;
     };
 
+    "direnv/direnv.vim" = {
+      url = "github:direnv/direnv.vim";
+      flake = false;
+    };
+
     "numToStr/Comment.nvim" = {
       url = "github:numToStr/Comment.nvim";
       flake = false;
