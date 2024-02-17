@@ -8,6 +8,8 @@
 
 Frosty is a modern and fully configured development environment for neovim with a focus on functionality and looks.
 
+Check the [roadmap](https://github.com/SystematicError/frosty-vim/issues/1) for upcoming changes.
+
 ## Installation
 
 ### Nix
@@ -22,4 +24,4 @@ nix run github:systematicerror/frosty-vim
 
 ### Non-nix
 
-Frosty has been designed with compatibility of non-nix systems in mind, at the moment some boilerplate is yet to be added in order to detect whether it is being run on such a system.
+Unlike other flake based neovim configurations, frosty is backwards compatible with typical non-nix neovim configurations, although currently `init.lua` requires some slight tweaking to correct load the plugin manager.
