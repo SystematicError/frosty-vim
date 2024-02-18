@@ -1,5 +1,5 @@
 FROSTY_PACKAGES = FROSTY_PACKAGES or {}
-vim.opt.rtp:prepend(FROSTY_PACKAGES["folke/lazy.nvim"])
+vim.opt.rtp:prepend(FROSTY_PACKAGES["folke/lazy.nvim"] or vim.fn.stdpath "data" .. "/lazy/lazy.nvim")
 
 local function ensure_table(object)
     return type(object) == "table" and object or { object }
