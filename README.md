@@ -18,10 +18,13 @@ Make sure that the `flake` and `nix-command` [experimental features](https://nix
 
 To try frosty without installing:
 
-```
-nix run github:systematicerror/frosty-vim
+```console
+nix run github:SystematicError/frosty-vim
 ```
 
 ### Non-nix
 
-Unlike other flake based neovim configurations, frosty is backwards compatible with typical non-nix neovim configurations, although currently `init.lua` requires some slight tweaking to correct load the plugin manager.
+```console
+git clone https://github.com/SystematicError/frosty-vim ~/.config/nvim --depth 1
+```
+
