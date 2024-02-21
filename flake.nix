@@ -184,7 +184,7 @@
     pkgs = nixpkgs.legacyPackages.${system};
     lib = nixpkgs.lib;
 
-    packageList = builtins.toFile "package_list.lua" (
+    packageList =
       "FROSTY_PACKAGES="
       + lib.generators.toLua {
         multiline = false;
@@ -193,8 +193,7 @@
       (builtins.listToAttrs (builtins.map (name: {
         name = name;
         value = inputs.${name}.outPath;
-      }) (builtins.filter (input: !builtins.elem input ["self" "nixpkgs"]) (builtins.attrNames inputs))))
-    );
+      }) (builtins.filter (input: !builtins.elem input ["self" "nixpkgs"]) (builtins.attrNames inputs))));
 
     runtimeDeps = with pkgs; [
       wl-clipboard
@@ -235,9 +234,9 @@
     packages.${system}.default = pkgs.wrapNeovimUnstable pkgs.neovim-unwrapped (
       pkgs.neovimUtils.makeNeovimConfig {
         customRC = ''
-          lua package.path = package.path .. ";${./lua}/?.lua"
-          luafile ${packageList}
-          luafile ${./init.lua}
+          lua ${packageList}
+          lua package.path = package.path .. ";${./.}/lua/?.lua"
+          luafile ${./.}/init.lua
           set runtimepath^=${builtins.concatStringsSep "," treesitterParsers}
         '';
       }
