@@ -1,24 +1,5 @@
 FROSTY_PACKAGES = FROSTY_PACKAGES or {}
 
-if FROSTY_PACKAGES["folke/lazy.nvim"] then
-    vim.opt.rtp:prepend(FROSTY_PACKAGES["folke/lazy.nvim"])
-else
-    local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
-
-    if not vim.loop.fs_stat(lazypath) then
-        vim.fn.system {
-            "git",
-            "clone",
-            "--filter=blob:none",
-            "https://github.com/folke/lazy.nvim.git",
-            "--branch=stable",
-            lazypath,
-        }
-    end
-
-    vim.opt.rtp:prepend(lazypath)
-end
-
 local function ensure_table(object)
     return type(object) == "table" and object or { object }
 end
@@ -58,6 +39,7 @@ local function fetch_plugin_configs(files)
     return plugins
 end
 
+require "bootstrap"
 require "options"
 
 require("lazy").setup(
