@@ -14,6 +14,11 @@
       flake = false;
     };
 
+    "goolord/alpha-nvim" = {
+      url = "github:goolord/alpha-nvim";
+      flake = false;
+    };
+
     "nvim-neo-tree/neo-tree.nvim" = {
       url = "github:nvim-neo-tree/neo-tree.nvim";
       flake = false;
