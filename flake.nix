@@ -194,11 +194,16 @@
       + lib.generators.toLua {
         multiline = false;
         indent = false;
-      }
-      (builtins.listToAttrs (builtins.map (name: {
-        name = name;
-        value = inputs.${name}.outPath;
-      }) (builtins.filter (input: !builtins.elem input ["self" "nixpkgs"]) (builtins.attrNames inputs))));
+      } (
+        builtins.listToAttrs (
+          builtins.map
+          (name: {
+            name = name;
+            value = inputs.${name}.outPath;
+          })
+          (builtins.attrNames (removeAttrs inputs ["self" "nixpkgs"]))
+        )
+      );
 
     runtimeDeps = with pkgs; [
       wl-clipboard
