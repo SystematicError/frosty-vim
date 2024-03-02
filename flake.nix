@@ -209,6 +209,8 @@
       wl-clipboard
       ripgrep
 
+      vscode-langservers-extracted
+
       lua-language-server
       stylua
 

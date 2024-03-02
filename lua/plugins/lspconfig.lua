@@ -3,6 +3,10 @@ local function config()
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
     local servers = {
+        cssls = {},
+        html = {},
+        jsonls = {},
+
         lua_ls = {
             Lua = {
                 hint = { enable = true },
