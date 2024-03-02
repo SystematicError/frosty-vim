@@ -28,3 +28,36 @@ nix run github:SystematicError/frosty-vim
 git clone https://github.com/SystematicError/frosty-vim ~/.config/nvim --depth 1
 ```
 
+## Language support
+
+These are the defaults, the config can be tweaked to add further support as needed.
+
+<details>
+<summary>Supported languages</summary>
+
+| Language   | Treesitter | LSP | Formatter |
+| ---------- | ---------- | --- | --------- |
+| Bash       | x          |     |           |
+| C          | x          |     |           |
+| C++        | x          |     |           |
+| CSS        | x          | x   |           |
+| Diff       | x          |     |           |
+| Dockerfile | x          |     |           |
+| Go         | x          |     |           |
+| HTML       | x          | x   |           |
+| Javascript | x          |     |           |
+| JSON       | x          | x   |           |
+| Latex      | x          |     |           |
+| Lua        | x          | x   | x         |
+| Make       | x          |     |           |
+| Markdown   | x          |     |           |
+| Nix        | x          | x   | x         |
+| Python     | x          |     |           |
+| Rust       | x          | x   | x         |
+| TOML       | x          |     |           |
+| Vim        | x          |     |           |
+| Vimdoc     | x          |     |           |
+| XML        | x          |     |           |
+| YAML       | x          |     |           |
+
+</details>
