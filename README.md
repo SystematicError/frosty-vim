@@ -37,27 +37,27 @@ These are the defaults, the config can be tweaked to add further support as need
 
 | Language   | Treesitter | LSP | Formatter |
 | ---------- | ---------- | --- | --------- |
-| Bash       | x          |     |           |
-| C          | x          |     |           |
-| C++        | x          |     |           |
-| CSS        | x          | x   |           |
-| Diff       | x          |     |           |
-| Dockerfile | x          |     |           |
-| Go         | x          |     |           |
-| HTML       | x          | x   |           |
-| Javascript | x          |     |           |
-| JSON       | x          | x   |           |
-| Latex      | x          |     |           |
-| Lua        | x          | x   | x         |
-| Make       | x          |     |           |
-| Markdown   | x          |     |           |
-| Nix        | x          | x   | x         |
-| Python     | x          |     |           |
-| Rust       | x          | x   | x         |
-| TOML       | x          |     |           |
-| Vim        | x          |     |           |
-| Vimdoc     | x          |     |           |
-| XML        | x          |     |           |
-| YAML       | x          |     |           |
+| Bash       | ✓          |     |           |
+| C          | ✓          |     |           |
+| C++        | ✓          |     |           |
+| CSS        | ✓          | ✓   |           |
+| Diff       | ✓          |     |           |
+| Dockerfile | ✓          |     |           |
+| Go         | ✓          |     |           |
+| HTML       | ✓          | ✓   |           |
+| Javascript | ✓          |     |           |
+| JSON       | ✓          | ✓   |           |
+| Latex      | ✓          |     |           |
+| Lua        | ✓          | ✓   | ✓         |
+| Make       | ✓          |     |           |
+| Markdown   | ✓          |     |           |
+| Nix        | ✓          | ✓   | ✓         |
+| Python     | ✓          |     |           |
+| Rust       | ✓          | ✓   | ✓         |
+| TOML       | ✓          |     |           |
+| Vim        | ✓          |     |           |
+| Vimdoc     | ✓          |     |           |
+| XML        | ✓          |     |           |
+| YAML       | ✓          |     |           |
 
 </details>
