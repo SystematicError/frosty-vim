@@ -224,14 +224,17 @@
     treesitterParsers = with pkgs.vimPlugins.nvim-treesitter-parsers; [
       bash
       c
+      cpp
       css
       diff
       dockerfile
+      go
       html
       javascript
       json
       latex
       lua
+      make
       markdown
       nix
       python
