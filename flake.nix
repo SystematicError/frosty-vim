@@ -226,11 +226,14 @@
       bash
       c
       cpp
+      c_sharp
       css
+      csv
       diff
       dockerfile
       go
       html
+      java
       javascript
       json
       latex
@@ -239,8 +242,10 @@
       markdown
       nix
       python
+      ruby
       rust
       scss
+      sql
       toml
       typescript
       vim

@@ -40,11 +40,14 @@ These are the defaults, the config can be tweaked to add further support as need
 | Bash       | ✓          |     |           |
 | C          | ✓          |     |           |
 | C++        | ✓          |     |           |
+| C#         | ✓          |     |           |
 | CSS        | ✓          | ✓   | ✓         |
+| CSV        | ✓          |     |           |
 | Diff       | ✓          |     |           |
 | Dockerfile | ✓          |     |           |
 | Go         | ✓          |     |           |
 | HTML       | ✓          | ✓   | ✓         |
+| Java       | ✓          |     |           |
 | Javascript | ✓          |     | ✓         |
 | JSON       | ✓          | ✓   | ✓         |
 | Latex      | ✓          |     |           |
@@ -54,8 +57,10 @@ These are the defaults, the config can be tweaked to add further support as need
 | Markdown   | ✓          |     | ✓         |
 | Nix        | ✓          | ✓   | ✓         |
 | Python     | ✓          |     |           |
+| Ruby       | ✓          |     |           |
 | Rust       | ✓          | ✓   | ✓         |
 | SCSS       | ✓          | ✓   | ✓         |
+| SQL        | ✓          |     |           |
 | TOML       | ✓          |     |           |
 | Typescript | ✓          |     | ✓         |
 | Vim        | ✓          |     |           |
