@@ -242,6 +242,7 @@
       rust
       scss
       toml
+      typescript
       vim
       vimdoc
       xml

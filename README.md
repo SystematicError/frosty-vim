@@ -57,6 +57,7 @@ These are the defaults, the config can be tweaked to add further support as need
 | Rust       | ✓          | ✓   | ✓         |
 | SCSS       | ✓          | ✓   | ✓         |
 | TOML       | ✓          |     |           |
+| Typescript | ✓          |     | ✓         |
 | Vim        | ✓          |     |           |
 | Vimdoc     | ✓          |     |           |
 | XML        | ✓          |     |           |

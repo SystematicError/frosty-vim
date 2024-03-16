@@ -16,6 +16,7 @@ local function config()
             nix = { "alejandra" },
             rust = { "rustfmt" },
             scss = { "prettierd" },
+            typescript = { "prettierd" }, -- BUG: Multiple imports causes an error
             yaml = { "prettierd" },
         },
 
