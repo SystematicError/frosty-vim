@@ -6,9 +6,14 @@ local function config()
         },
 
         formatters_by_ft = {
+            css = { "prettierd" },
+            html = { "prettierd" },
+            javascript = { "prettierd" },
             lua = { "stylua" },
+            markdown = { "prettierd" },
             nix = { "alejandra" },
             rust = { "rustfmt" },
+            yaml = { "prettierd" },
         },
 
         formatters = {},

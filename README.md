@@ -40,17 +40,17 @@ These are the defaults, the config can be tweaked to add further support as need
 | Bash       | ✓          |     |           |
 | C          | ✓          |     |           |
 | C++        | ✓          |     |           |
-| CSS        | ✓          | ✓   |           |
+| CSS        | ✓          | ✓   | ✓         |
 | Diff       | ✓          |     |           |
 | Dockerfile | ✓          |     |           |
 | Go         | ✓          |     |           |
-| HTML       | ✓          | ✓   |           |
-| Javascript | ✓          |     |           |
+| HTML       | ✓          | ✓   | ✓         |
+| Javascript | ✓          |     | ✓         |
 | JSON       | ✓          | ✓   |           |
 | Latex      | ✓          |     |           |
 | Lua        | ✓          | ✓   | ✓         |
 | Make       | ✓          |     |           |
-| Markdown   | ✓          |     |           |
+| Markdown   | ✓          |     | ✓         |
 | Nix        | ✓          | ✓   | ✓         |
 | Python     | ✓          |     |           |
 | Rust       | ✓          | ✓   | ✓         |
@@ -58,6 +58,6 @@ These are the defaults, the config can be tweaked to add further support as need
 | Vim        | ✓          |     |           |
 | Vimdoc     | ✓          |     |           |
 | XML        | ✓          |     |           |
-| YAML       | ✓          |     |           |
+| YAML       | ✓          |     | ✓         |
 
 </details>

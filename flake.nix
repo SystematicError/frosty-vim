@@ -210,6 +210,7 @@
       ripgrep
 
       vscode-langservers-extracted
+      prettierd
 
       lua-language-server
       stylua
