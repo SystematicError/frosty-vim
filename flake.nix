@@ -240,6 +240,7 @@
       nix
       python
       rust
+      scss
       toml
       vim
       vimdoc

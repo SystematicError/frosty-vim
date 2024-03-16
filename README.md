@@ -48,12 +48,14 @@ These are the defaults, the config can be tweaked to add further support as need
 | Javascript | ✓          |     | ✓         |
 | JSON       | ✓          | ✓   |           |
 | Latex      | ✓          |     |           |
+| Less       |            | ✓   | ✓         |
 | Lua        | ✓          | ✓   | ✓         |
 | Make       | ✓          |     |           |
 | Markdown   | ✓          |     | ✓         |
 | Nix        | ✓          | ✓   | ✓         |
 | Python     | ✓          |     |           |
 | Rust       | ✓          | ✓   | ✓         |
+| SCSS       | ✓          | ✓   | ✓         |
 | TOML       | ✓          |     |           |
 | Vim        | ✓          |     |           |
 | Vimdoc     | ✓          |     |           |

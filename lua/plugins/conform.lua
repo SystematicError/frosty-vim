@@ -9,10 +9,12 @@ local function config()
             css = { "prettierd" },
             html = { "prettierd" },
             javascript = { "prettierd" },
+            less = { "prettierd" },
             lua = { "stylua" },
             markdown = { "prettierd" },
             nix = { "alejandra" },
             rust = { "rustfmt" },
+            scss = { "prettierd" },
             yaml = { "prettierd" },
         },
 
