@@ -6,6 +6,7 @@ local function config()
         },
 
         formatters_by_ft = {
+            sh = { "shfmt" },
             css = { "prettierd" },
             html = { "prettierd" },
             javascript = { "prettierd" },

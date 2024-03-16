@@ -212,6 +212,9 @@
       vscode-langservers-extracted
       prettierd
 
+      nodePackages.bash-language-server
+      shfmt
+
       lua-language-server
       stylua
 

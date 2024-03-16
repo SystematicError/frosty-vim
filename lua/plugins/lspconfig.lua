@@ -3,6 +3,7 @@ local function config()
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
     local servers = {
+        bashls = {},
         cssls = {},
         html = {},
         jsonls = {},

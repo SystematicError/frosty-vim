@@ -37,7 +37,7 @@ These are the defaults, the config can be tweaked to add further support as need
 
 | Language   | Treesitter | LSP | Formatter |
 | ---------- | ---------- | --- | --------- |
-| Bash       | ✓          |     |           |
+| Bash       | ✓          | ✓   | ✓         |
 | C          | ✓          |     |           |
 | C++        | ✓          |     |           |
 | C#         | ✓          |     |           |
