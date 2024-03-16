@@ -9,6 +9,7 @@ local function config()
             css = { "prettierd" },
             html = { "prettierd" },
             javascript = { "prettierd" },
+            json = { "prettierd" },
             less = { "prettierd" },
             lua = { "stylua" },
             markdown = { "prettierd" },

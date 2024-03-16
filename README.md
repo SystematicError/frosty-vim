@@ -46,7 +46,7 @@ These are the defaults, the config can be tweaked to add further support as need
 | Go         | ✓          |     |           |
 | HTML       | ✓          | ✓   | ✓         |
 | Javascript | ✓          |     | ✓         |
-| JSON       | ✓          | ✓   |           |
+| JSON       | ✓          | ✓   | ✓         |
 | Latex      | ✓          |     |           |
 | Less       |            | ✓   | ✓         |
 | Lua        | ✓          | ✓   | ✓         |
