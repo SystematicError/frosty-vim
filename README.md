@@ -35,7 +35,7 @@ These are the defaults, the config can be tweaked to add further support as need
 <details>
 <summary>Supported languages</summary>
 
-| Language   | Treesitter | LSP                                                               | Formatter                                              |
+| Language   | Treesitter | Language Server                                                   | Formatter                                              |
 | ---------- | ---------- | ----------------------------------------------------------------- | ------------------------------------------------------ |
 | Bash       | ✓          | [bashls](https://github.com/bash-lsp/bash-language-server)        | [shfmt](https://github.com/mvdan/sh)                   |
 | C          | ✓          |                                                                   |                                                        |
