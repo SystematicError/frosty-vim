@@ -35,37 +35,37 @@ These are the defaults, the config can be tweaked to add further support as need
 <details>
 <summary>Supported languages</summary>
 
-| Language   | Treesitter | LSP | Formatter |
-| ---------- | ---------- | --- | --------- |
-| Bash       | ✓          | ✓   | ✓         |
-| C          | ✓          |     |           |
-| C++        | ✓          |     |           |
-| C#         | ✓          |     |           |
-| CSS        | ✓          | ✓   | ✓         |
-| CSV        | ✓          |     |           |
-| Diff       | ✓          |     |           |
-| Dockerfile | ✓          |     |           |
-| Go         | ✓          |     |           |
-| HTML       | ✓          | ✓   | ✓         |
-| Java       | ✓          |     |           |
-| Javascript | ✓          |     | ✓         |
-| JSON       | ✓          | ✓   | ✓         |
-| Latex      | ✓          |     |           |
-| Less       |            | ✓   | ✓         |
-| Lua        | ✓          | ✓   | ✓         |
-| Make       | ✓          |     |           |
-| Markdown   | ✓          |     | ✓         |
-| Nix        | ✓          | ✓   | ✓         |
-| Python     | ✓          |     |           |
-| Ruby       | ✓          |     |           |
-| Rust       | ✓          | ✓   | ✓         |
-| SCSS       | ✓          | ✓   | ✓         |
-| SQL        | ✓          |     |           |
-| TOML       | ✓          |     |           |
-| Typescript | ✓          |     | ✓         |
-| Vim        | ✓          |     |           |
-| Vimdoc     | ✓          |     |           |
-| XML        | ✓          |     |           |
-| YAML       | ✓          |     | ✓         |
+| Language   | Treesitter | LSP                                                               | Formatter                                              |
+| ---------- | ---------- | ----------------------------------------------------------------- | ------------------------------------------------------ |
+| Bash       | ✓          | [bashls](https://github.com/bash-lsp/bash-language-server)        | [shfmt](https://github.com/mvdan/sh)                   |
+| C          | ✓          |                                                                   |                                                        |
+| C++        | ✓          |                                                                   |                                                        |
+| C#         | ✓          |                                                                   |                                                        |
+| CSS        | ✓          | [vscode](https://github.com/hrsh7th/vscode-langservers-extracted) | [prettierd](https://github.com/fsouza/prettierd)       |
+| CSV        | ✓          |                                                                   |                                                        |
+| Diff       | ✓          |                                                                   |                                                        |
+| Dockerfile | ✓          |                                                                   |                                                        |
+| Go         | ✓          |                                                                   |                                                        |
+| HTML       | ✓          | [vscode](https://github.com/hrsh7th/vscode-langservers-extracted) | [prettierd](https://github.com/fsouza/prettierd)       |
+| Java       | ✓          |                                                                   |                                                        |
+| Javascript | ✓          |                                                                   | [prettierd](https://github.com/fsouza/prettierd)       |
+| JSON       | ✓          | [vscode](https://github.com/hrsh7th/vscode-langservers-extracted) | [prettierd](https://github.com/fsouza/prettierd)       |
+| Latex      | ✓          |                                                                   |                                                        |
+| Less       |            | [vscode](https://github.com/hrsh7th/vscode-langservers-extracted) | [prettierd](https://github.com/fsouza/prettierd)       |
+| Lua        | ✓          | [luals](https://github.com/LuaLS/lua-language-server)             | [stylua](https://github.com/JohnnyMorganz/StyLua)      |
+| Make       | ✓          |                                                                   |                                                        |
+| Markdown   | ✓          |                                                                   | [prettierd](https://github.com/fsouza/prettierd)       |
+| Nix        | ✓          | [nil](https://github.com/oxalica/nil)                             | [alejandra](https://github.com/kamadorueda/alejandra/) |
+| Python     | ✓          |                                                                   |                                                        |
+| Ruby       | ✓          |                                                                   |                                                        |
+| Rust       | ✓          | [rust-analyzer](https://github.com/rust-lang/rust-analyzer)       | [rustfmt](https://github.com/rust-lang/rustfmt)        |
+| SCSS       | ✓          | [vscode](https://github.com/hrsh7th/vscode-langservers-extracted) | [prettierd](https://github.com/fsouza/prettierd)       |
+| SQL        | ✓          |                                                                   |                                                        |
+| TOML       | ✓          |                                                                   |                                                        |
+| Typescript | ✓          |                                                                   | [prettierd](https://github.com/fsouza/prettierd)       |
+| Vim        | ✓          |                                                                   |                                                        |
+| Vimdoc     | ✓          |                                                                   |                                                        |
+| XML        | ✓          |                                                                   |                                                        |
+| YAML       | ✓          |                                                                   | [prettierd](https://github.com/fsouza/prettierd)       |
 
 </details>
