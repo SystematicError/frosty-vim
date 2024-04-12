@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    flake-utils.url = "github:numtide/flake-utils";
 
     "folke/lazy.nvim" = {
       url = "github:folke/lazy.nvim";
@@ -183,101 +184,102 @@
   outputs = {
     self,
     nixpkgs,
+    flake-utils,
     ...
-  } @ inputs: let
-    system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${system};
-    lib = nixpkgs.lib;
+  } @ inputs:
+    flake-utils.lib.eachDefaultSystem (system: let
+      pkgs = nixpkgs.legacyPackages.${system};
+      lib = nixpkgs.lib;
 
-    packageList =
-      "FROSTY_PACKAGES="
-      + lib.generators.toLua {
-        multiline = false;
-        indent = false;
-      } (
-        builtins.listToAttrs (
-          builtins.map
-          (name: {
-            name = name;
-            value = inputs.${name}.outPath;
-          })
-          (builtins.attrNames (removeAttrs inputs ["self" "nixpkgs"]))
-        )
+      packageList =
+        "FROSTY_PACKAGES="
+        + lib.generators.toLua {
+          multiline = false;
+          indent = false;
+        } (
+          builtins.listToAttrs (
+            builtins.map
+            (name: {
+              name = name;
+              value = inputs.${name}.outPath;
+            })
+            (builtins.attrNames (lib.filterAttrs (_: v: !builtins.hasAttr "_type" v) inputs))
+          )
+        );
+
+      runtimeDeps = with pkgs; [
+        wl-clipboard
+        ripgrep
+
+        vscode-langservers-extracted
+        prettierd
+
+        nodePackages.bash-language-server
+        shfmt
+
+        lua-language-server
+        stylua
+
+        nil
+        alejandra
+
+        rust-analyzer
+        rustfmt
+      ];
+
+      treesitterParsers = with pkgs.vimPlugins.nvim-treesitter-parsers; [
+        bash
+        c
+        cpp
+        c_sharp
+        css
+        csv
+        diff
+        dockerfile
+        go
+        html
+        java
+        javascript
+        json
+        latex
+        lua
+        make
+        markdown
+        nix
+        python
+        ruby
+        rust
+        scss
+        sql
+        toml
+        typescript
+        vim
+        vimdoc
+        xml
+        yaml
+      ];
+    in {
+      packages.default = pkgs.wrapNeovimUnstable pkgs.neovim-unwrapped (
+        pkgs.neovimUtils.makeNeovimConfig {
+          customRC = ''
+            lua ${packageList}
+            lua package.path = package.path .. ";${./.}/lua/?.lua"
+            luafile ${./.}/init.lua
+            set runtimepath^=${builtins.concatStringsSep "," treesitterParsers}
+          '';
+        }
+        // {
+          wrapperArgs = [
+            "--prefix"
+            "PATH"
+            ":"
+            "${lib.makeBinPath runtimeDeps}"
+          ];
+        }
       );
 
-    runtimeDeps = with pkgs; [
-      wl-clipboard
-      ripgrep
-
-      vscode-langservers-extracted
-      prettierd
-
-      nodePackages.bash-language-server
-      shfmt
-
-      lua-language-server
-      stylua
-
-      nil
-      alejandra
-
-      rust-analyzer
-      rustfmt
-    ];
-
-    treesitterParsers = with pkgs.vimPlugins.nvim-treesitter-parsers; [
-      bash
-      c
-      cpp
-      c_sharp
-      css
-      csv
-      diff
-      dockerfile
-      go
-      html
-      java
-      javascript
-      json
-      latex
-      lua
-      make
-      markdown
-      nix
-      python
-      ruby
-      rust
-      scss
-      sql
-      toml
-      typescript
-      vim
-      vimdoc
-      xml
-      yaml
-    ];
-  in {
-    packages.${system}.default = pkgs.wrapNeovimUnstable pkgs.neovim-unwrapped (
-      pkgs.neovimUtils.makeNeovimConfig {
-        customRC = ''
-          lua ${packageList}
-          lua package.path = package.path .. ";${./.}/lua/?.lua"
-          luafile ${./.}/init.lua
-          set runtimepath^=${builtins.concatStringsSep "," treesitterParsers}
-        '';
-      }
-      // {
-        wrapperArgs = [
-          "--prefix"
-          "PATH"
-          ":"
-          "${lib.makeBinPath runtimeDeps}"
-        ];
-      }
-    );
-
-    devShells.${system}.default = pkgs.mkShell {
-      packages = runtimeDeps ++ builtins.attrValues self.outputs.packages.${system};
-    };
-  };
+      devShells.default = pkgs.mkShell {
+        packages = runtimeDeps ++ builtins.attrValues self.outputs.packages.${system};
+      };
+    });
 }
