@@ -15,7 +15,6 @@ local function config()
             lua = { "stylua" },
             markdown = { "prettierd" },
             nix = { "alejandra" },
-            rust = { "rustfmt" },
             scss = { "prettierd" },
             typescript = { "prettierd" }, -- BUG: Multiple imports causes an error
             yaml = { "prettierd" },
