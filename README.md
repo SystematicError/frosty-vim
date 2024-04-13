@@ -55,8 +55,8 @@ These are the defaults, the config can be tweaked to add further support as need
 | Lua        | ✓          | [luals](https://github.com/LuaLS/lua-language-server)             | [stylua](https://github.com/JohnnyMorganz/StyLua)      |
 | Make       | ✓          |                                                                   |                                                        |
 | Markdown   | ✓          |                                                                   | [prettierd](https://github.com/fsouza/prettierd)       |
-| Nix        | ✓          | [nil](https://github.com/oxalica/nil)                             | [alejandra](https://github.com/kamadorueda/alejandra/) |
-| Python     | ✓          |                                                                   |                                                        |
+| Nix        | ✓          | [nil](https://github.com/oxalica/nil)                             | [alejandra](https://github.com/kamadorueda/alejandra)  |
+| Python     | ✓          | [pylsp](https://github.com/python-lsp/python-lsp-server/)         | [ruff](https://github.com/astral-sh/ruff)              |
 | Ruby       | ✓          |                                                                   |                                                        |
 | Rust       | ✓          | [rust-analyzer](https://github.com/rust-lang/rust-analyzer)       | [rustfmt](https://github.com/rust-lang/rustfmt)        |
 | SCSS       | ✓          | [vscode](https://github.com/hrsh7th/vscode-langservers-extracted) | [prettierd](https://github.com/fsouza/prettierd)       |

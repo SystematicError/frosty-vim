@@ -18,6 +18,15 @@ local function config()
         },
 
         nil_ls = {},
+
+        pylsp = {
+            pylsp = {
+                plugins = {
+                    ruff = { enabled = true },
+                },
+            },
+        },
+
         rust_analyzer = {},
     }
 
