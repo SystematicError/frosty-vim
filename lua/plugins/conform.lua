@@ -19,16 +19,7 @@ local function config()
             typescript = { "prettierd" }, -- BUG: Multiple imports causes an error
             yaml = { "prettierd" },
         },
-
-        formatters = {},
     }
-
-    for formatter, _ in pairs(opts.formatters_by_ft) do
-        opts.formatters[formatter] = {}
-        opts.formatters[formatter].cwd = function()
-            return vim.fn.getcwd()
-        end
-    end
 
     require("conform").setup(opts)
 end
