@@ -211,11 +211,11 @@
         wl-clipboard
         ripgrep
 
-        vscode-langservers-extracted
-        prettierd
-
         nodePackages.bash-language-server
         shfmt
+
+        vscode-langservers-extracted
+        prettierd
 
         lua-language-server
         stylua

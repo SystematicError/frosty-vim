@@ -1,34 +1,8 @@
 local function config()
+    local servers = require("languages").servers
+
     local lspconfig = require "lspconfig"
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
-    local servers = {
-        bashls = {},
-        cssls = {},
-        html = {},
-        jsonls = {},
-
-        lua_ls = {
-            Lua = {
-                hint = { enable = true },
-                format = { enable = false },
-                telemetry = { enable = false },
-                completion = { callSnippet = "Both" },
-            },
-        },
-
-        nil_ls = {},
-
-        pylsp = {
-            pylsp = {
-                plugins = {
-                    ruff = { enabled = true },
-                },
-            },
-        },
-
-        rust_analyzer = {},
-    }
 
     for server, settings in pairs(servers) do
         lspconfig[server].setup {
