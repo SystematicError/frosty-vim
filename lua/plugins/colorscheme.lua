@@ -3,7 +3,7 @@ local function config()
         flavour = "mocha",
 
         integrations = {
-            alpha = true,
+            dashboard = true,
             gitsigns = true,
             neogit = true,
             indent_blankline = true,

@@ -8,6 +8,12 @@ local function config()
             show_start = false,
             show_end = false,
         },
+
+        exclude = {
+            filetypes = {
+                "dashboard",
+            },
+        },
     }
 
     require("ibl").setup(opts)

@@ -15,8 +15,8 @@
       flake = false;
     };
 
-    "goolord/alpha-nvim" = {
-      url = "github:goolord/alpha-nvim";
+    "nvimdev/dashboard-nvim" = {
+      url = "github:nvimdev/dashboard-nvim";
       flake = false;
     };
 

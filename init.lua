@@ -45,7 +45,7 @@ require "options"
 require("lazy").setup(
     fetch_plugin_configs {
         "colorscheme",
-        "alpha",
+        "dashboard",
         "neo-tree",
         "web-devicons",
         "bufferline",
