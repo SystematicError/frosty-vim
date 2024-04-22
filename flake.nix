@@ -230,37 +230,7 @@
         rustfmt
       ];
 
-      treesitterParsers = with pkgs.vimPlugins.nvim-treesitter-parsers; [
-        bash
-        c
-        cpp
-        c_sharp
-        css
-        csv
-        diff
-        dockerfile
-        go
-        html
-        java
-        javascript
-        json
-        latex
-        lua
-        make
-        markdown
-        nix
-        python
-        ruby
-        rust
-        scss
-        sql
-        toml
-        typescript
-        vim
-        vimdoc
-        xml
-        yaml
-      ];
+      treesitterParsers = builtins.attrValues pkgs.vimPlugins.nvim-treesitter.grammarPlugins;
     in {
       packages.default = pkgs.wrapNeovimUnstable pkgs.neovim-unwrapped (
         pkgs.neovimUtils.makeNeovimConfig {
