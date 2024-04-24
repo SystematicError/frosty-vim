@@ -290,22 +290,6 @@
         "type": "github"
       }
     },
-    "jinh0/eyeliner.nvim": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1694881767,
-        "narHash": "sha256-k9aquvmJMGCY1YmRzHiyRt9IOC1t3ZjaC8Cb4ga8qcE=",
-        "owner": "jinh0",
-        "repo": "eyeliner.nvim",
-        "rev": "c540d58bf52aa979d4cca639c60387ae0c0ccf88",
-        "type": "github"
-      },
-      "original": {
-        "owner": "jinh0",
-        "repo": "eyeliner.nvim",
-        "type": "github"
-      }
-    },
     "kylechui/nvim-surround": {
       "flake": false,
       "locked": {
@@ -550,7 +534,6 @@
         "hrsh7th/cmp-nvim-lsp": "hrsh7th/cmp-nvim-lsp",
         "hrsh7th/cmp-path": "hrsh7th/cmp-path",
         "hrsh7th/nvim-cmp": "hrsh7th/nvim-cmp",
-        "jinh0/eyeliner.nvim": "jinh0/eyeliner.nvim",
         "kylechui/nvim-surround": "kylechui/nvim-surround",
         "lewis6991/gitsigns.nvim": "lewis6991/gitsigns.nvim",
         "lukas-reineke/indent-blankline.nvim": "lukas-reineke/indent-blankline.nvim",
