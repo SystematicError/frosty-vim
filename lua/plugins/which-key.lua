@@ -25,7 +25,16 @@ local function config()
                 g = { "<cmd>Telescope live_grep<cr>", "Live grep" },
             },
 
-            g = { "<cmd>Neogit<cr>", "Neogit" },
+            g = {
+                name = "Git",
+
+                g = { "<cmd>Neogit<cr>", "Neogit" },
+                s = { "<cmd>Gitsigns stage_hunk<cr>", "Stage hunk" },
+                u = { "<cmd>Gitsigns undo_stage_hunk<cr>", "Unstage hunk" },
+                x = { "<cmd>Gitsigns reset_hunk<cr>", "Discard hunk" },
+                p = { "<cmd>Gitsigns preview_hunk_inline<cr>", "Preview hunk" },
+                b = { "<cmd>Gitsigns blame_line<cr>", "Blame line" },
+            },
         },
     }
 
