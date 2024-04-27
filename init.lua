@@ -61,6 +61,7 @@ require("lazy").setup(
         "conform",
         "debugprint",
         "telescope",
+        "image",
         "which-key",
         "indent-blankline",
         "guess-indent",

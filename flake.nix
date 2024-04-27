@@ -140,6 +140,11 @@
       flake = false;
     };
 
+    "3rd/image.nvim" = {
+      url = "github:3rd/image.nvim";
+      flake = false;
+    };
+
     "folke/which-key.nvim" = {
       url = "github:folke/which-key.nvim";
       flake = false;
@@ -205,6 +210,8 @@
       runtimeDeps = with pkgs; [
         wl-clipboard
         ripgrep
+        curl
+        imagemagick
 
         nodePackages.bash-language-server
         shfmt
@@ -225,26 +232,40 @@
         rustfmt
       ];
 
+      luaDeps = ps:
+        with ps; [
+          magick
+        ];
+
       treesitterParsers = builtins.attrValues pkgs.vimPlugins.nvim-treesitter.grammarPlugins;
-    in {
-      packages.default = pkgs.wrapNeovimUnstable pkgs.neovim-unwrapped (
-        pkgs.neovimUtils.makeNeovimConfig {
-          customRC = ''
+
+      baseNeovimConfig = pkgs.neovimUtils.makeNeovimConfig {
+        extraLuaPackages = luaDeps;
+
+        customRC = ''
             lua ${packageList}
-            lua package.path = package.path .. ";${./.}/lua/?.lua"
+          lua package.path = package.path .. ";${./.}/lua/?.lua"
             luafile ${./.}/init.lua
             set runtimepath^=${builtins.concatStringsSep "," treesitterParsers}
-          '';
-        }
+        '';
+      };
+
+      neovimConfig =
+        baseNeovimConfig
         // {
-          wrapperArgs = [
-            "--prefix"
-            "PATH"
-            ":"
-            "${lib.makeBinPath runtimeDeps}"
-          ];
-        }
-      );
+          wrapperArgs =
+            baseNeovimConfig.wrapperArgs
+            ++ [
+              "--prefix"
+              "PATH"
+              ":"
+              "${lib.makeBinPath runtimeDeps}"
+            ];
+        };
+    in {
+      packages.default = pkgs.wrapNeovimUnstable pkgs.neovim-unwrapped neovimConfig;
+
+      cfg = neovimConfig;
 
       devShells.default = pkgs.mkShell {
         packages = runtimeDeps ++ builtins.attrValues self.outputs.packages.${system};
