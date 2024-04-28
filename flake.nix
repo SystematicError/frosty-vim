@@ -243,10 +243,10 @@
         extraLuaPackages = luaDeps;
 
         customRC = ''
-            lua ${packageList}
+          lua ${packageList}
           lua package.path = package.path .. ";${./.}/lua/?.lua"
-            luafile ${./.}/init.lua
-            set runtimepath^=${builtins.concatStringsSep "," treesitterParsers}
+          luafile ${./.}/init.lua
+          set runtimepath^=${builtins.concatStringsSep "," treesitterParsers}
         '';
       };
 
