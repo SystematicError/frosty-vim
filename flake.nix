@@ -240,6 +240,9 @@
       treesitterParsers = builtins.attrValues pkgs.vimPlugins.nvim-treesitter.grammarPlugins;
 
       baseNeovimConfig = pkgs.neovimUtils.makeNeovimConfig {
+        withPython3 = false;
+        withNodeJs = false;
+        withRuby = false;
         extraLuaPackages = luaDeps;
 
         customRC = ''
