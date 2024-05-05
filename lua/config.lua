@@ -1,0 +1,1 @@
+FROSTY_CONFIG = {}
