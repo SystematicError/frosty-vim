@@ -50,9 +50,8 @@ return function(files)
     local plugins = {}
 
     for _, file in ipairs(files) do
-        for _, plugin in ipairs(require("plugins." .. file)) do
-            table.insert(plugins, make_plugin_local(plugin))
-        end
+        local module = require("plugins." .. file)
+        table.insert(plugins, make_plugin_local(module[1]))
     end
 
     return plugins
