@@ -77,4 +77,12 @@ return {
             },
         },
     },
+
+    highlights = function(colors)
+        return {
+            NeoTreeWinSeparator = { fg = colors.mantle, bg = colors.mantle },
+            NeoTreeCursorLine = { bg = colors.mantle },
+            NeoTreeIndentMarker = { fg = colors.surface0 },
+        }
+    end,
 }

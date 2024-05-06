@@ -48,4 +48,20 @@ return {
             },
         },
     },
+
+    highlights = function(colors)
+        return {
+            TelescopeSelection = { bg = colors.crust },
+            TelescopePromptNormal = { bg = colors.crust },
+            TelescopePromptBorder = { fg = colors.crust, bg = colors.crust },
+            TelescopePromptTitle = { fg = colors.crust, bg = colors.blue, style = { "bold" } },
+            TelescopePromptPrefix = { fg = colors.overlay0 },
+            TelescopePreviewNormal = { bg = colors.mantle },
+            TelescopePreviewBorder = { fg = colors.mantle, bg = colors.mantle },
+            TelescopePreviewTitle = { fg = colors.mantle },
+            TelescopeResultsNormal = { bg = colors.mantle },
+            TelescopeResultsBorder = { fg = colors.mantle, bg = colors.mantle },
+            TelescopeResultsTitle = { fg = colors.mantle },
+        }
+    end,
 }

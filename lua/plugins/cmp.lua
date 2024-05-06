@@ -149,4 +149,13 @@ return {
         },
         config = config,
     },
+
+    highlights = function(colors)
+        return {
+            CmpItemAbbrMatch = { fg = colors.blue },
+            CmpItemAbbrMatchFuzzy = { link = "CmpItemAbbrMatch" },
+            CmpItemMenu = { fg = colors.overlay2, style = { "italic" } },
+            CmpBorder = { fg = colors.surface0 },
+        }
+    end,
 }

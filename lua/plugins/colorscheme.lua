@@ -46,34 +46,7 @@ local function config()
             },
         },
 
-        custom_highlights = function(colors)
-            return {
-                Search = { bg = colors.surface0, style = { "bold" } },
-                CurSearch = { fg = colors.text, bg = colors.base, style = { "bold", "underline" } },
-                IncSearch = { link = "CurSearch" },
-
-                CmpItemAbbrMatch = { fg = colors.blue },
-                CmpItemAbbrMatchFuzzy = { link = "CmpItemAbbrMatch" },
-                CmpItemMenu = { fg = colors.overlay2, style = { "italic" } },
-                CmpBorder = { fg = colors.surface0 },
-
-                NeoTreeWinSeparator = { fg = colors.mantle, bg = colors.mantle },
-                NeoTreeCursorLine = { bg = colors.mantle },
-                NeoTreeIndentMarker = { fg = colors.surface0 },
-
-                TelescopeSelection = { bg = colors.crust },
-                TelescopePromptNormal = { bg = colors.crust },
-                TelescopePromptBorder = { fg = colors.crust, bg = colors.crust },
-                TelescopePromptTitle = { fg = colors.crust, bg = colors.blue, style = { "bold" } },
-                TelescopePromptPrefix = { fg = colors.overlay0 },
-                TelescopePreviewNormal = { bg = colors.mantle },
-                TelescopePreviewBorder = { fg = colors.mantle, bg = colors.mantle },
-                TelescopePreviewTitle = { fg = colors.mantle },
-                TelescopeResultsNormal = { bg = colors.mantle },
-                TelescopeResultsBorder = { fg = colors.mantle, bg = colors.mantle },
-                TelescopeResultsTitle = { fg = colors.mantle },
-            }
-        end,
+        custom_highlights = FROSTY_CONFIG.highlight,
     }
 
     require("catppuccin").setup(opts)

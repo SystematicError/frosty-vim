@@ -48,7 +48,13 @@ end
 
 return function(files)
     local plugins = {}
-    local mappings = { {}, FROSTY_CONFIG.mappings }
+    local mappings = { FROSTY_CONFIG.mappings, {} }
+    local highlights = {
+        FROSTY_CONFIG.highlights,
+        function()
+            return {}
+        end,
+    }
 
     for _, file in ipairs(files) do
         local module = require("plugins." .. file)
@@ -58,9 +64,25 @@ return function(files)
         if module.mappings then
             table.insert(mappings, module.mappings)
         end
+
+        if module.highlights then
+            table.insert(highlights, module.highlights)
+        end
     end
 
-    FROSTY_CONFIG.mappings = vim.tbl_deep_extend("force", unpack(mappings))
+    FROSTY_CONFIG = {
+        mappings = vim.tbl_deep_extend("force", unpack(mappings)),
+
+        highlights = function(colors)
+            local highlight_tables = {}
+
+            for _, highlight in ipairs(highlights) do
+                table.insert(highlight_tables, highlight(colors))
+            end
+
+            return vim.tbl_extend("force", unpack(highlight_tables))
+        end,
+    }
 
     return plugins
 end
