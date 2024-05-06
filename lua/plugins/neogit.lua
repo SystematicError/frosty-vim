@@ -19,4 +19,16 @@ return {
         },
         config = config,
     },
+
+    mappings = {
+        n = {
+            ["<leader>"] = {
+                g = {
+                    name = "Git",
+
+                    g = { "<cmd>Neogit<cr>", "Neogit" },
+                },
+            },
+        },
+    },
 }

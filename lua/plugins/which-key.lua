@@ -3,45 +3,9 @@ local function config()
 
     vim.g.mapleader = " "
 
-    local normal_mappings = {
-        ["<c-d>"] = { "<c-d>zz", "Scroll down" },
-        ["<c-u>"] = { "<c-u>zz", "Scroll up" },
-
-        ["g?d"] = { "<cmd>DeleteDebugPrints<cr>", "Delete debug prints" },
-
-        ["<leader>"] = {
-            n = {
-                name = "Neotree",
-
-                s = { "<cmd>Neotree show<cr>", "Show" },
-                c = { "<cmd>Neotree close<cr>", "Close" },
-                t = { "<cmd>Neotree toggle<cr>", "Toggle" },
-            },
-
-            t = {
-                name = "Telescope",
-
-                f = { "<cmd>Telescope find_files<cr>", "Find files" },
-                g = { "<cmd>Telescope live_grep<cr>", "Live grep" },
-                r = { "<cmd>Telescope oldfiles<cr>", "Recent files" },
-                x = { "<cmd>Telescope filetypes<cr>", "Set filetype" },
-                b = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Buffer grep" },
-            },
-
-            g = {
-                name = "Git",
-
-                g = { "<cmd>Neogit<cr>", "Neogit" },
-                s = { "<cmd>Gitsigns stage_hunk<cr>", "Stage hunk" },
-                u = { "<cmd>Gitsigns undo_stage_hunk<cr>", "Unstage hunk" },
-                x = { "<cmd>Gitsigns reset_hunk<cr>", "Discard hunk" },
-                p = { "<cmd>Gitsigns preview_hunk_inline<cr>", "Preview hunk" },
-                b = { "<cmd>Gitsigns blame_line<cr>", "Blame line" },
-            },
-        },
-    }
-
-    which_key.register(normal_mappings, { mode = "n" })
+    for mode, mappings in pairs(FROSTY_CONFIG.mappings) do
+        which_key.register(mappings, { mode = mode })
+    end
 end
 
 return {

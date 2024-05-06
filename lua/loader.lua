@@ -48,11 +48,19 @@ end
 
 return function(files)
     local plugins = {}
+    local mappings = { {}, FROSTY_CONFIG.mappings }
 
     for _, file in ipairs(files) do
         local module = require("plugins." .. file)
+
         table.insert(plugins, make_plugin_local(module[1]))
+
+        if module.mappings then
+            table.insert(mappings, module.mappings)
+        end
     end
+
+    FROSTY_CONFIG.mappings = vim.tbl_deep_extend("force", unpack(mappings))
 
     return plugins
 end

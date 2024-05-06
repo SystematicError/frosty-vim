@@ -12,4 +12,10 @@ return {
         "andrewferrier/debugprint.nvim",
         config = config,
     },
+
+    mappings = {
+        n = {
+            ["g?d"] = { "<cmd>DeleteDebugPrints<cr>", "Delete debug prints" },
+        },
+    },
 }
