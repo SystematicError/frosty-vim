@@ -11,8 +11,6 @@ opt.whichwrap = "bshl<>[]~"
 
 opt.mouse = "a"
 
-opt.clipboard = "unnamedplus"
-
 opt.signcolumn = "yes"
 opt.ruler = false
 opt.laststatus = 3
