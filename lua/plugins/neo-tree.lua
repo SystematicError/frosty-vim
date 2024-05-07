@@ -66,14 +66,12 @@ return {
 
     mappings = {
         n = {
-            ["<leader>"] = {
-                n = {
-                    name = "Neotree",
+            ["<leader>n"] = {
+                name = "Neotree",
 
-                    s = { "<cmd>Neotree show<cr>", "Show" },
-                    c = { "<cmd>Neotree close<cr>", "Close" },
-                    t = { "<cmd>Neotree toggle<cr>", "Toggle" },
-                },
+                s = { "<cmd>Neotree show<cr>", "Show" },
+                c = { "<cmd>Neotree close<cr>", "Close" },
+                t = { "<cmd>Neotree toggle<cr>", "Toggle" },
             },
         },
     },

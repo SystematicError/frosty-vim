@@ -23,16 +23,14 @@ return {
 
     mappings = {
         n = {
-            ["<leader>"] = {
-                g = {
-                    name = "Git",
+            ["<leader>g"] = {
+                name = "Git",
 
-                    s = { "<cmd>Gitsigns stage_hunk<cr>", "Stage hunk" },
-                    u = { "<cmd>Gitsigns undo_stage_hunk<cr>", "Unstage hunk" },
-                    x = { "<cmd>Gitsigns reset_hunk<cr>", "Discard hunk" },
-                    p = { "<cmd>Gitsigns preview_hunk_inline<cr>", "Preview hunk" },
-                    b = { "<cmd>Gitsigns blame_line<cr>", "Blame line" },
-                },
+                s = { "<cmd>Gitsigns stage_hunk<cr>", "Stage hunk" },
+                u = { "<cmd>Gitsigns undo_stage_hunk<cr>", "Unstage hunk" },
+                x = { "<cmd>Gitsigns reset_hunk<cr>", "Discard hunk" },
+                p = { "<cmd>Gitsigns preview_hunk_inline<cr>", "Preview hunk" },
+                b = { "<cmd>Gitsigns blame_line<cr>", "Blame line" },
             },
 
             ["[h"] = { "<cmd>Gitsigns prev_hunk<cr>", "Previous hunk" },

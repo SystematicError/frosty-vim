@@ -22,12 +22,10 @@ return {
 
     mappings = {
         n = {
-            ["<leader>"] = {
-                g = {
-                    name = "Git",
+            ["<leader>g"] = {
+                name = "Git",
 
-                    g = { "<cmd>Neogit<cr>", "Neogit" },
-                },
+                g = { "<cmd>Neogit<cr>", "Neogit" },
             },
         },
     },
