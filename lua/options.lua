@@ -16,6 +16,8 @@ opt.ruler = false
 opt.laststatus = 3
 opt.showmode = false
 
+opt.scrolloff = 4
+
 opt.fillchars = { eob = " " }
 
 opt.splitbelow = true
