@@ -2,8 +2,14 @@ local function config()
     local opts = {
         ensure_installed = {},
 
-        highlight = { enable = true },
-        indent = { enable = true },
+        highlight = {
+            enable = true,
+            additional_vim_regex_highlighting = false,
+        },
+
+        indent = {
+            enable = true,
+        },
     }
 
     require("nvim-treesitter.configs").setup(opts)
