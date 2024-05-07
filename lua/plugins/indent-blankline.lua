@@ -24,4 +24,8 @@ return {
         "lukas-reineke/indent-blankline.nvim",
         config = config,
     },
+
+    colorscheme_integrations = {
+        indent_blankline = true,
+    },
 }

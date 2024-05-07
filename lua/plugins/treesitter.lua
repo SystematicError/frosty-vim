@@ -20,4 +20,8 @@ return {
         "nvim-treesitter/nvim-treesitter",
         config = config,
     },
+
+    colorscheme_integrations = {
+        treesitter = true,
+    },
 }

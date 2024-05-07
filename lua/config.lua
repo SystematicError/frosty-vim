@@ -11,6 +11,8 @@ FROSTY_CONFIG = {
         },
     },
 
+    colorscheme_integrations = {},
+
     highlights = function(colors)
         return {
             Search = { bg = colors.surface0, style = { "bold" } },

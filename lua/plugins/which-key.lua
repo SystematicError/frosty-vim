@@ -13,4 +13,8 @@ return {
         "folke/which-key.nvim",
         config = config,
     },
+
+    colorscheme_integrations = {
+        which_key = true,
+    },
 }

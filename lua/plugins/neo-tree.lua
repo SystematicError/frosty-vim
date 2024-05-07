@@ -78,6 +78,10 @@ return {
         },
     },
 
+    colorscheme_integrations = {
+        neotree = true,
+    },
+
     highlights = function(colors)
         return {
             NeoTreeWinSeparator = { fg = colors.mantle, bg = colors.mantle },

@@ -2,19 +2,6 @@ local function config()
     local opts = {
         flavour = "mocha",
 
-        integrations = {
-            dashboard = true,
-            gitsigns = true,
-            neogit = true,
-            indent_blankline = true,
-            neotree = true,
-            notify = true,
-            cmp = true,
-            treesitter = true,
-            telescope = true,
-            which_key = true,
-        },
-
         color_overrides = {
             mocha = {
                 base = "#0f0f0f",
@@ -45,6 +32,8 @@ local function config()
                 lavender = "#bdace0",
             },
         },
+
+        integrations = FROSTY_CONFIG.colorscheme_integrations,
 
         highlight_overrides = {
             all = FROSTY_CONFIG.highlights,

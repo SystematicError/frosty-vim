@@ -36,4 +36,8 @@ return {
             },
         },
     },
+
+    colorscheme_integrations = {
+        gitsigns = true,
+    },
 }

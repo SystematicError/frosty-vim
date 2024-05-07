@@ -31,4 +31,8 @@ return {
             },
         },
     },
+
+    colorscheme_integrations = {
+        neogit = true,
+    },
 }

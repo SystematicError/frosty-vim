@@ -53,6 +53,10 @@ return {
         },
     },
 
+    colorscheme_integrations = {
+        telescope = true,
+    },
+
     highlights = function(colors)
         return {
             TelescopeSelection = { bg = colors.crust },

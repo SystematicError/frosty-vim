@@ -49,6 +49,7 @@ end
 return function(files)
     local plugins = {}
     local mappings = { FROSTY_CONFIG.mappings, {} }
+    local colorscheme_integrations = { FROSTY_CONFIG.colorscheme_integrations, {} }
     local highlights = {
         FROSTY_CONFIG.highlights,
         function()
@@ -65,6 +66,10 @@ return function(files)
             table.insert(mappings, module.mappings)
         end
 
+        if module.colorscheme_integrations then
+            table.insert(colorscheme_integrations, module.colorscheme_integrations)
+        end
+
         if module.highlights then
             table.insert(highlights, module.highlights)
         end
@@ -72,6 +77,8 @@ return function(files)
 
     FROSTY_CONFIG = {
         mappings = vim.tbl_deep_extend("force", unpack(mappings)),
+
+        colorscheme_integrations = vim.tbl_extend("force", unpack(colorscheme_integrations)),
 
         highlights = function(colors)
             local highlight_tables = {}

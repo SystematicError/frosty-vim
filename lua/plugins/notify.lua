@@ -20,4 +20,8 @@ return {
         "rcarriga/nvim-notify",
         config = config,
     },
+
+    colorscheme_integrations = {
+        notify = true,
+    },
 }

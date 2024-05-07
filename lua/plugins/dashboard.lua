@@ -45,4 +45,8 @@ return {
         "nvimdev/dashboard-nvim",
         config = config,
     },
+
+    colorscheme_integrations = {
+        dashboard = true,
+    },
 }

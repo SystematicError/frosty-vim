@@ -150,6 +150,10 @@ return {
         config = config,
     },
 
+    colorscheme_integrations = {
+        cmp = true,
+    },
+
     highlights = function(colors)
         return {
             CmpItemAbbrMatch = { fg = colors.blue },
