@@ -34,6 +34,9 @@ return {
                     b = { "<cmd>Gitsigns blame_line<cr>", "Blame line" },
                 },
             },
+
+            ["[h"] = { "<cmd>Gitsigns prev_hunk<cr>", "Previous hunk" },
+            ["]h"] = { "<cmd>Gitsigns next_hunk<cr>", "Next hunk" },
         },
     },
 
