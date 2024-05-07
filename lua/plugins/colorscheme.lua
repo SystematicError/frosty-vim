@@ -46,7 +46,9 @@ local function config()
             },
         },
 
-        custom_highlights = FROSTY_CONFIG.highlight,
+        highlight_overrides = {
+            all = FROSTY_CONFIG.highlights,
+        },
     }
 
     require("catppuccin").setup(opts)
