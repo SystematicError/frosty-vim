@@ -1,4 +1,6 @@
 local function config()
+    local telescope = require "telescope"
+
     local opts = {
         defaults = {
             sorting_strategy = "ascending",
@@ -20,7 +22,8 @@ local function config()
         },
     }
 
-    require("telescope").setup(opts)
+    telescope.setup(opts)
+    telescope.load_extension "ui-select"
 end
 
 return {
@@ -29,6 +32,7 @@ return {
         dependencies = {
             "nvim-lua/plenary.nvim",
             "nvim-tree/nvim-web-devicons",
+            "nvim-telescope/telescope-ui-select.nvim",
         },
         config = config,
     },

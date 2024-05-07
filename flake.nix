@@ -140,6 +140,11 @@
       flake = false;
     };
 
+    "nvim-telescope/telescope-ui-select.nvim" = {
+      url = "github:nvim-telescope/telescope-ui-select.nvim";
+      flake = false;
+    };
+
     "3rd/image.nvim" = {
       url = "github:3rd/image.nvim";
       flake = false;

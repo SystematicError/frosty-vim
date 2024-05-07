@@ -434,6 +434,22 @@
         "type": "github"
       }
     },
+    "nvim-telescope/telescope-ui-select.nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1701723223,
+        "narHash": "sha256-YRhNmmG4gx9Ht8JwjQfbTjJyTHEuZmtP6lqnhOsk8bE=",
+        "owner": "nvim-telescope",
+        "repo": "telescope-ui-select.nvim",
+        "rev": "6e51d7da30bd139a6950adf2a47fda6df9fa06d2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nvim-telescope",
+        "repo": "telescope-ui-select.nvim",
+        "type": "github"
+      }
+    },
     "nvim-telescope/telescope.nvim": {
       "flake": false,
       "locked": {
@@ -559,6 +575,7 @@
         "numToStr/Comment.nvim": "numToStr/Comment.nvim",
         "nvim-lua/plenary.nvim": "nvim-lua/plenary.nvim",
         "nvim-neo-tree/neo-tree.nvim": "nvim-neo-tree/neo-tree.nvim",
+        "nvim-telescope/telescope-ui-select.nvim": "nvim-telescope/telescope-ui-select.nvim",
         "nvim-telescope/telescope.nvim": "nvim-telescope/telescope.nvim",
         "nvim-tree/nvim-web-devicons": "nvim-tree/nvim-web-devicons",
         "nvim-treesitter/nvim-treesitter": "nvim-treesitter/nvim-treesitter",
