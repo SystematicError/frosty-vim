@@ -1,5 +1,11 @@
 FROSTY_PACKAGES = FROSTY_PACKAGES or {}
 
+FROSTY_CONFIG = {
+    mappings = require "mappings",
+    colorscheme_integrations = {},
+    highlights = require "highlights",
+}
+
 local lazy_path = FROSTY_PACKAGES["folke/lazy.nvim"]
 
 if not lazy_path then
@@ -48,6 +54,7 @@ end
 
 return function(files)
     local plugins = {}
+
     local mappings = { FROSTY_CONFIG.mappings, {} }
     local colorscheme_integrations = { FROSTY_CONFIG.colorscheme_integrations, {} }
     local highlights = {
