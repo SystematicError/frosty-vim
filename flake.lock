@@ -306,6 +306,38 @@
         "type": "github"
       }
     },
+    "kevinhwang91/nvim-ufo": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1712135966,
+        "narHash": "sha256-dzMlbzY8vyTo1t+EHqvzviiHPgWe7jCfAIQArwgozDs=",
+        "owner": "kevinhwang91",
+        "repo": "nvim-ufo",
+        "rev": "a5390706f510d39951dd581f6d2a972741b3fa26",
+        "type": "github"
+      },
+      "original": {
+        "owner": "kevinhwang91",
+        "repo": "nvim-ufo",
+        "type": "github"
+      }
+    },
+    "kevinhwang91/promise-async": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1709041466,
+        "narHash": "sha256-v6iWktPHr8QqvxzI8hRUQVzxKzLk5SdroPpEGPRjMRU=",
+        "owner": "kevinhwang91",
+        "repo": "promise-async",
+        "rev": "93540c168c5ed2b030ec3e6c40ab8bbb85e36355",
+        "type": "github"
+      },
+      "original": {
+        "owner": "kevinhwang91",
+        "repo": "promise-async",
+        "type": "github"
+      }
+    },
     "kylechui/nvim-surround": {
       "flake": false,
       "locked": {
@@ -567,6 +599,8 @@
         "hrsh7th/cmp-nvim-lsp": "hrsh7th/cmp-nvim-lsp",
         "hrsh7th/cmp-path": "hrsh7th/cmp-path",
         "hrsh7th/nvim-cmp": "hrsh7th/nvim-cmp",
+        "kevinhwang91/nvim-ufo": "kevinhwang91/nvim-ufo",
+        "kevinhwang91/promise-async": "kevinhwang91/promise-async",
         "kylechui/nvim-surround": "kylechui/nvim-surround",
         "lewis6991/gitsigns.nvim": "lewis6991/gitsigns.nvim",
         "lukas-reineke/indent-blankline.nvim": "lukas-reineke/indent-blankline.nvim",

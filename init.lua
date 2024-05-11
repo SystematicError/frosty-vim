@@ -8,6 +8,7 @@ local plugins = require "loader" {
     "bufferline",
     "feline",
     "notify",
+    "ufo",
     "gitsigns",
     "neogit",
     "colorizer",
