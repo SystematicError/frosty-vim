@@ -254,36 +254,33 @@
 
       treesitterParsers = builtins.attrValues pkgs.vimPlugins.nvim-treesitter.grammarPlugins;
 
-      baseNeovimConfig = pkgs.neovimUtils.makeNeovimConfig {
-        withPython3 = false;
-        withNodeJs = false;
-        withRuby = false;
-        extraLuaPackages = luaDeps;
+      neovim =
+        (pkgs.wrapNeovimUnstable pkgs.neovim-unwrapped (pkgs.neovimUtils.makeNeovimConfig {
+          withPython3 = false;
+          withNodeJs = false;
+          withRuby = false;
+          extraLuaPackages = luaDeps;
 
-        customRC = ''
-          lua ${packageList}
-          lua package.path = package.path .. ";${./.}/lua/?.lua"
-          luafile ${./.}/init.lua
-          set runtimepath^=${builtins.concatStringsSep "," treesitterParsers}
-        '';
-      };
-
-      neovimConfig =
-        baseNeovimConfig
-        // {
-          wrapperArgs =
-            baseNeovimConfig.wrapperArgs
+          customRC = ''
+            lua ${packageList}
+            lua package.path = package.path .. ";${./.}/lua/?.lua"
+            luafile ${./.}/init.lua
+            set runtimepath^=${builtins.concatStringsSep "," treesitterParsers}
+          '';
+        }))
+        .overrideAttrs (old: {
+          generatedWrapperArgs =
+            old.generatedWrapperArgs
+            or []
             ++ [
               "--prefix"
               "PATH"
               ":"
-              "${lib.makeBinPath runtimeDeps}"
+              (lib.makeBinPath runtimeDeps)
             ];
-        };
+        });
     in {
-      packages.default = pkgs.wrapNeovimUnstable pkgs.neovim-unwrapped neovimConfig;
-
-      cfg = neovimConfig;
+      packages.default = neovim;
 
       devShells.default = pkgs.mkShell {
         packages = runtimeDeps ++ builtins.attrValues self.outputs.packages.${system};
