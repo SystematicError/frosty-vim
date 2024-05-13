@@ -280,7 +280,10 @@
             ];
         });
     in {
-      packages.default = neovim;
+      packages = {
+        default = neovim;
+        inherit neovim;
+      };
 
       devShells.default = pkgs.mkShell {
         packages = runtimeDeps ++ builtins.attrValues self.outputs.packages.${system};
