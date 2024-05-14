@@ -11,14 +11,15 @@ opt.whichwrap = "bshl<>[]~"
 
 opt.mouse = "a"
 
-opt.signcolumn = "yes"
+opt.signcolumn = "yes:1"
+opt.foldcolumn = "1"
+opt.fillchars = { eob = " ", fold = " ", foldsep = " ", foldopen = "", foldclose = "" }
+
 opt.ruler = false
 opt.laststatus = 3
 opt.showmode = false
 
 opt.scrolloff = 4
-
-opt.fillchars = { eob = " " }
 
 opt.splitbelow = true
 opt.splitright = true
