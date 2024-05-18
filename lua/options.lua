@@ -12,8 +12,7 @@ opt.whichwrap = "bshl<>[]~"
 opt.mouse = "a"
 
 opt.signcolumn = "yes:1"
-opt.foldcolumn = "1"
-opt.fillchars = { eob = " ", fold = " ", foldsep = " ", foldopen = "", foldclose = "" }
+opt.fillchars = { eob = " " }
 
 opt.ruler = false
 opt.laststatus = 3
