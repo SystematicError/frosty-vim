@@ -55,16 +55,6 @@
       flake = false;
     };
 
-    "kevinhwang91/nvim-ufo" = {
-      url = "github:kevinhwang91/nvim-ufo";
-      flake = false;
-    };
-
-    "kevinhwang91/promise-async" = {
-      url = "github:kevinhwang91/promise-async";
-      flake = false;
-    };
-
     "lewis6991/gitsigns.nvim" = {
       url = "github:lewis6991/gitsigns.nvim";
       flake = false;
