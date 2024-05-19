@@ -13,8 +13,12 @@ local function config()
                 return vim.fn.getcwd()
             end,
 
-            on_attach = function(client)
+            on_attach = function(client, buffer)
                 client.server_capabilities.semanticTokensProvider = nil
+
+                if client.supports_method "textDocument/inlayHint" then
+                    vim.lsp.inlay_hint.enable(true, { bufnr = buffer })
+                end
             end,
         }
     end
