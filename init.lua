@@ -6,6 +6,7 @@ local plugins = require "loader" {
     "neo-tree",
     "web-devicons",
     "bufferline",
+    "dropbar",
     "feline",
     "notify",
     "gitsigns",

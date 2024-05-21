@@ -16,6 +16,22 @@
         "type": "github"
       }
     },
+    "Bekaboo/dropbar.nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1715869781,
+        "narHash": "sha256-YdJN1jQopZnDmaY0oXOAs/wiyiCoeILtBFtN0KNhuIw=",
+        "owner": "Bekaboo",
+        "repo": "dropbar.nvim",
+        "rev": "9fc10fa1a34ec3e55b470962e4e94644611bd209",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Bekaboo",
+        "repo": "dropbar.nvim",
+        "type": "github"
+      }
+    },
     "L3MON4D3/LuaSnip": {
       "flake": false,
       "locked": {
@@ -549,6 +565,7 @@
     "root": {
       "inputs": {
         "3rd/image.nvim": "3rd/image.nvim",
+        "Bekaboo/dropbar.nvim": "Bekaboo/dropbar.nvim",
         "L3MON4D3/LuaSnip": "L3MON4D3/LuaSnip",
         "MunifTanjim/nui.nvim": "MunifTanjim/nui.nvim",
         "NMAC427/guess-indent.nvim": "NMAC427/guess-indent.nvim",

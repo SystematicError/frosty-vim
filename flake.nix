@@ -45,6 +45,11 @@
       flake = false;
     };
 
+    "Bekaboo/dropbar.nvim" = {
+      url = "github:Bekaboo/dropbar.nvim";
+      flake = false;
+    };
+
     "freddiehaddad/feline.nvim" = {
       url = "github:freddiehaddad/feline.nvim";
       flake = false;
