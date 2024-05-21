@@ -7,7 +7,6 @@ local servers = {
 
     lua_ls = {
         Lua = {
-            hint = { enable = true },
             format = { enable = false },
             telemetry = { enable = false },
             completion = { callSnippet = "Both" },
