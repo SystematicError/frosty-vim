@@ -4,6 +4,8 @@ local function config()
     local lspconfig = require "lspconfig"
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
+    vim.lsp.inlay_hint.enable()
+
     for server, settings in pairs(servers) do
         lspconfig[server].setup {
             capabilities = capabilities,
@@ -13,12 +15,8 @@ local function config()
                 return vim.fn.getcwd()
             end,
 
-            on_attach = function(client, buffer)
+            on_attach = function(client)
                 client.server_capabilities.semanticTokensProvider = nil
-
-                if client.supports_method "textDocument/inlayHint" then
-                    vim.lsp.inlay_hint.enable(true, { bufnr = buffer })
-                end
             end,
         }
     end
