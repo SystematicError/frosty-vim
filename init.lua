@@ -24,7 +24,6 @@ local plugins = require "loader" {
     "indent-blankline",
     "guess-indent",
     "direnv",
-    "comment",
     "surround",
     "autopairs",
 }

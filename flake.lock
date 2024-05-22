@@ -402,22 +402,6 @@
         "type": "github"
       }
     },
-    "numToStr/Comment.nvim": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1691409559,
-        "narHash": "sha256-+dF1ZombrlO6nQggufSb0igXW5zwU++o0W/5ZA07cdc=",
-        "owner": "numToStr",
-        "repo": "Comment.nvim",
-        "rev": "0236521ea582747b58869cb72f70ccfa967d2e89",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numToStr",
-        "repo": "Comment.nvim",
-        "type": "github"
-      }
-    },
     "nvim-lua/plenary.nvim": {
       "flake": false,
       "locked": {
@@ -589,7 +573,6 @@
         "lukas-reineke/indent-blankline.nvim": "lukas-reineke/indent-blankline.nvim",
         "neovim/nvim-lspconfig": "neovim/nvim-lspconfig",
         "nixpkgs": "nixpkgs",
-        "numToStr/Comment.nvim": "numToStr/Comment.nvim",
         "nvim-lua/plenary.nvim": "nvim-lua/plenary.nvim",
         "nvim-neo-tree/neo-tree.nvim": "nvim-neo-tree/neo-tree.nvim",
         "nvim-telescope/telescope-ui-select.nvim": "nvim-telescope/telescope-ui-select.nvim",

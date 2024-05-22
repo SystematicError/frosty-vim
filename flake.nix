@@ -175,11 +175,6 @@
       flake = false;
     };
 
-    "numToStr/Comment.nvim" = {
-      url = "github:numToStr/Comment.nvim";
-      flake = false;
-    };
-
     "kylechui/nvim-surround" = {
       url = "github:kylechui/nvim-surround";
       flake = false;
