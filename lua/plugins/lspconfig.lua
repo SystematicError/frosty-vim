@@ -40,4 +40,26 @@ return {
         dependencies = "hrsh7th/cmp-nvim-lsp",
         config = config,
     },
+
+    mappings = {
+        n = {
+            ["<leader>l"] = {
+                name = "LSP",
+
+                l = { vim.diagnostic.open_float, "Show line diagnostics" },
+                h = { vim.lsp.buf.hover, "Show hover information" },
+                s = { vim.lsp.buf.signature_help, "Show signature help" },
+                f = { vim.lsp.buf.references, "Show references" },
+                r = { vim.lsp.buf.rename, "Rename references" },
+
+                d = { vim.lsp.buf.definition, "Go to definition" },
+                D = { vim.lsp.buf.declaration, "Go to declaration" },
+                t = { vim.lsp.buf.type_definition, "Go to type definition" },
+                i = { vim.lsp.buf.implementation, "Go to implementation" },
+            },
+
+            ["[d"] = { vim.diagnostic.goto_prev, "Previous diagnostic" },
+            ["]d"] = { vim.diagnostic.goto_next, "Next hunk diagnostic" },
+        },
+    },
 }
