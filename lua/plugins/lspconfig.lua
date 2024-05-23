@@ -46,11 +46,13 @@ return {
             ["<leader>l"] = {
                 name = "LSP",
 
+                c = { vim.lsp.buf.code_action, "Run code action" },
+                r = { vim.lsp.buf.rename, "Rename references" },
+
                 l = { vim.diagnostic.open_float, "Show line diagnostics" },
                 h = { vim.lsp.buf.hover, "Show hover information" },
                 s = { vim.lsp.buf.signature_help, "Show signature help" },
                 f = { vim.lsp.buf.references, "Show references" },
-                r = { vim.lsp.buf.rename, "Rename references" },
 
                 d = { vim.lsp.buf.definition, "Go to definition" },
                 D = { vim.lsp.buf.declaration, "Go to declaration" },
