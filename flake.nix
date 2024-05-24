@@ -135,6 +135,11 @@
       flake = false;
     };
 
+    "stevearc/aerial.nvim" = {
+      url = "github:stevearc/aerial.nvim";
+      flake = false;
+    };
+
     "andrewferrier/debugprint.nvim" = {
       url = "github:andrewferrier/debugprint.nvim";
       flake = false;

@@ -584,6 +584,7 @@
         "rcarriga/nvim-notify": "rcarriga/nvim-notify",
         "saadparwaiz1/cmp_luasnip": "saadparwaiz1/cmp_luasnip",
         "sindrets/diffview.nvim": "sindrets/diffview.nvim",
+        "stevearc/aerial.nvim": "stevearc/aerial.nvim",
         "stevearc/conform.nvim": "stevearc/conform.nvim",
         "windwp/nvim-autopairs": "windwp/nvim-autopairs"
       }
@@ -617,6 +618,22 @@
       "original": {
         "owner": "sindrets",
         "repo": "diffview.nvim",
+        "type": "github"
+      }
+    },
+    "stevearc/aerial.nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1716351902,
+        "narHash": "sha256-8pvXP54K+F3UD920EYU2+k15dpIPL2pMZc3XBLCGAoQ=",
+        "owner": "stevearc",
+        "repo": "aerial.nvim",
+        "rev": "bd5f141a547c082e9c1644026f38590407dad659",
+        "type": "github"
+      },
+      "original": {
+        "owner": "stevearc",
+        "repo": "aerial.nvim",
         "type": "github"
       }
     },

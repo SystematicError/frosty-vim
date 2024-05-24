@@ -17,6 +17,7 @@ local plugins = require "loader" {
     "lspconfig",
     "luasnip",
     "conform",
+    "aerial",
     "debugprint",
     "telescope",
     "image",
