@@ -22,6 +22,7 @@ local function config()
     }
 
     require("bufferline").setup(opts)
+    require("scope").setup()
 end
 
 return {
@@ -29,6 +30,7 @@ return {
         "akinsho/bufferline.nvim",
         dependencies = {
             "nvim-tree/nvim-web-devicons",
+            "tiagovla/scope.nvim",
             "catppuccin/nvim",
         },
         config = config,

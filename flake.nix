@@ -45,6 +45,11 @@
       flake = false;
     };
 
+    "tiagovla/scope.nvim" = {
+      url = "github:tiagovla/scope.nvim";
+      flake = false;
+    };
+
     "Bekaboo/dropbar.nvim" = {
       url = "github:Bekaboo/dropbar.nvim";
       flake = false;

@@ -586,6 +586,7 @@
         "sindrets/diffview.nvim": "sindrets/diffview.nvim",
         "stevearc/aerial.nvim": "stevearc/aerial.nvim",
         "stevearc/conform.nvim": "stevearc/conform.nvim",
+        "tiagovla/scope.nvim": "tiagovla/scope.nvim",
         "windwp/nvim-autopairs": "windwp/nvim-autopairs"
       }
     },
@@ -665,6 +666,22 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "tiagovla/scope.nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1711884167,
+        "narHash": "sha256-8Bd1DI6nuUxkTCx0wCfWKHdi6UXQNuDygj5UuSGypLs=",
+        "owner": "tiagovla",
+        "repo": "scope.nvim",
+        "rev": "86a0f5b594b08b2ad65f470ffdee81654942b6ac",
+        "type": "github"
+      },
+      "original": {
+        "owner": "tiagovla",
+        "repo": "scope.nvim",
         "type": "github"
       }
     },
