@@ -2,7 +2,7 @@ local function config()
     local cmp = require "cmp"
     local luasnip = require "luasnip"
 
-    local lspkind_icons = {
+    local kind_icons = {
         Text = "",
         Method = "󰆧",
         Function = "󰊕",
@@ -96,7 +96,7 @@ local function config()
             fields = { "kind", "abbr", "menu" },
 
             format = function(entry, vim_item)
-                vim_item.kind = lspkind_icons[vim_item.kind] .. " "
+                vim_item.kind = kind_icons[vim_item.kind] .. " "
 
                 vim_item.menu = "    "
                     .. ({

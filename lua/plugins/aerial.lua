@@ -1,7 +1,24 @@
 local function config()
     local opts = {
-        filter_kind = false,
+        icons = {},
+        filter_kind = {},
     }
+
+    local kind_icons = {
+        Class = "󰠱",
+        Constructor = "",
+        Enum = "",
+        Function = "󰊕",
+        Interface = "",
+        Module = "",
+        Method = "󰆧",
+        Struct = "",
+    }
+
+    for kind, icon in pairs(kind_icons) do
+        opts.icons[kind] = icon
+        table.insert(opts.filter_kind, kind)
+    end
 
     require("aerial").setup(opts)
 end
