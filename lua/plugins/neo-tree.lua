@@ -72,6 +72,10 @@ return {
                 s = { "<cmd>Neotree show<cr>", "Show" },
                 c = { "<cmd>Neotree close<cr>", "Close" },
                 t = { "<cmd>Neotree toggle<cr>", "Toggle" },
+
+                f = { "<cmd>Neotree filesystem<cr>", "Files" },
+                b = { "<cmd>Neotree buffers<cr>", "Buffers" },
+                g = { "<cmd>Neotree git_status<cr>", "Git" },
             },
         },
     },
