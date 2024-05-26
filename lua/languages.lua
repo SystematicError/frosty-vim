@@ -1,4 +1,6 @@
-local servers = {
+local languages = {}
+
+languages.servers = {
     bashls = {},
 
     cssls = {},
@@ -26,7 +28,7 @@ local servers = {
     rust_analyzer = {},
 }
 
-local formatters = {
+languages.formatters = {
     sh = { "shfmt" },
 
     css = { "prettierd" },
@@ -44,7 +46,4 @@ local formatters = {
     nix = { "alejandra" },
 }
 
-return {
-    servers = servers,
-    formatters = formatters,
-}
+return languages
