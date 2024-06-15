@@ -228,7 +228,7 @@
         curl
         imagemagick
 
-        nodePackages.bash-language-server
+        bash-language-server
         shfmt
 
         vscode-langservers-extracted
