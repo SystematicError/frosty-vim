@@ -160,11 +160,6 @@
       flake = false;
     };
 
-    "3rd/image.nvim" = {
-      url = "github:3rd/image.nvim";
-      flake = false;
-    };
-
     "folke/which-key.nvim" = {
       url = "github:folke/which-key.nvim";
       flake = false;
@@ -226,7 +221,6 @@
         wl-clipboard
         ripgrep
         curl
-        imagemagick
 
         bash-language-server
         shfmt
@@ -247,10 +241,7 @@
         rustfmt
       ];
 
-      luaDeps = ps:
-        with ps; [
-          magick
-        ];
+      luaDeps = ps: [];
 
       treesitterParsers = builtins.attrValues pkgs.vimPlugins.nvim-treesitter.grammarPlugins;
 

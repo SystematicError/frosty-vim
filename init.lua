@@ -20,7 +20,6 @@ local plugins = require "loader" {
     "aerial",
     "debugprint",
     "telescope",
-    "image",
     "which-key",
     "indent-blankline",
     "guess-indent",
