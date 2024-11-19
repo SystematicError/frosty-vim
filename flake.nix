@@ -5,48 +5,13 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
 
-    "folke/lazy.nvim" = {
-      url = "github:folke/lazy.nvim";
-      flake = false;
-    };
-
-    "catppuccin/nvim" = {
-      url = "github:catppuccin/nvim";
-      flake = false;
-    };
-
-    "nvimdev/dashboard-nvim" = {
-      url = "github:nvimdev/dashboard-nvim";
-      flake = false;
-    };
-
-    "nvim-neo-tree/neo-tree.nvim" = {
-      url = "github:nvim-neo-tree/neo-tree.nvim";
-      flake = false;
-    };
-
-    "nvim-lua/plenary.nvim" = {
-      url = "github:nvim-lua/plenary.nvim";
-      flake = false;
-    };
-
-    "MunifTanjim/nui.nvim" = {
-      url = "github:MunifTanjim/nui.nvim";
-      flake = false;
-    };
-
-    "nvim-tree/nvim-web-devicons" = {
-      url = "github:nvim-tree/nvim-web-devicons";
-      flake = false;
-    };
-
     "akinsho/bufferline.nvim" = {
       url = "github:akinsho/bufferline.nvim";
       flake = false;
     };
 
-    "tiagovla/scope.nvim" = {
-      url = "github:tiagovla/scope.nvim";
+    "andrewferrier/debugprint.nvim" = {
+      url = "github:andrewferrier/debugprint.nvim";
       flake = false;
     };
 
@@ -55,68 +20,28 @@
       flake = false;
     };
 
+    "catppuccin/nvim" = {
+      url = "github:catppuccin/nvim";
+      flake = false;
+    };
+
+    "direnv/direnv.vim" = {
+      url = "github:direnv/direnv.vim";
+      flake = false;
+    };
+
+    "folke/lazy.nvim" = {
+      url = "github:folke/lazy.nvim";
+      flake = false;
+    };
+
+    "folke/which-key.nvim" = {
+      url = "github:folke/which-key.nvim";
+      flake = false;
+    };
+
     "freddiehaddad/feline.nvim" = {
       url = "github:freddiehaddad/feline.nvim";
-      flake = false;
-    };
-
-    "rcarriga/nvim-notify" = {
-      url = "github:rcarriga/nvim-notify";
-      flake = false;
-    };
-
-    "lewis6991/gitsigns.nvim" = {
-      url = "github:lewis6991/gitsigns.nvim";
-      flake = false;
-    };
-
-    "NeogitOrg/neogit" = {
-      url = "github:NeogitOrg/neogit";
-      flake = false;
-    };
-
-    "sindrets/diffview.nvim" = {
-      url = "github:sindrets/diffview.nvim";
-      flake = false;
-    };
-
-    "NvChad/nvim-colorizer.lua" = {
-      url = "github:NvChad/nvim-colorizer.lua";
-      flake = false;
-    };
-
-    "nvim-treesitter/nvim-treesitter" = {
-      url = "github:nvim-treesitter/nvim-treesitter";
-      flake = false;
-    };
-
-    "hrsh7th/nvim-cmp" = {
-      url = "github:hrsh7th/nvim-cmp";
-      flake = false;
-    };
-
-    "neovim/nvim-lspconfig" = {
-      url = "github:neovim/nvim-lspconfig";
-      flake = false;
-    };
-
-    "hrsh7th/cmp-nvim-lsp" = {
-      url = "github:hrsh7th/cmp-nvim-lsp";
-      flake = false;
-    };
-
-    "L3MON4D3/LuaSnip" = {
-      url = "github:L3MON4D3/LuaSnip";
-      flake = false;
-    };
-
-    "saadparwaiz1/cmp_luasnip" = {
-      url = "github:saadparwaiz1/cmp_luasnip";
-      flake = false;
-    };
-
-    "rafamadriz/friendly-snippets" = {
-      url = "github:rafamadriz/friendly-snippets";
       flake = false;
     };
 
@@ -125,28 +50,83 @@
       flake = false;
     };
 
-    "hrsh7th/cmp-path" = {
-      url = "github:hrsh7th/cmp-path";
-      flake = false;
-    };
-
     "hrsh7th/cmp-cmdline" = {
       url = "github:hrsh7th/cmp-cmdline";
       flake = false;
     };
 
-    "stevearc/conform.nvim" = {
-      url = "github:stevearc/conform.nvim";
+    "hrsh7th/cmp-nvim-lsp" = {
+      url = "github:hrsh7th/cmp-nvim-lsp";
       flake = false;
     };
 
-    "stevearc/aerial.nvim" = {
-      url = "github:stevearc/aerial.nvim";
+    "hrsh7th/cmp-path" = {
+      url = "github:hrsh7th/cmp-path";
       flake = false;
     };
 
-    "andrewferrier/debugprint.nvim" = {
-      url = "github:andrewferrier/debugprint.nvim";
+    "hrsh7th/nvim-cmp" = {
+      url = "github:hrsh7th/nvim-cmp";
+      flake = false;
+    };
+
+    "kylechui/nvim-surround" = {
+      url = "github:kylechui/nvim-surround";
+      flake = false;
+    };
+
+    "L3MON4D3/LuaSnip" = {
+      url = "github:L3MON4D3/LuaSnip";
+      flake = false;
+    };
+
+    "lewis6991/gitsigns.nvim" = {
+      url = "github:lewis6991/gitsigns.nvim";
+      flake = false;
+    };
+
+    "lukas-reineke/indent-blankline.nvim" = {
+      url = "github:lukas-reineke/indent-blankline.nvim";
+      flake = false;
+    };
+
+    "MunifTanjim/nui.nvim" = {
+      url = "github:MunifTanjim/nui.nvim";
+      flake = false;
+    };
+
+    "NeogitOrg/neogit" = {
+      url = "github:NeogitOrg/neogit";
+      flake = false;
+    };
+
+    "neovim/nvim-lspconfig" = {
+      url = "github:neovim/nvim-lspconfig";
+      flake = false;
+    };
+
+    "NMAC427/guess-indent.nvim" = {
+      url = "github:NMAC427/guess-indent.nvim";
+      flake = false;
+    };
+
+    "NvChad/nvim-colorizer.lua" = {
+      url = "github:NvChad/nvim-colorizer.lua";
+      flake = false;
+    };
+
+    "nvimdev/dashboard-nvim" = {
+      url = "github:nvimdev/dashboard-nvim";
+      flake = false;
+    };
+
+    "nvim-lua/plenary.nvim" = {
+      url = "github:nvim-lua/plenary.nvim";
+      flake = false;
+    };
+
+    "nvim-neo-tree/neo-tree.nvim" = {
+      url = "github:nvim-neo-tree/neo-tree.nvim";
       flake = false;
     };
 
@@ -160,28 +140,48 @@
       flake = false;
     };
 
-    "folke/which-key.nvim" = {
-      url = "github:folke/which-key.nvim";
+    "nvim-tree/nvim-web-devicons" = {
+      url = "github:nvim-tree/nvim-web-devicons";
       flake = false;
     };
 
-    "lukas-reineke/indent-blankline.nvim" = {
-      url = "github:lukas-reineke/indent-blankline.nvim";
+    "nvim-treesitter/nvim-treesitter" = {
+      url = "github:nvim-treesitter/nvim-treesitter";
       flake = false;
     };
 
-    "NMAC427/guess-indent.nvim" = {
-      url = "github:NMAC427/guess-indent.nvim";
+    "rafamadriz/friendly-snippets" = {
+      url = "github:rafamadriz/friendly-snippets";
       flake = false;
     };
 
-    "direnv/direnv.vim" = {
-      url = "github:direnv/direnv.vim";
+    "rcarriga/nvim-notify" = {
+      url = "github:rcarriga/nvim-notify";
       flake = false;
     };
 
-    "kylechui/nvim-surround" = {
-      url = "github:kylechui/nvim-surround";
+    "saadparwaiz1/cmp_luasnip" = {
+      url = "github:saadparwaiz1/cmp_luasnip";
+      flake = false;
+    };
+
+    "sindrets/diffview.nvim" = {
+      url = "github:sindrets/diffview.nvim";
+      flake = false;
+    };
+
+    "stevearc/aerial.nvim" = {
+      url = "github:stevearc/aerial.nvim";
+      flake = false;
+    };
+
+    "stevearc/conform.nvim" = {
+      url = "github:stevearc/conform.nvim";
+      flake = false;
+    };
+
+    "tiagovla/scope.nvim" = {
+      url = "github:tiagovla/scope.nvim";
       flake = false;
     };
 
