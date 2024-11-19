@@ -225,8 +225,7 @@
         bash-language-server
         shfmt
 
-        vscode-langservers-extracted
-        prettierd
+        biome
 
         lua-language-server
         stylua
