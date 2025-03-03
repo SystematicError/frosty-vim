@@ -1,22 +1,111 @@
 {
   description = "Neovim configuration with a side of flakes";
 
+  outputs = {
+    self,
+    nixpkgs,
+    flake-utils,
+    ...
+  } @ inputs:
+    flake-utils.lib.eachDefaultSystem (system: let
+      pkgs = nixpkgs.legacyPackages.${system};
+      lib = nixpkgs.lib;
+
+      packageList =
+        lib.generators.toLua {
+          multiline = false;
+          indent = false;
+        } (
+          builtins.listToAttrs (
+            builtins.map
+            (name: {
+              name = name;
+              value = inputs.${name}.outPath;
+            })
+            (builtins.attrNames (lib.filterAttrs (_: value: !builtins.hasAttr "_type" value) inputs))
+          )
+        );
+
+      allTreesitterParsers = pkgs.linkFarm "frosty-treesitter-runtime" (
+        builtins.map (drv: {
+          name = "parser/${lib.removeSuffix "-grammar" (lib.strings.getName drv.name)}.so";
+          path = "${drv.outPath}/parser";
+        })
+        pkgs.vimPlugins.nvim-treesitter.allGrammars
+      );
+
+      luaDeps = ps: [];
+
+      # Include packages from `pkgs.vimPlugins.nvim-treesitter.grammarPlugins` if you want only specific parsers
+      treesitterParsers = [allTreesitterParsers];
+
+      runtimeDeps = with pkgs; [
+        wl-clipboard # Replace with `xclip` for X11 support
+
+        lua-language-server
+        stylua
+
+        nil
+        alejandra
+
+        (python3.withPackages (ps: with ps; [python-lsp-server python-lsp-ruff]))
+        ruff
+
+        bash-language-server
+        shfmt
+      ];
+
+      neovim =
+        (pkgs.wrapNeovimUnstable pkgs.neovim-unwrapped (pkgs.neovimUtils.makeNeovimConfig {
+          withPython3 = false;
+          withNodeJs = false;
+          withRuby = false;
+          extraLuaPackages = luaDeps;
+
+          customRC = ''
+            lua package.path = package.path .. ";${./.}/lua/?.lua;${./.}/lua/?/init.lua"
+            lua package.cpath = package.cpath .. ";${pkgs.vimPlugins.blink-cmp.blink-fuzzy-lib}/lib/lib?.so"
+            lua FROSTY_PACKAGES=${packageList}
+            luafile ${./.}/init.lua
+            set runtimepath^=${builtins.concatStringsSep "," treesitterParsers}
+          '';
+        }))
+        .overrideAttrs (old: {
+          generatedWrapperArgs =
+            old.generatedWrapperArgs
+            or []
+            ++ [
+              "--prefix"
+              "PATH"
+              ":"
+              (lib.makeBinPath runtimeDeps)
+            ];
+        });
+    in {
+      packages = {
+        default = neovim;
+        inherit neovim;
+      };
+
+      devShells.default = pkgs.mkShell {
+        packages = runtimeDeps ++ [neovim];
+      };
+    });
+
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
 
+    # Plugin loader
+
+    "folke/lazy.nvim" = {
+      url = "github:folke/lazy.nvim";
+      flake = false;
+    };
+
+    # Plugins
     "akinsho/bufferline.nvim" = {
       url = "github:akinsho/bufferline.nvim";
-      flake = false;
-    };
-
-    "andrewferrier/debugprint.nvim" = {
-      url = "github:andrewferrier/debugprint.nvim";
-      flake = false;
-    };
-
-    "Bekaboo/dropbar.nvim" = {
-      url = "github:Bekaboo/dropbar.nvim";
       flake = false;
     };
 
@@ -25,13 +114,8 @@
       flake = false;
     };
 
-    "direnv/direnv.vim" = {
-      url = "github:direnv/direnv.vim";
-      flake = false;
-    };
-
-    "folke/lazy.nvim" = {
-      url = "github:folke/lazy.nvim";
+    "folke/snacks.nvim" = {
+      url = "github:folke/snacks.nvim";
       flake = false;
     };
 
@@ -40,53 +124,8 @@
       flake = false;
     };
 
-    "freddiehaddad/feline.nvim" = {
-      url = "github:freddiehaddad/feline.nvim";
-      flake = false;
-    };
-
-    "hrsh7th/cmp-buffer" = {
-      url = "github:hrsh7th/cmp-buffer";
-      flake = false;
-    };
-
-    "hrsh7th/cmp-cmdline" = {
-      url = "github:hrsh7th/cmp-cmdline";
-      flake = false;
-    };
-
-    "hrsh7th/cmp-nvim-lsp" = {
-      url = "github:hrsh7th/cmp-nvim-lsp";
-      flake = false;
-    };
-
-    "hrsh7th/cmp-path" = {
-      url = "github:hrsh7th/cmp-path";
-      flake = false;
-    };
-
-    "hrsh7th/nvim-cmp" = {
-      url = "github:hrsh7th/nvim-cmp";
-      flake = false;
-    };
-
-    "kylechui/nvim-surround" = {
-      url = "github:kylechui/nvim-surround";
-      flake = false;
-    };
-
-    "L3MON4D3/LuaSnip" = {
-      url = "github:L3MON4D3/LuaSnip";
-      flake = false;
-    };
-
     "lewis6991/gitsigns.nvim" = {
       url = "github:lewis6991/gitsigns.nvim";
-      flake = false;
-    };
-
-    "lukas-reineke/indent-blankline.nvim" = {
-      url = "github:lukas-reineke/indent-blankline.nvim";
       flake = false;
     };
 
@@ -115,11 +154,6 @@
       flake = false;
     };
 
-    "nvimdev/dashboard-nvim" = {
-      url = "github:nvimdev/dashboard-nvim";
-      flake = false;
-    };
-
     "nvim-lua/plenary.nvim" = {
       url = "github:nvim-lua/plenary.nvim";
       flake = false;
@@ -127,16 +161,6 @@
 
     "nvim-neo-tree/neo-tree.nvim" = {
       url = "github:nvim-neo-tree/neo-tree.nvim";
-      flake = false;
-    };
-
-    "nvim-telescope/telescope.nvim" = {
-      url = "github:nvim-telescope/telescope.nvim";
-      flake = false;
-    };
-
-    "nvim-telescope/telescope-ui-select.nvim" = {
-      url = "github:nvim-telescope/telescope-ui-select.nvim";
       flake = false;
     };
 
@@ -150,28 +174,23 @@
       flake = false;
     };
 
+    "nvim-treesitter/nvim-treesitter-textobjects" = {
+      url = "github:nvim-treesitter/nvim-treesitter-textobjects";
+      flake = false;
+    };
+
     "rafamadriz/friendly-snippets" = {
       url = "github:rafamadriz/friendly-snippets";
       flake = false;
     };
 
-    "rcarriga/nvim-notify" = {
-      url = "github:rcarriga/nvim-notify";
-      flake = false;
-    };
-
-    "saadparwaiz1/cmp_luasnip" = {
-      url = "github:saadparwaiz1/cmp_luasnip";
+    "Saghen/blink.cmp" = {
+      url = "github:Saghen/blink.cmp";
       flake = false;
     };
 
     "sindrets/diffview.nvim" = {
       url = "github:sindrets/diffview.nvim";
-      flake = false;
-    };
-
-    "stevearc/aerial.nvim" = {
-      url = "github:stevearc/aerial.nvim";
       flake = false;
     };
 
@@ -190,93 +209,4 @@
       flake = false;
     };
   };
-
-  outputs = {
-    self,
-    nixpkgs,
-    flake-utils,
-    ...
-  } @ inputs:
-    flake-utils.lib.eachDefaultSystem (system: let
-      pkgs = nixpkgs.legacyPackages.${system};
-      lib = nixpkgs.lib;
-
-      packageList =
-        "FROSTY_PACKAGES="
-        + lib.generators.toLua {
-          multiline = false;
-          indent = false;
-        } (
-          builtins.listToAttrs (
-            builtins.map
-            (name: {
-              name = name;
-              value = inputs.${name}.outPath;
-            })
-            (builtins.attrNames (lib.filterAttrs (_: v: !builtins.hasAttr "_type" v) inputs))
-          )
-        );
-
-      runtimeDeps = with pkgs; [
-        wl-clipboard
-        ripgrep
-        curl
-
-        bash-language-server
-        shfmt
-
-        biome
-
-        lua-language-server
-        stylua
-
-        nil
-        alejandra
-
-        (python311.withPackages (ps: with ps; [python-lsp-server python-lsp-ruff]))
-        ruff
-
-        rust-analyzer
-        rustfmt
-      ];
-
-      luaDeps = ps: [];
-
-      treesitterParsers = builtins.attrValues pkgs.vimPlugins.nvim-treesitter.grammarPlugins;
-
-      neovim =
-        (pkgs.wrapNeovimUnstable pkgs.neovim-unwrapped (pkgs.neovimUtils.makeNeovimConfig {
-          withPython3 = false;
-          withNodeJs = false;
-          withRuby = false;
-          extraLuaPackages = luaDeps;
-
-          customRC = ''
-            lua ${packageList}
-            lua package.path = package.path .. ";${./.}/lua/?.lua"
-            luafile ${./.}/init.lua
-            set runtimepath^=${builtins.concatStringsSep "," treesitterParsers}
-          '';
-        }))
-        .overrideAttrs (old: {
-          generatedWrapperArgs =
-            old.generatedWrapperArgs
-            or []
-            ++ [
-              "--prefix"
-              "PATH"
-              ":"
-              (lib.makeBinPath runtimeDeps)
-            ];
-        });
-    in {
-      packages = {
-        default = neovim;
-        inherit neovim;
-      };
-
-      devShells.default = pkgs.mkShell {
-        packages = runtimeDeps ++ builtins.attrValues self.outputs.packages.${system};
-      };
-    });
 }

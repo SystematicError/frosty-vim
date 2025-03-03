@@ -1,5 +1,0 @@
-return {
-    {
-        "direnv/direnv.vim",
-    },
-}

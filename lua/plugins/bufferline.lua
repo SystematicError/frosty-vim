@@ -3,18 +3,11 @@ local function config()
         options = {
             highlights = require("catppuccin.groups.integrations.bufferline").get(),
 
-            separator_style = { " ", " " },
-
-            indicator = {
-                style = "none",
-            },
-
             offsets = {
                 {
                     filetype = "neo-tree",
                     highlight = "NeoTreeNormal",
                     text = "",
-                    padding = 1,
                     separator = false,
                 },
             },
@@ -26,13 +19,12 @@ local function config()
 end
 
 return {
-    {
-        "akinsho/bufferline.nvim",
-        dependencies = {
-            "nvim-tree/nvim-web-devicons",
-            "tiagovla/scope.nvim",
-            "catppuccin/nvim",
-        },
-        config = config,
+    "akinsho/bufferline.nvim",
+    dependencies = {
+        "catppuccin/nvim",
+        "nvim-tree/nvim-web-devicons",
+        "tiagovla/scope.nvim",
     },
+    lazy = false,
+    config = config,
 }

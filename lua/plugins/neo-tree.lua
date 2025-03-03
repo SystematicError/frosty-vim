@@ -1,33 +1,20 @@
 local function config()
+    local icons = require "icons"
+
     local opts = {
         close_if_last_window = true,
         enable_diagnostics = false,
         enable_modified_markers = false,
 
         default_component_configs = {
-            icon = {
-                folder_closed = "",
-                folder_open = "",
-                folder_empty = "",
-            },
+            icon = icons.tree_folder,
 
             name = {
                 use_git_status_colors = false,
             },
 
             git_status = {
-                symbols = {
-                    added = "",
-                    modified = "",
-                    deleted = "",
-                    renamed = "󰏫",
-
-                    untracked = "",
-                    ignored = "󱙝",
-                    unstaged = "○",
-                    staged = "●",
-                    conflict = "",
-                },
+                symbols = icons.tree_git,
             },
 
             symlink_target = {
@@ -54,41 +41,30 @@ local function config()
 end
 
 return {
-    {
-        "nvim-neo-tree/neo-tree.nvim",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "MunifTanjim/nui.nvim",
-            "nvim-tree/nvim-web-devicons",
-        },
-        config = config,
+    "nvim-neo-tree/neo-tree.nvim",
+    dependencies = {
+        "nvim-lua/plenary.nvim",
+        "nvim-tree/nvim-web-devicons",
+        "MunifTanjim/nui.nvim",
     },
 
-    mappings = {
-        n = {
-            ["<leader>n"] = {
-                name = "Neotree",
-
-                s = { "<cmd>Neotree show<cr>", "Show" },
-                c = { "<cmd>Neotree close<cr>", "Close" },
-                t = { "<cmd>Neotree toggle<cr>", "Toggle" },
-
-                f = { "<cmd>Neotree filesystem<cr>", "Files" },
-                b = { "<cmd>Neotree buffers<cr>", "Buffers" },
-                g = { "<cmd>Neotree git_status<cr>", "Git" },
-            },
-        },
+    cmd = "Neotree",
+    keys = {
+        { "<leader>n", "<cmd>Neotree toggle<cr>", desc = "Neotree" },
     },
+    init = function()
+        vim.api.nvim_create_autocmd("BufEnter", {
+            group = vim.api.nvim_create_augroup("frosty_lazy_neotree", { clear = true }),
+            callback = function(args)
+                local stat = vim.uv.fs_stat(args.file)
 
-    colorscheme_integrations = {
-        neotree = true,
-    },
-
-    highlights = function(colors)
-        return {
-            NeoTreeWinSeparator = { fg = colors.mantle, bg = colors.mantle },
-            NeoTreeCursorLine = { bg = colors.mantle },
-            NeoTreeIndentMarker = { fg = colors.surface0 },
-        }
+                if stat and stat.type == "directory" then
+                    vim.cmd("Neotree dir=" .. args.file)
+                    vim.api.nvim_clear_autocmds { group = "frosty_lazy_neotree" }
+                end
+            end,
+        })
     end,
+
+    config = config,
 }

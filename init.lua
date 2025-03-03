@@ -1,36 +1,28 @@
 require "options"
+require "autocmds"
+require "keymaps"
+require "gui"
 
 local plugins = require "loader" {
-    "aerial",
     "autopairs",
+    "blink",
     "bufferline",
-    "cmp",
+    "catppuccin",
     "colorizer",
-    "colorscheme",
     "conform",
-    "dashboard",
-    "debugprint",
-    "direnv",
-    "dropbar",
-    "feline",
     "gitsigns",
     "guess-indent",
-    "indent-blankline",
     "lspconfig",
-    "luasnip",
-    "neogit",
     "neo-tree",
-    "notify",
-    "surround",
-    "telescope",
+    "neogit",
+    "snacks",
     "treesitter",
-    "web-devicons",
     "which-key",
 }
 
 require("lazy").setup(plugins, {
     defaults = {
-        -- lazy = true
+        lazy = true,
     },
 
     install = {

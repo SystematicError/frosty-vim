@@ -1,18 +1,12 @@
 FROSTY_PACKAGES = FROSTY_PACKAGES or {}
 
-FROSTY_CONFIG = {
-    mappings = require "mappings",
-    colorscheme_integrations = {},
-    highlights = require "highlights",
-}
-
 local lazy_path = FROSTY_PACKAGES["folke/lazy.nvim"]
 
 if not lazy_path then
     lazy_path = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 
-    if not vim.loop.fs_stat(lazy_path) then
-        vim.fn.system {
+    if not vim.uv.fs_stat(lazy_path) then
+        local output = vim.fn.system {
             "git",
             "clone",
             "--filter=blob:none",
@@ -20,6 +14,17 @@ if not lazy_path then
             "--branch=stable",
             lazy_path,
         }
+
+        if vim.v.shell_error ~= 0 then
+            vim.api.nvim_echo({
+                { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+                { output, "WarningMsg" },
+                { "\nPress any key to exit..." },
+            }, true, {})
+
+            vim.fn.getchar()
+            os.exit(1)
+        end
     end
 end
 
@@ -29,7 +34,7 @@ local function ensure_table(object)
     return type(object) == "table" and object or { object }
 end
 
-local function make_spec_local(spec)
+local function inject_path(spec)
     if FROSTY_PACKAGES[spec[1]] then
         spec.dir = FROSTY_PACKAGES[spec[1]]
         spec.name = spec.name or spec[1]:match "^.+/(.+)$"
@@ -39,13 +44,13 @@ local function make_spec_local(spec)
 end
 
 local function make_plugin_local(plugin)
-    plugin = make_spec_local(ensure_table(plugin))
+    plugin = inject_path(ensure_table(plugin))
 
     if plugin.dependencies then
         plugin.dependencies = ensure_table(plugin.dependencies)
 
         for i, dependency in ipairs(plugin.dependencies) do
-            plugin.dependencies[i] = make_spec_local(ensure_table(dependency))
+            plugin.dependencies[i] = inject_path(ensure_table(dependency))
         end
     end
 
@@ -55,48 +60,9 @@ end
 return function(files)
     local plugins = {}
 
-    local mappings = { FROSTY_CONFIG.mappings, {} }
-    local colorscheme_integrations = { FROSTY_CONFIG.colorscheme_integrations, {} }
-    local highlights = {
-        FROSTY_CONFIG.highlights,
-        function()
-            return {}
-        end,
-    }
-
     for _, file in ipairs(files) do
-        local module = require("plugins." .. file)
-
-        table.insert(plugins, make_plugin_local(module[1]))
-
-        if module.mappings then
-            table.insert(mappings, module.mappings)
-        end
-
-        if module.colorscheme_integrations then
-            table.insert(colorscheme_integrations, module.colorscheme_integrations)
-        end
-
-        if module.highlights then
-            table.insert(highlights, module.highlights)
-        end
+        table.insert(plugins, make_plugin_local(require("plugins." .. file)))
     end
-
-    FROSTY_CONFIG = {
-        mappings = vim.tbl_deep_extend("force", unpack(mappings)),
-
-        colorscheme_integrations = vim.tbl_extend("force", unpack(colorscheme_integrations)),
-
-        highlights = function(colors)
-            local highlight_tables = {}
-
-            for _, highlight in ipairs(highlights) do
-                table.insert(highlight_tables, highlight(colors))
-            end
-
-            return vim.tbl_extend("force", unpack(highlight_tables))
-        end,
-    }
 
     return plugins
 end

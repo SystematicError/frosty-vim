@@ -1,7 +1,6 @@
 local function config()
     local opts = {
         integrations = {
-            telescope = true,
             diffview = true,
         },
     }
@@ -10,27 +9,16 @@ local function config()
 end
 
 return {
-    {
-        "NeogitOrg/neogit",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "sindrets/diffview.nvim",
-            "nvim-telescope/telescope.nvim",
-        },
-        config = config,
+    "NeogitOrg/neogit",
+    dependencies = {
+        "nvim-lua/plenary.nvim",
+        "sindrets/diffview.nvim", -- TODO: Diffview configuration
     },
 
-    mappings = {
-        n = {
-            ["<leader>g"] = {
-                name = "Git",
-
-                g = { "<cmd>Neogit<cr>", "Neogit" },
-            },
-        },
+    cmd = "Neogit",
+    keys = {
+        { "<leader>g", "<cmd>Neogit<cr>", desc = "Neogit" },
     },
 
-    colorscheme_integrations = {
-        neogit = true,
-    },
+    config = config,
 }

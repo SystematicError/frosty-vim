@@ -14,9 +14,10 @@ opt.mouse = "a"
 opt.signcolumn = "yes:1"
 opt.fillchars = { eob = " " }
 
+opt.showmode = false
 opt.ruler = false
 opt.laststatus = 3
-opt.showmode = false
+opt.cmdheight = 0
 
 opt.scrolloff = 4
 
