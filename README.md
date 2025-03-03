@@ -10,7 +10,7 @@ Frosty is a modern and fully configured development environment for neovim with 
 
 Check the [roadmap](https://github.com/SystematicError/frosty-vim/issues/1) for upcoming changes.
 
-**Warning: ⚠️** Major overhaul in progress, expect breaking changes
+**Warning: ⚠️** Major overhaul in progress, expect breaking changes. Refer to commit [0dde40e](https://github.com/SystematicError/frosty-vim/tree/0dde40edfdc186607fb7460d97247b58b390c78a) for last stable version.
 
 ## Installation
 
