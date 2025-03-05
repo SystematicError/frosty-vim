@@ -34,7 +34,7 @@ git clone https://github.com/SystematicError/frosty-vim ~/.config/nvim --depth 1
 
 These are the defaults, the config can be tweaked to add further support as needed.
 
-Syntax highlighting and treesitter based functionality for 250+ languages are provided via parsers from [nixpkgs](https://search.nixos.org/packages?channel=unstable&query=vimPlugins.nvim-treesitter-parsers).
+Syntax highlighting and treesitter based functionality for 300+ languages are provided via parsers from [nixpkgs](https://search.nixos.org/packages?channel=unstable&query=vimPlugins.nvim-treesitter-parsers).
 Additionally, further support is provided for the following languages:
 
 | Language | Language Server                                             | Formatter                                             |
