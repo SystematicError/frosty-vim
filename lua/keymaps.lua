@@ -6,6 +6,11 @@ local map = vim.keymap.set
 map("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "Lazy" })
 map("n", "<leader>f", "<cmd>lua Snacks.picker('files')<cr>", { desc = "Files" })
 
+-- TODO: Works on neovide, but not ghostty
+map("v", "<c-s-c>", '"+y', { desc = "Copy to system clipboard" })
+map("n", "<c-s-v>", '"+p', { desc = "Paste from system clipboard" })
+map("i", "<c-s-v>", '<esc>"+pa', { desc = "Paste from system clipboard" })
+
 map("n", "<tab>", "<cmd>bnext<cr>", { desc = "Next buffer" })
 map("n", "<s-tab>", "<cmd>bprevious<cr>", { desc = "Previous buffer" })
 
