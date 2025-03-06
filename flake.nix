@@ -129,6 +129,11 @@
       flake = false;
     };
 
+    "lewis6991/satellite.nvim" = {
+      url = "github:lewis6991/satellite.nvim";
+      flake = false;
+    };
+
     "MunifTanjim/nui.nvim" = {
       url = "github:MunifTanjim/nui.nvim";
       flake = false;
@@ -159,6 +164,11 @@
       flake = false;
     };
 
+    "nvim-lualine/lualine.nvim" = {
+      url = "github:nvim-lualine/lualine.nvim";
+      flake = false;
+    };
+
     "nvim-neo-tree/neo-tree.nvim" = {
       url = "github:nvim-neo-tree/neo-tree.nvim";
       flake = false;
@@ -176,6 +186,11 @@
 
     "nvim-treesitter/nvim-treesitter-textobjects" = {
       url = "github:nvim-treesitter/nvim-treesitter-textobjects";
+      flake = false;
+    };
+
+    "OXY2DEV/markview.nvim" = {
+      url = "github:OXY2DEV/markview.nvim/dev"; # TODO: Remove after horizontal rule rendering is fixed
       flake = false;
     };
 

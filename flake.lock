@@ -64,6 +64,23 @@
         "type": "github"
       }
     },
+    "OXY2DEV/markview.nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1737771136,
+        "narHash": "sha256-YPbdHLIW+MkLqaCh9d9/QZQb+HvwpHWxIzCX2VzxsA4=",
+        "owner": "OXY2DEV",
+        "repo": "markview.nvim",
+        "rev": "c76411a2a5422b29ca935b6c212c27e785da2020",
+        "type": "github"
+      },
+      "original": {
+        "owner": "OXY2DEV",
+        "ref": "dev",
+        "repo": "markview.nvim",
+        "type": "github"
+      }
+    },
     "Saghen/blink.cmp": {
       "flake": false,
       "locked": {
@@ -194,6 +211,22 @@
         "type": "github"
       }
     },
+    "lewis6991/satellite.nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1740928235,
+        "narHash": "sha256-h5JdODw0NKzvE9YZGpVF1fg2mFAyK7vqCMAf7+isxFM=",
+        "owner": "lewis6991",
+        "repo": "satellite.nvim",
+        "rev": "1a259773c4d85e59b6cd74a55c0880874cacdd23",
+        "type": "github"
+      },
+      "original": {
+        "owner": "lewis6991",
+        "repo": "satellite.nvim",
+        "type": "github"
+      }
+    },
     "neovim/nvim-lspconfig": {
       "flake": false,
       "locked": {
@@ -239,6 +272,22 @@
       "original": {
         "owner": "nvim-lua",
         "repo": "plenary.nvim",
+        "type": "github"
+      }
+    },
+    "nvim-lualine/lualine.nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1738997087,
+        "narHash": "sha256-uAxe3UdNUVfdpQcKvGvQ/E2blGksvMPlTBfEOtgeVYo=",
+        "owner": "nvim-lualine",
+        "repo": "lualine.nvim",
+        "rev": "f4f791f67e70d378a754d02da068231d2352e5bc",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nvim-lualine",
+        "repo": "lualine.nvim",
         "type": "github"
       }
     },
@@ -328,6 +377,7 @@
         "NMAC427/guess-indent.nvim": "NMAC427/guess-indent.nvim",
         "NeogitOrg/neogit": "NeogitOrg/neogit",
         "NvChad/nvim-colorizer.lua": "NvChad/nvim-colorizer.lua",
+        "OXY2DEV/markview.nvim": "OXY2DEV/markview.nvim",
         "Saghen/blink.cmp": "Saghen/blink.cmp",
         "akinsho/bufferline.nvim": "akinsho/bufferline.nvim",
         "catppuccin/nvim": "catppuccin/nvim",
@@ -336,9 +386,11 @@
         "folke/snacks.nvim": "folke/snacks.nvim",
         "folke/which-key.nvim": "folke/which-key.nvim",
         "lewis6991/gitsigns.nvim": "lewis6991/gitsigns.nvim",
+        "lewis6991/satellite.nvim": "lewis6991/satellite.nvim",
         "neovim/nvim-lspconfig": "neovim/nvim-lspconfig",
         "nixpkgs": "nixpkgs",
         "nvim-lua/plenary.nvim": "nvim-lua/plenary.nvim",
+        "nvim-lualine/lualine.nvim": "nvim-lualine/lualine.nvim",
         "nvim-neo-tree/neo-tree.nvim": "nvim-neo-tree/neo-tree.nvim",
         "nvim-tree/nvim-web-devicons": "nvim-tree/nvim-web-devicons",
         "nvim-treesitter/nvim-treesitter": "nvim-treesitter/nvim-treesitter",
