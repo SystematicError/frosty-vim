@@ -7,8 +7,19 @@ local function config()
 
     for server, settings in pairs(servers) do
         lspconfig[server].setup {
-            capabilities = capabilities,
             settings = settings,
+            capabilities = capabilities,
+
+            on_attach = function(client, buffer)
+                if client.supports_method "textDocument/codeLens" then
+                    vim.lsp.codelens.refresh()
+
+                    vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "InsertLeave" }, {
+                        buffer = buffer,
+                        callback = vim.lsp.codelens.refresh,
+                    })
+                end
+            end,
         }
     end
 
@@ -17,9 +28,7 @@ local function config()
         vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
     end
 
-    vim.lsp.inlay_hint.enable() -- TODO: is there a better way to do this?
-
-    -- TODO: add codelens support
+    vim.lsp.inlay_hint.enable()
 end
 
 return {
