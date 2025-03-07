@@ -5,8 +5,9 @@ local function config()
         current_only = true,
 
         excluded_filetypes = {
-            "snacks_dashboard",
+            "gitsigns-blame",
             "neo-tree",
+            "snacks_dashboard",
         },
 
         handlers = {
