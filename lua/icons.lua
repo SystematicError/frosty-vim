@@ -7,7 +7,7 @@ icons.diagnostics = {
     Info = "",
 }
 
-icons.kind_icons = {
+icons.kinds = {
     Text = "",
     Method = "󰆧",
     Function = "󰊕",
@@ -66,6 +66,10 @@ icons.git_gutter = {
     topdelete = "‾",
     changedelete = "_",
     untracked = "┆",
+}
+
+icons.keymap_groups = {
+    git = "󰊢",
 }
 
 return icons

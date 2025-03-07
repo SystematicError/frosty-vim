@@ -1,7 +1,7 @@
 local function config()
     local blink = require "blink.cmp"
 
-    local kind_icons = require("icons").kind_icons
+    local kind_icons = require("icons").kinds
 
     local opts = {
         signature = { enabled = true },
