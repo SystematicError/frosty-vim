@@ -70,6 +70,7 @@ icons.git_gutter = {
 
 icons.keymap_groups = {
     git = "󰊢",
+    lsp = "",
 }
 
 return icons

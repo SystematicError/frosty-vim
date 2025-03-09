@@ -4,6 +4,7 @@ local function config()
     local opts = {
         spec = {
             { "<leader>g", group = "Git", icon = group_icons.git },
+            { "<leader>l", group = "LSP", icon = group_icons.lsp },
         },
     }
 

@@ -15,6 +15,7 @@ local function config()
                     vim.lsp.codelens.refresh()
 
                     vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "InsertLeave" }, {
+                        group = vim.api.nvim_create_augroup("frosty_codelens_refresh", { clear = true }),
                         buffer = buffer,
                         callback = vim.lsp.codelens.refresh,
                     })
@@ -34,6 +35,24 @@ end
 return {
     "neovim/nvim-lspconfig",
     dependencies = "Saghen/blink.cmp",
+
     lazy = false,
+    keys = {
+        { "<leader>lh", vim.lsp.buf.hover, desc = "Hover" },
+        { "<leader>ls", vim.lsp.buf.signature_help, desc = "Signature help" },
+        { "<leader>ll", vim.diagnostic.open_float, desc = "Line diagnostics" },
+
+        { "<leader>lr", vim.lsp.buf.references, desc = "References" },
+        { "<leader>lR", vim.lsp.buf.rename, desc = "Rename reference" },
+
+        { "<leader>lc", vim.lsp.buf.code_action, desc = "Code action" },
+        { "<leader>lC", vim.lsp.codelens.run, desc = "Run codelens" },
+
+        { "<leader>ld", vim.lsp.buf.definition, desc = "Go to definition" },
+        { "<leader>li", vim.lsp.buf.implementation, desc = "Go to implementation" },
+        { "<leader>lt", vim.lsp.buf.type_definition, desc = "Go to type definition" },
+        { "<leader>lD", vim.lsp.buf.declaration, desc = "Go to declaration" },
+    },
+
     config = config,
 }
