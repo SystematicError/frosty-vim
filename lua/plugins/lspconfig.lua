@@ -16,6 +16,7 @@ local function config()
 
                     vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "InsertLeave" }, {
                         group = vim.api.nvim_create_augroup("frosty_codelens_refresh", { clear = true }),
+                        desc = "Refresh buffer codelenses",
                         buffer = buffer,
                         callback = vim.lsp.codelens.refresh,
                     })

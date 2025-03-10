@@ -72,6 +72,7 @@ return {
     init = function()
         vim.api.nvim_create_autocmd("BufEnter", {
             group = vim.api.nvim_create_augroup("frosty_lazy_neotree", { clear = true }),
+            desc = "Lazy load neo-tree when opening a directory",
             callback = function(args)
                 local stat = vim.uv.fs_stat(args.file)
 
