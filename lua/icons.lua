@@ -74,4 +74,9 @@ icons.keymap_groups = {
     lsp = "",
 }
 
+icons.lsp_progress = {
+    done = "",
+    spinner = { "⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏" },
+}
+
 return icons

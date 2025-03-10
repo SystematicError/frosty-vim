@@ -3,6 +3,7 @@ local languages = {
     "lua",
     "nix",
     "python",
+    "rust",
     "sh",
 }
 

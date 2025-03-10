@@ -52,6 +52,9 @@
         (python3.withPackages (ps: with ps; [python-lsp-server python-lsp-ruff]))
         ruff
 
+        rust-analyzer
+        rustfmt
+
         bash-language-server
         shfmt
       ];
