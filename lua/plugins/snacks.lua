@@ -2,6 +2,7 @@ local function config()
     local opts = {
         dashboard = { enabled = true },
         indent = { enabled = true },
+        picker = { enabled = true },
         rename = { enable = true },
         statuscolumn = { enabled = true },
         terminal = { enabled = true },
@@ -22,6 +23,28 @@ return {
     priority = 1500,
     lazy = false,
     keys = {
+        {
+            "<leader>f<cr>",
+            function()
+                Snacks.picker.pickers()
+            end,
+            desc = "Pickers",
+        },
+        {
+            "<leader>ff",
+            function()
+                Snacks.picker.files()
+            end,
+            desc = "Files",
+        },
+        {
+            "<leader>fg",
+            function()
+                Snacks.picker.grep()
+            end,
+            desc = "Grep",
+        },
+
         {
             "]r",
             function()

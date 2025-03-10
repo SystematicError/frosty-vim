@@ -4,7 +4,6 @@ vim.g.maplocalleader = "\\"
 local map = vim.keymap.set
 
 map("n", "<leader>L", "<cmd>Lazy<cr>", { desc = "Lazy" })
-map("n", "<leader>f", "<cmd>lua Snacks.picker('files')<cr>", { desc = "Files" })
 
 -- TODO: Works on neovide, but not ghostty
 map("v", "<c-s-c>", '"+y', { desc = "Copy to system clipboard" })
