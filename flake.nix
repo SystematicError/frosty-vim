@@ -66,12 +66,12 @@
           withRuby = false;
           extraLuaPackages = luaDeps;
 
-          customRC = ''
-            lua package.path = package.path .. ";${./.}/lua/?.lua;${./.}/lua/?/init.lua"
-            lua package.cpath = package.cpath .. ";${pkgs.vimPlugins.blink-cmp.blink-fuzzy-lib}/lib/lib?.so"
-            lua FROSTY_PACKAGES=${packageList}
-            luafile ${./.}/init.lua
-            set runtimepath^=${builtins.concatStringsSep "," treesitterParsers}
+          luaRcContent = ''
+            package.path = package.path .. ";${./.}/lua/?.lua;${./.}/lua/?/init.lua"
+            package.cpath = package.cpath .. ";${pkgs.vimPlugins.blink-cmp.blink-fuzzy-lib}/lib/lib?.so"
+            FROSTY_PACKAGES=${packageList}
+            dofile("${./.}/init.lua")
+            vim.opt.rtp:prepend("${builtins.concatStringsSep "," treesitterParsers}")
           '';
         }))
         .overrideAttrs (old: {
