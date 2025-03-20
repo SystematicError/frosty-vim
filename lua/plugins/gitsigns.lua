@@ -26,8 +26,8 @@ return {
         { "<leader>gx", "<cmd>Gitsigns reset_hunk<cr>", desc = "Discard hunk" },
         { "<leader>gp", "<cmd>Gitsigns preview_hunk_inline<cr>", desc = "Preview hunk" },
 
-        { "<leader>gb", "<cmd>Gitsigns blame<cr>", desc = "Blame file" },
-        { "<leader>gl", "<cmd>Gitsigns blame_line<cr>", desc = "Blame line" },
+        { "<leader>gb", "<cmd>Gitsigns blame_line<cr>", desc = "Blame line" },
+        { "<leader>gB", "<cmd>Gitsigns blame<cr>", desc = "Blame file" },
 
         { "]g", "<cmd>Gitsigns next_hunk<cr><cr>", desc = "Next git hunk" },
         { "[g", "<cmd>Gitsigns prev_hunk<cr><cr>", desc = "Previous git hunk" },
