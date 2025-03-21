@@ -79,4 +79,9 @@ icons.lsp_progress = {
     spinner = { "⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏" },
 }
 
+icons.lightbulb = {
+    action = "󰌵",
+    lens = "",
+}
+
 return icons

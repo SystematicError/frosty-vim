@@ -128,6 +128,11 @@
       flake = false;
     };
 
+    "kosayoda/nvim-lightbulb" = {
+      url = "github:kosayoda/nvim-lightbulb";
+      flake = false;
+    };
+
     "lewis6991/gitsigns.nvim" = {
       url = "github:lewis6991/gitsigns.nvim";
       flake = false;

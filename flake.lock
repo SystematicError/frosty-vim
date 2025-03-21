@@ -195,6 +195,22 @@
         "type": "github"
       }
     },
+    "kosayoda/nvim-lightbulb": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1738682390,
+        "narHash": "sha256-y3Fui9WdS9DVWcvcRttdv7yx0At8lmCmXh5ZnFb05/E=",
+        "owner": "kosayoda",
+        "repo": "nvim-lightbulb",
+        "rev": "f7f61c47af5bf701b1f4af127bc565ab6491acbf",
+        "type": "github"
+      },
+      "original": {
+        "owner": "kosayoda",
+        "repo": "nvim-lightbulb",
+        "type": "github"
+      }
+    },
     "lewis6991/gitsigns.nvim": {
       "flake": false,
       "locked": {
@@ -385,6 +401,7 @@
         "folke/lazy.nvim": "folke/lazy.nvim",
         "folke/snacks.nvim": "folke/snacks.nvim",
         "folke/which-key.nvim": "folke/which-key.nvim",
+        "kosayoda/nvim-lightbulb": "kosayoda/nvim-lightbulb",
         "lewis6991/gitsigns.nvim": "lewis6991/gitsigns.nvim",
         "lewis6991/satellite.nvim": "lewis6991/satellite.nvim",
         "neovim/nvim-lspconfig": "neovim/nvim-lspconfig",

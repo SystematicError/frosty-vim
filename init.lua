@@ -12,6 +12,7 @@ local plugins = require "loader" {
     "conform",
     "gitsigns",
     "guess-indent",
+    "lightbulb",
     "lspconfig",
     "lualine",
     "markview",
