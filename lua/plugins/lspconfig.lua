@@ -41,7 +41,7 @@ return {
     keys = {
         { "<leader>lh", vim.lsp.buf.hover, desc = "Hover" },
         { "<leader>ls", vim.lsp.buf.signature_help, desc = "Signature help" },
-        { "<leader>ll", vim.diagnostic.open_float, desc = "Line diagnostics" },
+        { "<leader>ld", vim.diagnostic.open_float, desc = "Diagnostics" },
 
         { "<leader>lr", vim.lsp.buf.references, desc = "References" },
         { "<leader>lR", vim.lsp.buf.rename, desc = "Rename reference" },
@@ -49,10 +49,10 @@ return {
         { "<leader>lc", vim.lsp.buf.code_action, desc = "Code action" },
         { "<leader>lC", vim.lsp.codelens.run, desc = "Run codelens" },
 
-        { "<leader>ld", vim.lsp.buf.definition, desc = "Go to definition" },
-        { "<leader>li", vim.lsp.buf.implementation, desc = "Go to implementation" },
-        { "<leader>lt", vim.lsp.buf.type_definition, desc = "Go to type definition" },
-        { "<leader>lD", vim.lsp.buf.declaration, desc = "Go to declaration" },
+        { "<leader>ljd", vim.lsp.buf.definition, desc = "Definition" },
+        { "<leader>lji", vim.lsp.buf.implementation, desc = "Implementation" },
+        { "<leader>ljt", vim.lsp.buf.type_definition, desc = "Type definition" },
+        { "<leader>ljD", vim.lsp.buf.declaration, desc = "Declaration" },
     },
 
     config = config,
