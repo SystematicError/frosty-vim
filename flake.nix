@@ -113,6 +113,11 @@
       flake = false;
     };
 
+    "brenoprata10/nvim-highlight-colors" = {
+      url = "github:brenoprata10/nvim-highlight-colors";
+      flake = false;
+    };
+
     "catppuccin/nvim" = {
       url = "github:catppuccin/nvim";
       flake = false;
@@ -160,11 +165,6 @@
 
     "NMAC427/guess-indent.nvim" = {
       url = "github:NMAC427/guess-indent.nvim";
-      flake = false;
-    };
-
-    "NvChad/nvim-colorizer.lua" = {
-      url = "github:NvChad/nvim-colorizer.lua";
       flake = false;
     };
 

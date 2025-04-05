@@ -1,5 +1,5 @@
 return {
-    "NvChad/nvim-colorizer.lua",
+    "brenoprata10/nvim-highlight-colors",
     lazy = false,
     config = true,
 }

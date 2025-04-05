@@ -48,22 +48,6 @@
         "type": "github"
       }
     },
-    "NvChad/nvim-colorizer.lua": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1740839091,
-        "narHash": "sha256-yOPUgqHe0WT437aX8kp0P/reNgjZUNNRG7hvDgaeXT0=",
-        "owner": "NvChad",
-        "repo": "nvim-colorizer.lua",
-        "rev": "517df88cf2afb36652830df2c655df2da416a0ae",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NvChad",
-        "repo": "nvim-colorizer.lua",
-        "type": "github"
-      }
-    },
     "OXY2DEV/markview.nvim": {
       "flake": false,
       "locked": {
@@ -110,6 +94,22 @@
       "original": {
         "owner": "akinsho",
         "repo": "bufferline.nvim",
+        "type": "github"
+      }
+    },
+    "brenoprata10/nvim-highlight-colors": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1743538919,
+        "narHash": "sha256-jnbnWMerdEBWCNGOR34ddLfD/sDu170sxd5i42L1HfM=",
+        "owner": "brenoprata10",
+        "repo": "nvim-highlight-colors",
+        "rev": "63a0319d0933157e4fac72c992678785f7e7fa0c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "brenoprata10",
+        "repo": "nvim-highlight-colors",
         "type": "github"
       }
     },
@@ -392,10 +392,10 @@
         "MunifTanjim/nui.nvim": "MunifTanjim/nui.nvim",
         "NMAC427/guess-indent.nvim": "NMAC427/guess-indent.nvim",
         "NeogitOrg/neogit": "NeogitOrg/neogit",
-        "NvChad/nvim-colorizer.lua": "NvChad/nvim-colorizer.lua",
         "OXY2DEV/markview.nvim": "OXY2DEV/markview.nvim",
         "Saghen/blink.cmp": "Saghen/blink.cmp",
         "akinsho/bufferline.nvim": "akinsho/bufferline.nvim",
+        "brenoprata10/nvim-highlight-colors": "brenoprata10/nvim-highlight-colors",
         "catppuccin/nvim": "catppuccin/nvim",
         "flake-utils": "flake-utils",
         "folke/lazy.nvim": "folke/lazy.nvim",
