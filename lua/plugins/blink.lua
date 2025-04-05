@@ -37,9 +37,8 @@ local function config()
 
             list = {
                 selection = {
-                    preselect = function(ctx)
-                        -- TODO: move cmdline part to separate table
-                        return ctx.mode ~= "cmdline" and not blink.snippet_active { direction = 1 }
+                    preselect = function()
+                        return not blink.snippet_active { direction = 1 }
                     end,
                 },
             },
