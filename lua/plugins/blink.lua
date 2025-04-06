@@ -47,10 +47,18 @@ local function config()
         cmdline = {
             completion = {
                 menu = {
+                    auto_show = true,
+
                     draw = {
                         columns = {
                             { "label", "label_description", gap = 1 },
                         },
+                    },
+                },
+
+                list = {
+                    selection = {
+                        preselect = false,
                     },
                 },
             },
