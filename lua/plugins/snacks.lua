@@ -31,7 +31,7 @@ return {
         { "<leader>ba", function() Snacks.bufdelete.all() end, desc = "Delete all buffers" },
         { "<leader>bo", function() Snacks.bufdelete.other() end, desc = "Delete other buffers" },
 
-        { "<leader>f<cr>", function() Snacks.picker.pickers() end, desc = "Pickers" },
+        { "<leader>fp", function() Snacks.picker.pickers() end, desc = "Pickers" },
         { "<leader>ff", function() Snacks.picker.files() end, desc = "Files" },
         { "<leader>fg", function() Snacks.picker.grep() end, desc = "Grep" },
 
