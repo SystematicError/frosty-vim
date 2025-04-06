@@ -23,7 +23,6 @@ vim.api.nvim_create_autocmd("CmdlineLeave", {
 vim.api.nvim_create_autocmd("BufWritePost", {
     group = dynamic_cmdline_group,
     desc = "Get rid of message after writing a file",
-    pattern = { "*" },
     command = "redrawstatus",
 })
 
