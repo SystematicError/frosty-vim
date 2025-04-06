@@ -69,6 +69,7 @@ icons.git_gutter = {
 }
 
 icons.keymap_groups = {
+    buffers = "󰈔",
     find = "",
     git = "󰊢",
     lsp = "",
