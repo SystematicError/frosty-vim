@@ -1,6 +1,4 @@
 local function config()
-    -- TODO: look into inbuilt extra modules
-
     local opts = {
         preview = {
             icons = "devicons",
@@ -22,27 +20,6 @@ local function config()
                 heading_4 = { sign = "", style = "label", padding_left = "  ", padding_right = "  " },
                 heading_5 = { sign = "", style = "label", padding_left = "  ", padding_right = "  " },
                 heading_6 = { sign = "", style = "label", padding_left = "  ", padding_right = "  " },
-            },
-
-            horizontal_rules = {
-                parts = {
-                    { type = "text", text = " " },
-                    {
-                        type = "repeating",
-                        text = "─",
-                        repeat_amount = function(buffer)
-                            local utils = require "markview.utils"
-                            local window = utils.buf_getwin(buffer)
-
-                            local width = vim.api.nvim_win_get_width(window)
-                            local textoff = vim.fn.getwininfo(window)[1].textoff
-
-                            return width - textoff - 2
-                        end,
-                        hl = "Comment",
-                    },
-                    { type = "text", text = " " },
-                },
             },
         },
     }

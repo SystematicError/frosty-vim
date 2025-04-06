@@ -199,7 +199,7 @@
     };
 
     "OXY2DEV/markview.nvim" = {
-      url = "github:OXY2DEV/markview.nvim/dev"; # TODO: Remove after horizontal rule rendering is fixed
+      url = "github:OXY2DEV/markview.nvim";
       flake = false;
     };
 
