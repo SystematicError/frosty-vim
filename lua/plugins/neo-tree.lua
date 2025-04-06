@@ -67,7 +67,7 @@ return {
 
     cmd = "Neotree",
     keys = {
-        { "<leader>n", "<cmd>Neotree toggle<cr>", desc = "Neotree" },
+        { "<leader>e", "<cmd>Neotree toggle<cr>", desc = "File explorer" },
     },
     init = function()
         vim.api.nvim_create_autocmd("BufEnter", {
