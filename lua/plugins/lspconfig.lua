@@ -12,8 +12,6 @@ local function config()
 
             on_attach = function(client, buffer)
                 if client.supports_method "textDocument/codeLens" then
-                    vim.lsp.codelens.refresh()
-
                     vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "InsertLeave" }, {
                         group = vim.api.nvim_create_augroup("frosty_codelens_refresh", { clear = true }),
                         desc = "Refresh buffer codelenses",
@@ -31,6 +29,30 @@ local function config()
     end
 
     vim.lsp.inlay_hint.enable()
+
+    if Snacks then
+        Snacks.toggle.diagnostics({ name = "Diagnostics (Global)" }):map "<leader>uld"
+        Snacks.toggle({
+            name = "Diagnostics (Buffer)",
+            get = function()
+                return vim.diagnostic.is_enabled { bufnr = 0 }
+            end,
+            set = function(state)
+                vim.diagnostic.enable(state, { bufnr = 0 })
+            end,
+        }):map "<leader>ulD"
+
+        Snacks.toggle({
+            name = "Inlay Hints (Global)",
+            get = function()
+                return vim.lsp.inlay_hint.is_enabled()
+            end,
+            set = function(state)
+                vim.lsp.inlay_hint.enable(state)
+            end,
+        }):map "<leader>ulh"
+        Snacks.toggle.inlay_hints({ name = "Inlay Hints (Buffer)" }):map "<leader>ulH"
+    end
 end
 
 return {

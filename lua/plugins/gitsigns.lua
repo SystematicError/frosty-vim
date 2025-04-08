@@ -1,4 +1,6 @@
 local function config()
+    local gitsigns = require "gitsigns"
+
     local git_gutter = require("icons").git_gutter
 
     local signs = {}
@@ -13,7 +15,21 @@ local function config()
         current_line_blame_formatter = "  <author>, <author_time:%Y-%m-%d> • <summary>",
     }
 
-    require("gitsigns").setup(opts)
+    if Snacks then
+        local gitsigns_config = require("gitsigns.config").config
+
+        Snacks.toggle({
+            name = "Git Line Blame",
+            get = function()
+                return gitsigns_config.current_line_blame
+            end,
+            set = function(state)
+                gitsigns.toggle_current_line_blame(state)
+            end,
+        }):map "<leader>ug"
+    end
+
+    gitsigns.setup(opts)
 end
 
 return {

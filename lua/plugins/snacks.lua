@@ -15,6 +15,27 @@ local function config()
         },
     }
 
+    -- TODO: not being applied globally
+    Snacks.toggle.option("wrap", { name = "Line Wrap", global = true }):map "<leader>uw"
+
+    Snacks.toggle({
+        name = "References",
+        get = function()
+            return Snacks.words.enabled
+        end,
+        set = function(state)
+            if state then
+                Snacks.words.enable()
+            else
+                Snacks.words.disable()
+            end
+        end,
+    }):map "<leader>ulr"
+
+    Snacks.toggle.indent():map "<leader>ui"
+    Snacks.toggle.zoom():map "<leader>uz"
+    Snacks.toggle.zen():map "<leader>uZ"
+
     require("snacks").setup(opts)
 end
 
@@ -27,7 +48,7 @@ return {
     -- stylua: ignore
     keys = {
         { "<leader>x", function() Snacks.bufdelete() end, desc = "Delete buffer" },
-        { "<leader>bd", function() Snacks.bufdelete() end, desc = "Delete buffer" },
+        { "<leader>bx", function() Snacks.bufdelete() end, desc = "Delete buffer" },
         { "<leader>ba", function() Snacks.bufdelete.all() end, desc = "Delete all buffers" },
         { "<leader>bo", function() Snacks.bufdelete.other() end, desc = "Delete other buffers" },
 

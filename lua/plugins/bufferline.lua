@@ -40,7 +40,7 @@ return {
 
         { "<leader>bp", "<cmd>BufferLineTogglePin<cr>", desc = "Toggle pin" },
         { "<leader>bm", "<cmd>BufferLinePick<cr>", desc = "Pick buffer to move to" },
-        { "<leader>bD", "<cmd>BufferLinePickClose<cr>", desc = "Pick buffer to delete" },
+        { "<leader>bX", "<cmd>BufferLinePickClose<cr>", desc = "Pick buffer to delete" },
     },
 
     config = config,

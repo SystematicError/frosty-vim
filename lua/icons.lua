@@ -73,6 +73,7 @@ icons.keymap_groups = {
     find = "",
     git = "󰊢",
     lsp = "",
+    ui = "",
 }
 
 icons.lsp_progress = {

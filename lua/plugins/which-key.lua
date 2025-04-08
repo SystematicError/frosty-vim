@@ -8,6 +8,8 @@ local function config()
             { "<leader>g", group = "Git", icon = group_icons.git },
             { "<leader>l", group = "LSP", icon = group_icons.lsp },
             { "<leader>lj", group = "Jumps" },
+            { "<leader>u", group = "UI/UX", icon = group_icons.ui },
+            { "<leader>ul", group = "Language Features" },
         },
     }
 
