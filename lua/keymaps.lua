@@ -40,6 +40,13 @@ map("n", "<c-right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window w
 
 map("n", "<tab>", "<cmd>bnext<cr>", { desc = "Next buffer" })
 map("n", "<s-tab>", "<cmd>bprevious<cr>", { desc = "Previous buffer" })
+map("n", "]b", "<cmd>bnext<cr>", { desc = "Next buffer" })
+map("n", "[b", "<cmd>bprevious<cr>", { desc = "Previous buffer" })
 map("n", "<leader>bl", "<cmd>e #<cr>", { desc = "Last buffer" })
 map("n", "<leader>x", "<cmd>bd<cr>", { desc = "Delete buffer" })
-map("n", "<leader>bx", "<cmd>bd<cr>", { desc = "Delete buffer" })
+map("n", "<leader>bd", "<cmd>bd<cr>", { desc = "Delete buffer" })
+
+map("n", "]<tab>", "<cmd>tabnext<cr>", { desc = "Next tab" })
+map("n", "[<tab>", "<cmd>tabprevious<cr>", { desc = "Previous tab" })
+map("n", "<leader><tab><tab>", "<cmd>tabnew<cr>", { desc = "New tab" })
+map("n", "<leader><tab>d", "<cmd>tabclose<cr>", { desc = "Delete tab" })
