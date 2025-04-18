@@ -1,3 +1,5 @@
+-- TODO: Migrate to new lsp config function on nvim 0.11
+
 local function config()
     local lspconfig = require "lspconfig"
     local capabilities = require("blink.cmp").get_lsp_capabilities()

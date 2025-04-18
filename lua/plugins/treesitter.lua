@@ -13,7 +13,7 @@ local function config()
             enable = true,
         },
 
-        -- TODO: more indepth config
+        -- TODO: Add more treesitter textobjects
         textobjects = {
             select = {
                 enable = true,

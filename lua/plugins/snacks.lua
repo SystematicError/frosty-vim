@@ -15,7 +15,7 @@ local function config()
         },
     }
 
-    -- TODO: not being applied globally
+    -- BUG: Wrap option being applied globally
     Snacks.toggle.option("wrap", { name = "Line Wrap", global = true }):map "<leader>uw"
 
     Snacks.toggle({

@@ -12,7 +12,7 @@ return {
     "NeogitOrg/neogit",
     dependencies = {
         "nvim-lua/plenary.nvim",
-        "sindrets/diffview.nvim", -- TODO: Diffview configuration
+        "sindrets/diffview.nvim", -- TODO: Add configuration for diffview
     },
 
     cmd = "Neogit",

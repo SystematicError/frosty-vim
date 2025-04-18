@@ -1,5 +1,6 @@
 -- Close orphan buffers when deleting current tab
--- TODO: Cancelling the closing of an unwritten buffer still causes ghosting
+-- BUG: Cancelling the closing of an unwritten buffer still causes ghosting
+-- BUG: Scope cache not instantly updating when making a new tab
 
 local function delete_current_tab()
     local tab_list = require("scope.core").cache
