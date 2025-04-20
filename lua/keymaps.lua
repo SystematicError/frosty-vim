@@ -54,3 +54,6 @@ map("n", "<leader><tab><tab>", "<cmd>tabnew<cr>", { desc = "New tab" })
 map("n", "<leader><tab>l", "<cmd>tabnext #<cr>", { desc = "Last tab" })
 map("n", "<leader><tab>d", "<cmd>tabclose<cr>", { desc = "Delete tab" })
 map("n", "<leader><tab>d", "<cmd>tabonly<cr>", { desc = "Delete other tabs" })
+
+map("n", "<leader>qq", "<cmd>q<cr>", { desc = "Quit current window" })
+map("n", "<leader>qa", "<cmd>qa<cr>", { desc = "Quit all windows" })

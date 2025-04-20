@@ -7,6 +7,8 @@ local function config()
     local servers = require("languages").lsp
     local diagnostic_icons = require("icons").diagnostics
 
+    vim.g.enable_codelens = true
+
     for server, settings in pairs(servers) do
         lspconfig[server].setup {
             settings = settings,
@@ -18,7 +20,11 @@ local function config()
                         group = vim.api.nvim_create_augroup("frosty_codelens_refresh", { clear = true }),
                         desc = "Refresh buffer codelenses",
                         buffer = buffer,
-                        callback = vim.lsp.codelens.refresh,
+                        callback = function()
+                            if vim.g.enable_codelens then
+                                vim.lsp.codelens.refresh()
+                            end
+                        end,
                     })
                 end
             end,
@@ -45,7 +51,7 @@ local function config()
         }):map "<leader>ulD"
 
         Snacks.toggle({
-            name = "Inlay Hints (Global)",
+            name = "Inlay Hints",
             get = function()
                 return vim.lsp.inlay_hint.is_enabled()
             end,
@@ -53,7 +59,19 @@ local function config()
                 vim.lsp.inlay_hint.enable(state)
             end,
         }):map "<leader>ulh"
-        Snacks.toggle.inlay_hints({ name = "Inlay Hints (Buffer)" }):map "<leader>ulH"
+
+        Snacks.toggle({
+            name = "Codelens",
+            get = function()
+                return vim.g.enable_codelens
+            end,
+            set = function(state)
+                if not state then
+                    vim.lsp.codelens.clear()
+                end
+                vim.g.enable_codelens = state
+            end,
+        }):map "<leader>ulc"
     end
 end
 
@@ -66,9 +84,7 @@ return {
         { "<leader>lh", vim.lsp.buf.hover, desc = "Hover" },
         { "<leader>ls", vim.lsp.buf.signature_help, desc = "Signature help" },
         { "<leader>ld", vim.diagnostic.open_float, desc = "Diagnostics" },
-
-        { "<leader>lr", vim.lsp.buf.references, desc = "References" },
-        { "<leader>lR", vim.lsp.buf.rename, desc = "Rename reference" },
+        { "<leader>lr", vim.lsp.buf.rename, desc = "Rename reference" },
 
         { "<leader>lc", vim.lsp.buf.code_action, desc = "Code action" },
         { "<leader>lC", vim.lsp.codelens.run, desc = "Run codelens" },

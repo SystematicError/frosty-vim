@@ -18,6 +18,7 @@ local plugins = require "loader" {
     "markview",
     "neo-tree",
     "neogit",
+    "persistence",
     "satellite",
     "snacks",
     "treesitter",

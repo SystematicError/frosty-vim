@@ -162,6 +162,22 @@
         "type": "github"
       }
     },
+    "folke/persistence.nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1740507614,
+        "narHash": "sha256-irUqDcSLBKL6uuL9IJoNCTTCdY+rTDW02+e5kf64TkM=",
+        "owner": "folke",
+        "repo": "persistence.nvim",
+        "rev": "166a79a55bfa7a4db3e26fc031b4d92af71d0b51",
+        "type": "github"
+      },
+      "original": {
+        "owner": "folke",
+        "repo": "persistence.nvim",
+        "type": "github"
+      }
+    },
     "folke/snacks.nvim": {
       "flake": false,
       "locked": {
@@ -398,6 +414,7 @@
         "catppuccin/nvim": "catppuccin/nvim",
         "flake-utils": "flake-utils",
         "folke/lazy.nvim": "folke/lazy.nvim",
+        "folke/persistence.nvim": "folke/persistence.nvim",
         "folke/snacks.nvim": "folke/snacks.nvim",
         "folke/which-key.nvim": "folke/which-key.nvim",
         "kosayoda/nvim-lightbulb": "kosayoda/nvim-lightbulb",

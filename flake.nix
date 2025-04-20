@@ -123,6 +123,11 @@
       flake = false;
     };
 
+    "folke/persistence.nvim" = {
+      url = "github:folke/persistence.nvim";
+      flake = false;
+    };
+
     "folke/snacks.nvim" = {
       url = "github:folke/snacks.nvim";
       flake = false;

@@ -88,8 +88,8 @@ return {
         { "<a-l>", "<cmd>BufferLineMoveNext<cr>", desc = "Move buffer right" },
         { "<a-h>", "<cmd>BufferLineMovePrev<cr>", desc = "Move buffer left" },
 
-        { "<a-L>", "<cmd>+tabmove<cr>", desc = "Move tab right" },
-        { "<a-H>", "<cmd>-tabmove<cr>", desc = "Move tab left" },
+        { "<c-a-l>", "<cmd>+tabmove<cr>", desc = "Move tab right" },
+        { "<c-a-h>", "<cmd>-tabmove<cr>", desc = "Move tab left" },
 
         { "<leader>bp", "<cmd>BufferLineTogglePin<cr>", desc = "Toggle pin" },
         { "<leader>bm", "<cmd>BufferLinePick<cr>", desc = "Pick buffer to move to" },
