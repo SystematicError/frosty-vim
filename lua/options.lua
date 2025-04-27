@@ -1,3 +1,4 @@
+-- TODO: Switch to vim.o
 local opt = vim.opt
 
 opt.cmdheight = 0
@@ -12,6 +13,7 @@ opt.number = true
 opt.relativenumber = true
 opt.ruler = false
 opt.scrolloff = 4
+opt.sessionoptions = { "blank", "buffers", "curdir", "folds", "globals", "help", "tabpages", "terminal", "winsize" }
 opt.shiftwidth = 4
 opt.showmode = false
 opt.signcolumn = "yes:1"
