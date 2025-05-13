@@ -11,20 +11,13 @@
       pkgs = nixpkgs.legacyPackages.${system};
       lib = nixpkgs.lib;
 
-      packageList =
-        lib.generators.toLua {
-          multiline = false;
-          indent = false;
-        } (
-          builtins.listToAttrs (
-            builtins.map
-            (name: {
-              name = name;
-              value = inputs.${name}.outPath;
-            })
-            (builtins.attrNames (lib.filterAttrs (_: value: !builtins.hasAttr "_type" value) inputs))
-          )
-        );
+      packageList = pkgs.linkFarm "frosty-packages" (
+        builtins.map (name: {
+          inherit name;
+          path = inputs.${name}.outPath;
+        })
+        (builtins.attrNames (lib.filterAttrs (_: value: !builtins.hasAttr "_type" value) inputs))
+      );
 
       allTreesitterParsers = pkgs.linkFarm "frosty-treesitter-runtime" (
         builtins.map (drv: {
@@ -37,6 +30,7 @@
       luaDeps = ps: [];
 
       # Include packages from `pkgs.vimPlugins.nvim-treesitter.grammarPlugins` if you want only specific parsers
+      # TODO: Use new nixpkgs pkgset style
       treesitterParsers = [allTreesitterParsers];
 
       runtimeDeps = with pkgs; [
@@ -69,9 +63,9 @@
           luaRcContent = ''
             package.path = package.path .. ";${./.}/lua/?.lua;${./.}/lua/?/init.lua"
             package.cpath = package.cpath .. ";${pkgs.vimPlugins.blink-cmp.blink-fuzzy-lib}/lib/lib?.so"
-            FROSTY_PACKAGES=${packageList}
+            FROSTY_PACKAGES="${packageList}"
+            FROSTY_RUNTIMEPATHS={"${./.}", "${builtins.concatStringsSep "," treesitterParsers}"}
             dofile("${./.}/init.lua")
-            vim.opt.rtp:prepend("${builtins.concatStringsSep "," treesitterParsers}")
           '';
         }))
         .overrideAttrs (old: {
@@ -102,138 +96,139 @@
 
     # Plugin loader
 
-    "folke/lazy.nvim" = {
+    "lazy.nvim" = {
       url = "github:folke/lazy.nvim";
       flake = false;
     };
 
     # Plugins
-    "akinsho/bufferline.nvim" = {
+
+    "bufferline.nvim" = {
       url = "github:akinsho/bufferline.nvim";
       flake = false;
     };
 
-    "brenoprata10/nvim-highlight-colors" = {
+    "nvim-highlight-colors" = {
       url = "github:brenoprata10/nvim-highlight-colors";
       flake = false;
     };
 
-    "catppuccin/nvim" = {
+    "catppuccin" = {
       url = "github:catppuccin/nvim";
       flake = false;
     };
 
-    "folke/persistence.nvim" = {
+    "persistence.nvim" = {
       url = "github:folke/persistence.nvim";
       flake = false;
     };
 
-    "folke/snacks.nvim" = {
+    "snacks.nvim" = {
       url = "github:folke/snacks.nvim";
       flake = false;
     };
 
-    "folke/which-key.nvim" = {
+    "which-key.nvim" = {
       url = "github:folke/which-key.nvim";
       flake = false;
     };
 
-    "kosayoda/nvim-lightbulb" = {
+    "nvim-lightbulb" = {
       url = "github:kosayoda/nvim-lightbulb";
       flake = false;
     };
 
-    "lewis6991/gitsigns.nvim" = {
+    "gitsigns.nvim" = {
       url = "github:lewis6991/gitsigns.nvim";
       flake = false;
     };
 
-    "lewis6991/satellite.nvim" = {
+    "satellite.nvim" = {
       url = "github:lewis6991/satellite.nvim";
       flake = false;
     };
 
-    "MunifTanjim/nui.nvim" = {
+    "nui.nvim" = {
       url = "github:MunifTanjim/nui.nvim";
       flake = false;
     };
 
-    "NeogitOrg/neogit" = {
+    "neogit" = {
       url = "github:NeogitOrg/neogit";
       flake = false;
     };
 
-    "neovim/nvim-lspconfig" = {
+    "nvim-lspconfig" = {
       url = "github:neovim/nvim-lspconfig";
       flake = false;
     };
 
-    "NMAC427/guess-indent.nvim" = {
+    "guess-indent.nvim" = {
       url = "github:NMAC427/guess-indent.nvim";
       flake = false;
     };
 
-    "nvim-lua/plenary.nvim" = {
+    "plenary.nvim" = {
       url = "github:nvim-lua/plenary.nvim";
       flake = false;
     };
 
-    "nvim-lualine/lualine.nvim" = {
+    "lualine.nvim" = {
       url = "github:nvim-lualine/lualine.nvim";
       flake = false;
     };
 
-    "nvim-neo-tree/neo-tree.nvim" = {
+    "neo-tree.nvim" = {
       url = "github:nvim-neo-tree/neo-tree.nvim";
       flake = false;
     };
 
-    "nvim-tree/nvim-web-devicons" = {
+    "nvim-web-devicons" = {
       url = "github:nvim-tree/nvim-web-devicons";
       flake = false;
     };
 
-    "nvim-treesitter/nvim-treesitter" = {
+    "nvim-treesitter" = {
       url = "github:nvim-treesitter/nvim-treesitter";
       flake = false;
     };
 
-    "nvim-treesitter/nvim-treesitter-textobjects" = {
+    "nvim-treesitter-textobjects" = {
       url = "github:nvim-treesitter/nvim-treesitter-textobjects";
       flake = false;
     };
 
-    "OXY2DEV/markview.nvim" = {
+    "markview.nvim" = {
       url = "github:OXY2DEV/markview.nvim";
       flake = false;
     };
 
-    "rafamadriz/friendly-snippets" = {
+    "friendly-snippets" = {
       url = "github:rafamadriz/friendly-snippets";
       flake = false;
     };
 
-    "Saghen/blink.cmp" = {
+    "blink.cmp" = {
       url = "github:Saghen/blink.cmp";
       flake = false;
     };
 
-    "sindrets/diffview.nvim" = {
+    "diffview.nvim" = {
       url = "github:sindrets/diffview.nvim";
       flake = false;
     };
 
-    "stevearc/conform.nvim" = {
+    "conform.nvim" = {
       url = "github:stevearc/conform.nvim";
       flake = false;
     };
 
-    "tiagovla/scope.nvim" = {
+    "scope.nvim" = {
       url = "github:tiagovla/scope.nvim";
       flake = false;
     };
 
-    "windwp/nvim-autopairs" = {
+    "nvim-autopairs" = {
       url = "github:windwp/nvim-autopairs";
       flake = false;
     };

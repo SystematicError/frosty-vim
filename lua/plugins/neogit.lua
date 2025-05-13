@@ -1,18 +1,16 @@
-local function config()
-    local opts = {
-        integrations = {
-            diffview = true,
-        },
-    }
+-- TODO: Configure diffview (modularise?)
 
-    require("neogit").setup(opts)
-end
+local default_opts = {
+    integrations = {
+        diffview = true,
+    },
+}
 
 return {
     "NeogitOrg/neogit",
     dependencies = {
         "nvim-lua/plenary.nvim",
-        "sindrets/diffview.nvim", -- TODO: Add configuration for diffview
+        "sindrets/diffview.nvim",
     },
 
     cmd = "Neogit",
@@ -20,5 +18,5 @@ return {
         { "<leader>gg", "<cmd>Neogit<cr>", desc = "Neogit" },
     },
 
-    config = config,
+    opts = default_opts,
 }

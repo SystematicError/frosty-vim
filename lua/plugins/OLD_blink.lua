@@ -15,11 +15,11 @@ local function config()
             providers = {
                 snippets = {
                     opts = {
-                        search_paths = {
-                            -- Flake managed snippet compatibility
-                            FROSTY_PACKAGES["rafamadriz/friendly-snippets"],
-                            vim.fn.stdpath "config" .. "/snippets",
-                        },
+                        -- search_paths = {
+                        --     -- Flake managed snippet compatibility
+                        --     FROSTY_PACKAGES["rafamadriz/friendly-snippets"],
+                        --     vim.fn.stdpath "config" .. "/snippets",
+                        -- },
                     },
                 },
             },

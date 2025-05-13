@@ -73,7 +73,7 @@ icons.keymap_groups = {
     find = "",
     git = "󰊢",
     lsp = "",
-    quit = "󰆓",
+    session = "󰆓",
     tabs = "󰓩",
     ui = "",
 }

@@ -1,42 +1,45 @@
-local function config()
-    local icons = require "icons"
+-- TODO: Modularise snacks integration
+-- TODO: Improve neo-tree config
 
-    local opts = {
-        close_if_last_window = true,
-        enable_diagnostics = false,
-        enable_modified_markers = false,
+local icons = require "icons"
 
-        default_component_configs = {
-            icon = icons.tree_folder,
+local default_opts = {
+    close_if_last_window = true,
+    enable_diagnostics = false,
+    enable_modified_markers = false,
 
-            name = {
-                use_git_status_colors = false,
-            },
+    default_component_configs = {
+        icon = icons.tree_folder,
 
-            git_status = {
-                symbols = icons.tree_git,
-            },
-
-            symlink_target = {
-                enabled = true,
-            },
+        name = {
+            use_git_status_colors = false,
         },
 
-        window = {
-            width = 35,
+        git_status = {
+            symbols = icons.tree_git,
         },
 
-        filesystem = {
-            group_empty_dirs = true,
-            use_libuv_file_watcher = true,
-
-            filtered_items = {
-                hide_dotfiles = false,
-                hide_gitignored = false,
-            },
+        symlink_target = {
+            enabled = true,
         },
-    }
+    },
 
+    window = {
+        width = 35,
+    },
+
+    filesystem = {
+        group_empty_dirs = true,
+        use_libuv_file_watcher = true,
+
+        filtered_items = {
+            hide_dotfiles = false,
+        },
+        hide_gitignored = false,
+    },
+}
+
+local function config(_, opts)
     if Snacks then
         local events = require "neo-tree.events"
 
@@ -50,8 +53,6 @@ local function config()
             { event = events.FILE_MOVED, handler = on_move },
             { event = events.FILE_RENAMED, handler = on_move },
         })
-
-        print(vim.inspect(opts))
     end
 
     require("neo-tree").setup(opts)
@@ -77,12 +78,13 @@ return {
                 local stat = vim.uv.fs_stat(args.file)
 
                 if stat and stat.type == "directory" then
-                    vim.cmd("Neotree dir=" .. args.file)
+                    vim.cmd "Neotree show"
                     vim.api.nvim_clear_autocmds { group = "frosty_lazy_neotree" }
                 end
             end,
         })
     end,
 
+    opts = default_opts,
     config = config,
 }

@@ -1,3 +1,7 @@
+-- TODO: Remove catppuccin dependency
+-- TODO: Modularise snacks integration
+-- TODO: Modularise scope integration
+
 -- Close orphan buffers when deleting current tab
 -- BUG: Cancelling the closing of an unwritten buffer still causes ghosting
 -- BUG: Scope cache not instantly updating when making a new tab
@@ -42,18 +46,18 @@ local function delete_other_tabs()
     vim.cmd "tabonly"
 end
 
-local function config()
-    local opts = {
-        offsets = {
-            {
-                filetype = "neo-tree",
-                highlight = "NeoTreeNormal",
-                text = "",
-                separator = false,
-            },
+local default_opts = {
+    offsets = {
+        {
+            filetype = "neo-tree",
+            highlight = "NeoTreeNormal",
+            text = "",
+            separator = false,
         },
-    }
+    },
+}
 
+local function config(_, opts)
     if Snacks then
         opts.close_command = "lua Snacks.bufdelete.delete(%d)"
         opts.right_mouse_command = opts.close_command
@@ -91,12 +95,13 @@ return {
         { "<c-a-l>", "<cmd>+tabmove<cr>", desc = "Move tab right" },
         { "<c-a-h>", "<cmd>-tabmove<cr>", desc = "Move tab left" },
 
-        { "<leader>bp", "<cmd>BufferLineTogglePin<cr>", desc = "Toggle pin" },
-        { "<leader>bm", "<cmd>BufferLinePick<cr>", desc = "Pick buffer to move to" },
+        { "<leader>bp", "<cmd>BufferLinePick<cr>", desc = "Pick buffer to move to" },
+        { "<leader>bP", "<cmd>BufferLineTogglePin<cr>", desc = "Toggle pin" },
         { "<leader>bD", "<cmd>BufferLinePickClose<cr>", desc = "Pick buffer to delete" },
 
         { "<leader><tab>m", "<cmd>ScopeMoveBuf<cr>", desc = "Move buffer to tab" },
     },
 
+    opts = default_opts,
     config = config,
 }

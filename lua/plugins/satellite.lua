@@ -1,27 +1,25 @@
-local function config()
-    local git_icons = require("icons").git_gutter
+-- TODO: Lazy load satellite
 
-    local opts = {
-        current_only = true,
+local git_icons = require("icons").git_gutter
 
-        excluded_filetypes = {
-            "gitsigns-blame",
-            "neo-tree",
-            "snacks_dashboard",
+local default_opts = {
+    current_only = true,
+
+    excluded_filetypes = {
+        "gitsigns-blame",
+        "neo-tree",
+        "snacks_dashboard",
+    },
+
+    handlers = {
+        gitsigns = {
+            signs = git_icons,
         },
-
-        handlers = {
-            gitsigns = {
-                signs = git_icons,
-            },
-        },
-    }
-
-    require("satellite").setup(opts)
-end
+    },
+}
 
 return {
     "lewis6991/satellite.nvim",
     lazy = false,
-    config = config,
+    opts = default_opts,
 }
