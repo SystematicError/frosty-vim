@@ -1,4 +1,7 @@
+-- TODO: Modularise opts table
+
 local function config()
+    -- TODO: Are all these enabled lines needed?
     local opts = {
         dashboard = { enabled = true },
         indent = { enabled = true },
@@ -18,6 +21,7 @@ local function config()
     -- BUG: Wrap option being applied globally
     Snacks.toggle.option("wrap", { name = "Line Wrap", global = true }):map "<leader>uw"
 
+    -- TODO: Better way to rename snack toggles
     Snacks.toggle({
         name = "References",
         get = function()

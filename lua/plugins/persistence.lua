@@ -1,4 +1,9 @@
+-- TODO: Modularise opts table
+-- TODO: Modularise scope integration
+
 local function config()
+    -- TODO: Scope persistence is funky
+    -- TODO: Don't persist neo-tree
     if require("lazy.core.config").plugins["scope.nvim"] then
         vim.api.nvim_create_autocmd("User", {
             pattern = "PersistenceSavePre",

@@ -1,3 +1,7 @@
+-- TODO: Modularise opts table
+-- TODO: Lazy load gitsigns
+-- TODO: Modularise snacks integration
+
 local function config()
     local gitsigns = require "gitsigns"
 

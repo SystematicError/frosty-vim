@@ -1,3 +1,8 @@
+-- TODO: Modularise opts table
+-- TODO: Modularise snacks integration
+-- TODO: Refactor everything
+-- TODO: Lazy load conform
+
 local function config()
     local formatter = require("languages").formatter
 

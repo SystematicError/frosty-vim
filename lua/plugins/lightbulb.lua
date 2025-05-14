@@ -1,3 +1,7 @@
+-- TODO: Modularise opts table
+-- TODO: Modularise snacks integration
+-- TODO: Lazy load lightbulb
+
 local function config()
     local bulb_icons = require("icons").lightbulb
 

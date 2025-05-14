@@ -1,4 +1,7 @@
--- TODO: Migrate to new lsp config function on nvim 0.11
+-- TODO: Modularise opts table
+-- TODO: Migrate to new lspconfig function on nvim 0.11
+-- TODO: Awfully big refactor
+-- TODO: Lazy load lspconfig
 
 local function config()
     local lspconfig = require "lspconfig"

@@ -1,3 +1,7 @@
+-- TODO: Modularise opts table
+-- TODO: Test snippets
+-- TODO: Lazy load
+
 local function config()
     local blink = require "blink.cmp"
 
