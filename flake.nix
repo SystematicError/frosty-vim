@@ -102,14 +102,13 @@
     };
 
     # Plugins
-
-    "bufferline.nvim" = {
-      url = "github:akinsho/bufferline.nvim";
+    "blink.cmp" = {
+      url = "github:Saghen/blink.cmp";
       flake = false;
     };
 
-    "nvim-highlight-colors" = {
-      url = "github:brenoprata10/nvim-highlight-colors";
+    "bufferline.nvim" = {
+      url = "github:akinsho/bufferline.nvim";
       flake = false;
     };
 
@@ -118,23 +117,18 @@
       flake = false;
     };
 
-    "persistence.nvim" = {
-      url = "github:folke/persistence.nvim";
+    "conform.nvim" = {
+      url = "github:stevearc/conform.nvim";
       flake = false;
     };
 
-    "snacks.nvim" = {
-      url = "github:folke/snacks.nvim";
+    "diffview.nvim" = {
+      url = "github:sindrets/diffview.nvim";
       flake = false;
     };
 
-    "which-key.nvim" = {
-      url = "github:folke/which-key.nvim";
-      flake = false;
-    };
-
-    "nvim-lightbulb" = {
-      url = "github:kosayoda/nvim-lightbulb";
+    "friendly-snippets" = {
+      url = "github:rafamadriz/friendly-snippets";
       flake = false;
     };
 
@@ -143,33 +137,8 @@
       flake = false;
     };
 
-    "satellite.nvim" = {
-      url = "github:lewis6991/satellite.nvim";
-      flake = false;
-    };
-
-    "nui.nvim" = {
-      url = "github:MunifTanjim/nui.nvim";
-      flake = false;
-    };
-
-    "neogit" = {
-      url = "github:NeogitOrg/neogit";
-      flake = false;
-    };
-
-    "nvim-lspconfig" = {
-      url = "github:neovim/nvim-lspconfig";
-      flake = false;
-    };
-
     "guess-indent.nvim" = {
       url = "github:NMAC427/guess-indent.nvim";
-      flake = false;
-    };
-
-    "plenary.nvim" = {
-      url = "github:nvim-lua/plenary.nvim";
       flake = false;
     };
 
@@ -178,13 +147,43 @@
       flake = false;
     };
 
+    "markview.nvim" = {
+      url = "github:OXY2DEV/markview.nvim";
+      flake = false;
+    };
+
     "neo-tree.nvim" = {
       url = "github:nvim-neo-tree/neo-tree.nvim";
       flake = false;
     };
 
-    "nvim-web-devicons" = {
-      url = "github:nvim-tree/nvim-web-devicons";
+    "neogit" = {
+      url = "github:NeogitOrg/neogit";
+      flake = false;
+    };
+
+    "nui.nvim" = {
+      url = "github:MunifTanjim/nui.nvim";
+      flake = false;
+    };
+
+    "nvim-autopairs" = {
+      url = "github:windwp/nvim-autopairs";
+      flake = false;
+    };
+
+    "nvim-highlight-colors" = {
+      url = "github:brenoprata10/nvim-highlight-colors";
+      flake = false;
+    };
+
+    "nvim-lightbulb" = {
+      url = "github:kosayoda/nvim-lightbulb";
+      flake = false;
+    };
+
+    "nvim-lspconfig" = {
+      url = "github:neovim/nvim-lspconfig";
       flake = false;
     };
 
@@ -198,28 +197,23 @@
       flake = false;
     };
 
-    "markview.nvim" = {
-      url = "github:OXY2DEV/markview.nvim";
+    "nvim-web-devicons" = {
+      url = "github:nvim-tree/nvim-web-devicons";
       flake = false;
     };
 
-    "friendly-snippets" = {
-      url = "github:rafamadriz/friendly-snippets";
+    "persistence.nvim" = {
+      url = "github:folke/persistence.nvim";
       flake = false;
     };
 
-    "blink.cmp" = {
-      url = "github:Saghen/blink.cmp";
+    "plenary.nvim" = {
+      url = "github:nvim-lua/plenary.nvim";
       flake = false;
     };
 
-    "diffview.nvim" = {
-      url = "github:sindrets/diffview.nvim";
-      flake = false;
-    };
-
-    "conform.nvim" = {
-      url = "github:stevearc/conform.nvim";
+    "satellite.nvim" = {
+      url = "github:lewis6991/satellite.nvim";
       flake = false;
     };
 
@@ -228,8 +222,13 @@
       flake = false;
     };
 
-    "nvim-autopairs" = {
-      url = "github:windwp/nvim-autopairs";
+    "snacks.nvim" = {
+      url = "github:folke/snacks.nvim";
+      flake = false;
+    };
+
+    "which-key.nvim" = {
+      url = "github:folke/which-key.nvim";
       flake = false;
     };
   };
