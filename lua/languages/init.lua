@@ -1,5 +1,6 @@
 -- Flake bundles lsp servers and formatters using `runtimeDeps`
 local languages = {
+    "biome",
     "lua",
     "nix",
     "python",

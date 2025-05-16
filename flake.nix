@@ -36,6 +36,8 @@
         wl-clipboard # Replace with `xclip` for X11 support
         ripgrep
 
+        biome
+
         lua-language-server
         stylua
 
