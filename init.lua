@@ -38,7 +38,7 @@ vim.opt.rtp:prepend(lazy_path)
 -- TODO: Add support for LazyFile event (maybe?)
 
 require("lazy").setup {
-    spec = { import = "plugins" },
+    spec = "plugins",
 
     defaults = {
         lazy = true,
@@ -50,7 +50,7 @@ require("lazy").setup {
 
     dev = {
         path = FROSTY_PACKAGES,
-        patterns = { "/" }, -- HACK: Select every plugin, maybe better way?
+        patterns = { "" },
         fallback = true,
     },
 
