@@ -39,10 +39,10 @@ Additionally, further support is provided for the following languages:
 
 | Language | Language Server                                             | Formatter                                             |
 | -------- | ----------------------------------------------------------- | ----------------------------------------------------- |
-| Bash     | [bashls](https://github.com/bash-lsp/bash-language-server)  | [shfmt](https://github.com/mvdan/sh)                  |
 | Lua      | [luals](https://github.com/LuaLS/lua-language-server)       | [stylua](https://github.com/JohnnyMorganz/StyLua)     |
 | Nix      | [nil](https://github.com/oxalica/nil)                       | [alejandra](https://github.com/kamadorueda/alejandra) |
 | Python   | [pylsp](https://github.com/python-lsp/python-lsp-server/)   | [ruff](https://github.com/astral-sh/ruff)             |
 | Rust     | [rust-analyzer](https://github.com/rust-lang/rust-analyzer) | [rustfmt](https://github.com/rust-lang/rustfmt)       |
+| Shell    | [bashls](https://github.com/bash-lsp/bash-language-server)  | [shfmt](https://github.com/mvdan/sh)                  |
 
 \+ Languages supported by the [Biome toolchain](https://biomejs.dev/internals/language-support/)
