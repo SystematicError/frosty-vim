@@ -30,7 +30,6 @@
       luaDeps = ps: [];
 
       # Include packages from `pkgs.vimPlugins.nvim-treesitter.grammarPlugins` if you want only specific parsers
-      # TODO: Use new nixpkgs pkgset style
       treesitterParsers = [allTreesitterParsers];
 
       runtimeDeps = with pkgs; [
