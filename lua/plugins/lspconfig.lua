@@ -1,45 +1,61 @@
--- TODO: Modularise opts table
--- TODO: Migrate to new lspconfig function on nvim 0.11
--- TODO: Awfully big refactor
 -- TODO: Lazy load lspconfig
+-- TODO: Modularise snacks integration
 
-local function config()
-    local lspconfig = require "lspconfig"
-    local capabilities = require("blink.cmp").get_lsp_capabilities()
+local default_opts = {
+    servers = {},
 
-    local servers = require("languages").lsp
+    diagnostics = {
+        underline = true,
+        update_in_insert = false,
+        virtual_text = true,
+        severity_sort = true,
+        signs = true,
+    },
+
+    inlay_hints = true,
+    codelens = true,
+}
+
+local function config(_, opts)
     local diagnostic_icons = require("icons").diagnostics
 
-    vim.g.enable_codelens = true
-
-    for server, settings in pairs(servers) do
-        lspconfig[server].setup {
-            settings = settings,
-            capabilities = capabilities,
-
-            on_attach = function(client, buffer)
-                if client.supports_method "textDocument/codeLens" then
-                    vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "InsertLeave" }, {
-                        group = vim.api.nvim_create_augroup("frosty_codelens_refresh", { clear = true }),
-                        desc = "Refresh buffer codelenses",
-                        buffer = buffer,
-                        callback = function()
-                            if vim.g.enable_codelens then
-                                vim.lsp.codelens.refresh()
-                            end
-                        end,
-                    })
-                end
-            end,
-        }
+    -- Server setup
+    for server, server_opts in pairs(opts.servers) do
+        vim.lsp.config(server, server_opts)
+        vim.lsp.enable(server)
     end
+
+    -- Diagnostics
+    vim.diagnostic.config(opts.diagnostics)
 
     for name, icon in pairs(diagnostic_icons) do
         local hl = "DiagnosticSign" .. name
         vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
     end
 
-    vim.lsp.inlay_hint.enable()
+    -- Inlay hints
+    vim.lsp.inlay_hint.enable(opts.inlay_hints)
+
+    -- Codelens
+    vim.g.enable_codelens = opts.codelens or true
+
+    -- TODO: Perhaps make this a global autocmd
+    vim.lsp.config("*", {
+        on_attach = function(client, buffer)
+            if client.supports_method "textDocument/codeLens" then
+                vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "InsertLeave" }, {
+                    group = vim.api.nvim_create_augroup("frosty_codelens_refresh", { clear = true }),
+                    desc = "Refresh buffer codelenses",
+                    buffer = buffer,
+                    callback = function()
+                        if vim.g.enable_codelens then
+                            vim.lsp.codelens.refresh()
+                        end
+                    end,
+                })
+            end
+        end,
+    })
 
     if Snacks then
         Snacks.toggle.diagnostics({ name = "Diagnostics (Global)" }):map "<leader>uld"
@@ -98,5 +114,6 @@ return {
         { "<leader>ljD", vim.lsp.buf.declaration, desc = "Declaration" },
     },
 
+    opts = default_opts,
     config = config,
 }

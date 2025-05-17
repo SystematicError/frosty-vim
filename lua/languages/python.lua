@@ -1,11 +1,23 @@
+-- TODO: Switch to basedpyright?
+
 local lsp = {
-    pylsp = {
-        plugins = {
-            ruff = { enabled = true },
+    settings = {
+        pylsp = {
+            plugins = {
+                ruff = { enabled = true },
+            },
         },
     },
 }
 
 return {
-    lsp = { pylsp = lsp },
+    {
+        "neovim/nvim-lspconfig",
+        optional = true,
+        opts = {
+            servers = {
+                pylsp = lsp,
+            },
+        },
+    },
 }

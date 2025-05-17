@@ -1,5 +1,13 @@
 local lsp = {}
 
 return {
-    lsp = { rust_analyzer = lsp },
+    {
+        "neovim/nvim-lspconfig",
+        optional = true,
+        opts = {
+            servers = {
+                rust_analyzer = lsp,
+            },
+        },
+    },
 }

@@ -1,5 +1,13 @@
 local lsp = {}
 
 return {
-    lsp = { bashls = lsp },
+    {
+        "neovim/nvim-lspconfig",
+        optional = true,
+        opts = {
+            servers = {
+                bashls = lsp,
+            },
+        },
+    },
 }

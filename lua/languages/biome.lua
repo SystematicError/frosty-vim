@@ -1,5 +1,13 @@
 local lsp = {}
 
 return {
-    lsp = { biome = lsp },
+    {
+        "neovim/nvim-lspconfig",
+        optional = true,
+        opts = {
+            servers = {
+                biome = lsp,
+            },
+        },
+    },
 }

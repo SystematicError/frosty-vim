@@ -38,7 +38,10 @@ vim.opt.rtp:prepend(lazy_path)
 -- TODO: Add support for LazyFile event (maybe?)
 
 require("lazy").setup {
-    spec = "plugins",
+    spec = {
+        { import = "plugins" },
+        { import = "languages" },
+    },
 
     defaults = {
         lazy = true,
