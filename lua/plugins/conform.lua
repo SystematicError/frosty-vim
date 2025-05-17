@@ -1,32 +1,27 @@
--- TODO: Modularise opts table
+-- TODO: Refine config
 -- TODO: Modularise snacks integration
--- TODO: Refactor everything
 -- TODO: Lazy load conform
 
-local function config()
-    local formatter = require("languages").formatter
+local default_opts = {
+    format_on_save = function(bufnr)
+        local global_state = vim.g.format_on_save
+        local buffer_state = vim.b[bufnr].format_on_save
 
+        local state = global_state == nil or global_state
+
+        if buffer_state ~= nil then
+            state = buffer_state
+        end
+
+        return state and {
+            timeout_ms = 1000,
+            lsp_format = "fallback",
+        }
+    end,
+}
+
+local function config(_, opts)
     vim.g.format_on_save = true
-
-    local opts = {
-        format_on_save = function(bufnr)
-            local global_state = vim.g.format_on_save
-            local buffer_state = vim.b[bufnr].format_on_save
-
-            local state = global_state == nil or global_state
-
-            if buffer_state ~= nil then
-                state = buffer_state
-            end
-
-            return state and {
-                timeout_ms = 1000,
-                lsp_format = "fallback",
-            }
-        end,
-
-        formatters_by_ft = formatter,
-    }
 
     if Snacks then
         Snacks.toggle({
@@ -63,6 +58,9 @@ end
 
 return {
     "stevearc/conform.nvim",
+
     lazy = false,
+
+    opts = default_opts,
     config = config,
 }
