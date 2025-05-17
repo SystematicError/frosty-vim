@@ -1,23 +1,18 @@
--- TODO: Modularise opts table
 -- TODO: Lazy load gitsigns
 -- TODO: Modularise snacks integration
 
-local function config()
+local default_opts = {
+    signs = {},
+    signs_staged_enable = false,
+    current_line_blame_formatter = "  <author>, <author_time:%Y-%m-%d> • <summary>",
+}
+
+for name, sign in pairs(require("icons").git_gutter) do
+    default_opts.signs[name] = { text = sign }
+end
+
+local function config(_, opts)
     local gitsigns = require "gitsigns"
-
-    local git_gutter = require("icons").git_gutter
-
-    local signs = {}
-
-    for name, sign in pairs(git_gutter) do
-        signs[name] = { text = sign }
-    end
-
-    local opts = {
-        signs = signs,
-        signs_staged_enable = false,
-        current_line_blame_formatter = "  <author>, <author_time:%Y-%m-%d> • <summary>",
-    }
 
     if Snacks then
         local gitsigns_config = require("gitsigns.config").config
@@ -56,5 +51,6 @@ return {
         { "ag", "<cmd>Gitsigns select_hunk<cr>", mode = { "o", "x" }, desc = "git hunk" },
     },
 
+    opts = default_opts,
     config = config,
 }
