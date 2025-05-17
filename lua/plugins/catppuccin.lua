@@ -1,5 +1,3 @@
--- TODO: Modularise bufferline integration
-
 local default_opts = {
     flavour = "mocha",
 
@@ -55,6 +53,10 @@ local function config(_, opts)
     vim.cmd.colorscheme "catppuccin"
 end
 
+local function bufferline_opts(_, opts)
+    opts.highlights = require("catppuccin.groups.integrations.bufferline").get()
+end
+
 return {
     "catppuccin/nvim",
     name = "catppuccin",
@@ -64,4 +66,10 @@ return {
 
     opts = default_opts,
     config = config,
+
+    specs = {
+        "akinsho/bufferline.nvim",
+        optional = true,
+        opts = bufferline_opts,
+    },
 }

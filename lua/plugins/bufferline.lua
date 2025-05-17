@@ -47,31 +47,30 @@ local function delete_other_tabs()
 end
 
 local default_opts = {
-    offsets = {
-        {
-            filetype = "neo-tree",
-            highlight = "NeoTreeNormal",
-            text = "",
-            separator = false,
+    options = {
+        offsets = {
+            {
+                filetype = "neo-tree",
+                highlight = "NeoTreeNormal",
+                text = "",
+                separator = false,
+            },
         },
     },
 }
 
 local function config(_, opts)
     if Snacks then
-        opts.close_command = "lua Snacks.bufdelete.delete(%d)"
-        opts.right_mouse_command = opts.close_command
+        opts.options = opts.options or {}
+        opts.options.close_command = "lua Snacks.bufdelete.delete(%d)"
+        opts.options.right_mouse_command = opts.options.close_command
 
         vim.keymap.set("n", "<leader><tab>d", delete_current_tab, { desc = "Delete tab" })
         vim.keymap.set("n", "<leader><tab>o", delete_other_tabs, { desc = "Delete other tabs" })
     end
 
     require("scope").setup()
-
-    require("bufferline").setup {
-        options = opts,
-        highlights = require("catppuccin.groups.integrations.bufferline").get(),
-    }
+    require("bufferline").setup(opts)
 end
 
 return {
