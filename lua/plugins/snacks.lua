@@ -3,7 +3,6 @@
 local function config()
     -- TODO: Are all these enabled lines needed?
     local opts = {
-        dashboard = { enabled = true },
         indent = { enabled = true },
         input = { enabled = true },
         picker = { enabled = true },
@@ -15,6 +14,13 @@ local function config()
         notifier = {
             enabled = true,
             style = "fancy",
+        },
+
+        dashboard = {
+            enabled = true,
+            preset = {
+                header = "█████\n    ██\n      ██\n        ██\n        ████\n        ████\n        ██  ██\n        ██    ██\n          ██      ████",
+            },
         },
     }
 
