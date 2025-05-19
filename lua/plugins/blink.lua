@@ -1,5 +1,4 @@
 -- TODO: Refine config
--- TODO: Lazy load
 
 local kind_icons = require("icons").kinds
 
@@ -86,7 +85,7 @@ return {
     "Saghen/blink.cmp",
     dependencies = "rafamadriz/friendly-snippets",
 
-    lazy = false,
+    event = { "InsertEnter", "CmdlineEnter" },
 
     opts = default_opts,
 }

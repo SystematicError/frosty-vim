@@ -96,7 +96,6 @@ end
 
 return {
     "neovim/nvim-lspconfig",
-    dependencies = "Saghen/blink.cmp",
 
     lazy = false,
     keys = {
