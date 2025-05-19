@@ -1,13 +1,9 @@
--- TODO: Refine config
-
-local kind_icons = require("icons").kinds
-
 local default_opts = {
     signature = { enabled = true },
 
     appearance = {
         nerd_font_variant = "normal",
-        kind_icons = kind_icons,
+        kind_icons = require("icons").kinds,
     },
 
     completion = {
@@ -49,6 +45,7 @@ local default_opts = {
         },
     },
 
+    -- Hybrid of super-tab and enter mapping presets
     keymap = {
         preset = "none",
 
@@ -59,6 +56,9 @@ local default_opts = {
 
         ["<c-u>"] = { "scroll_documentation_up", "fallback" },
         ["<c-d>"] = { "scroll_documentation_down", "fallback" },
+
+        ["<up>"] = { "select_prev", "fallback" },
+        ["<down>"] = { "select_next", "fallback" },
 
         ["<tab>"] = {
             function(cmp)
@@ -71,7 +71,6 @@ local default_opts = {
             "snippet_forward",
             "fallback",
         },
-
         ["<s-tab>"] = { "select_prev", "snippet_backward", "fallback" },
     },
 
