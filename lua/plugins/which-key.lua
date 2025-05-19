@@ -20,4 +20,14 @@ return {
     "folke/which-key.nvim",
     event = "VeryLazy",
     opts = default_opts,
+
+    specs = {
+        "catppuccin/nvim",
+        optional = true,
+        opts = {
+            integrations = {
+                which_key = true,
+            },
+        },
+    },
 }

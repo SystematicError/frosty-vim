@@ -36,4 +36,14 @@ return {
     lazy = false,
 
     opts = default_opts,
+
+    specs = {
+        "catppuccin/nvim",
+        optional = true,
+        opts = {
+            integrations = {
+                treesitter = true,
+            },
+        },
+    },
 }

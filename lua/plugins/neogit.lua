@@ -19,4 +19,15 @@ return {
     },
 
     opts = default_opts,
+
+    specs = {
+        "catppuccin/nvim",
+        optional = true,
+        opts = {
+            integrations = {
+                diffview = true,
+                neogit = true,
+            },
+        },
+    },
 }

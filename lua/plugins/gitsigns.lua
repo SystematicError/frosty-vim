@@ -53,4 +53,14 @@ return {
 
     opts = default_opts,
     config = config,
+
+    specs = {
+        "catppuccin/nvim",
+        optional = true,
+        opts = {
+            integrations = {
+                gitsigns = true,
+            },
+        },
+    },
 }

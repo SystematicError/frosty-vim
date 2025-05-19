@@ -87,4 +87,14 @@ return {
     event = { "InsertEnter", "CmdlineEnter" },
 
     opts = default_opts,
+
+    specs = {
+        "catppuccin/nvim",
+        optional = true,
+        opts = {
+            integrations = {
+                blink_cmp = true,
+            },
+        },
+    },
 }

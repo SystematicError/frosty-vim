@@ -31,4 +31,14 @@ return {
     ft = { "markdown", "quarto", "rmd", "typst" },
 
     opts = default_opts,
+
+    specs = {
+        "catppuccin/nvim",
+        optional = true,
+        opts = {
+            integrations = {
+                markview = true,
+            },
+        },
+    },
 }

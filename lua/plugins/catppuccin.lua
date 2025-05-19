@@ -1,6 +1,7 @@
 local default_opts = {
     flavour = "mocha",
 
+    -- TODO Make a prettier colorscheme (https://catbbrew.com/)
     color_overrides = {
         mocha = {
             rosewater = "#f5e0dc",
@@ -34,17 +35,9 @@ local default_opts = {
 
     default_integrations = false,
     integrations = {
-        blink_cmp = true,
-        diffview = true,
-        gitsigns = true,
         markdown = true,
         native_lsp = { enabled = true, virtual_text = {}, underlines = {}, inlay_hints = {} },
-        neogit = true,
-        neotree = true,
         semantic_tokens = true,
-        snacks = { enabled = true },
-        treesitter = true,
-        which_key = true,
     },
 }
 

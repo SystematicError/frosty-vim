@@ -71,4 +71,14 @@ return {
     },
 
     config = config,
+
+    specs = {
+        "catppuccin/nvim",
+        optional = true,
+        opts = {
+            integrations = {
+                snacks = { enabled = true },
+            },
+        },
+    },
 }
