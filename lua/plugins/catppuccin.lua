@@ -36,8 +36,25 @@ local default_opts = {
     default_integrations = false,
     integrations = {
         markdown = true,
-        native_lsp = { enabled = true, virtual_text = {}, underlines = {}, inlay_hints = {} },
         semantic_tokens = true,
+
+        native_lsp = {
+            enabled = true,
+
+            virtual_text = {},
+
+            underlines = {
+                errors = { "undercurl" },
+                hints = { "undercurl" },
+                warnings = { "undercurl" },
+                information = { "undercurl" },
+                ok = { "undercurl" },
+            },
+
+            inlay_hints = {
+                background = false,
+            },
+        },
     },
 }
 
