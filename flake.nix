@@ -54,6 +54,9 @@
         shfmt
       ];
 
+      includeBlinkLib = true;
+      allowUserConfigEnvVar = true;
+
       neovim =
         (pkgs.wrapNeovimUnstable pkgs.neovim-unwrapped (pkgs.neovimUtils.makeNeovimConfig {
           withPython3 = false;
@@ -63,10 +66,15 @@
 
           luaRcContent = ''
             package.path = package.path .. ";${./.}/lua/?.lua;${./.}/lua/?/init.lua"
-            package.cpath = package.cpath .. ";${pkgs.vimPlugins.blink-cmp.blink-fuzzy-lib}/lib/lib?.so"
+            ${lib.optionalString includeBlinkLib ''package.cpath = package.cpath .. ";${pkgs.vimPlugins.blink-cmp.blink-fuzzy-lib}/lib/lib?.so"''}
             FROSTY_PACKAGES="${packageList}"
             FROSTY_RUNTIMEPATHS={"${./.}", "${builtins.concatStringsSep "," treesitterParsers}"}
             dofile("${./.}/init.lua")
+            ${lib.optionalString allowUserConfigEnvVar ''
+              local stat = vim.uv.fs_stat(vim.env.FROSTY_USERCONFIG or "")
+              if stat and stat.type == "file" then
+                dofile(vim.env.FROSTY_USERCONFIG)
+              end''}
           '';
         }))
         .overrideAttrs (old: {
