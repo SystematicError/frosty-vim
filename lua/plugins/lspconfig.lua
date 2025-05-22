@@ -9,7 +9,7 @@ local default_opts = {
         update_in_insert = false,
         virtual_text = true,
         severity_sort = true,
-        signs = true,
+        signs = { text = require("icons").diagnostics },
     },
 
     inlay_hints = true,
@@ -17,8 +17,6 @@ local default_opts = {
 }
 
 local function config(_, opts)
-    local diagnostic_icons = require("icons").diagnostics
-
     -- Server setup
     for server, server_opts in pairs(opts.servers) do
         vim.lsp.config(server, server_opts)
@@ -27,11 +25,6 @@ local function config(_, opts)
 
     -- Diagnostics
     vim.diagnostic.config(opts.diagnostics)
-
-    for name, icon in pairs(diagnostic_icons) do
-        local hl = "DiagnosticSign" .. name
-        vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-    end
 
     -- Inlay hints
     vim.lsp.inlay_hint.enable(opts.inlay_hints)
