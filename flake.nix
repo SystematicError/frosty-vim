@@ -69,12 +69,12 @@
             ${lib.optionalString includeBlinkLib ''package.cpath = package.cpath .. ";${pkgs.vimPlugins.blink-cmp.blink-fuzzy-lib}/lib/lib?.so"''}
             FROSTY_PACKAGES="${packageList}"
             FROSTY_RUNTIMEPATHS={"${./.}", "${builtins.concatStringsSep "," treesitterParsers}"}
-            dofile("${./.}/init.lua")
             ${lib.optionalString allowUserConfigEnvVar ''
               local stat = vim.uv.fs_stat(vim.env.FROSTY_USERCONFIG or "")
               if stat and stat.type == "file" then
-                dofile(vim.env.FROSTY_USERCONFIG)
+                FROSTY_USERCONFIG = dofile(vim.env.FROSTY_USERCONFIG)
               end''}
+            dofile("${./.}/init.lua")
           '';
         }))
         .overrideAttrs (old: {

@@ -4,7 +4,7 @@
   },
 
   "diagnostics": {
-    "globals": ["vim", "Snacks", "FROSTY_PACKAGES", "FROSTY_RUNTIMEPATHS"]
+    "globals": ["vim", "Snacks", "FROSTY_USERCONFIG", "FROSTY_PACKAGES", "FROSTY_RUNTIMEPATHS"]
   }
 }
 

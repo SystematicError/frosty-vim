@@ -41,6 +41,7 @@ require("lazy").setup {
     spec = {
         { import = "plugins" },
         { import = "languages" },
+        FROSTY_USERCONFIG,
     },
 
     defaults = {
