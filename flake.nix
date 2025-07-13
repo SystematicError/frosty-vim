@@ -64,7 +64,7 @@
           withRuby = false;
           extraLuaPackages = luaDeps;
 
-          luaRcContent = ''
+          customLuaRC = ''
             package.path = package.path .. ";${./.}/lua/?.lua;${./.}/lua/?/init.lua"
             ${lib.optionalString includeBlinkLib ''package.cpath = package.cpath .. ";${pkgs.vimPlugins.blink-cmp.blink-fuzzy-lib}/lib/lib?.so"''}
             FROSTY_PACKAGES="${packageList}"
