@@ -44,7 +44,7 @@
         nil
         alejandra
 
-        (python3.withPackages (ps: with ps; [python-lsp-server python-lsp-ruff]))
+        basedpyright
         ruff
 
         rust-analyzer

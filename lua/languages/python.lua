@@ -1,14 +1,14 @@
--- TODO: Switch to basedpyright?
-
 local lsp = {
     settings = {
-        pylsp = {
-            plugins = {
-                ruff = { enabled = true },
+        basedpyright = {
+            analysis = {
+                typeCheckingMode = "standard",
             },
         },
     },
 }
+
+local formatter = { "ruff_fix", "ruff_format", "ruff_organize_imports" }
 
 return {
     {
@@ -16,7 +16,17 @@ return {
         optional = true,
         opts = {
             servers = {
-                pylsp = lsp,
+                basedpyright = lsp,
+            },
+        },
+    },
+
+    {
+        "stevearc/conform.nvim",
+        optional = true,
+        opts = {
+            formatters_by_ft = {
+                python = formatter,
             },
         },
     },

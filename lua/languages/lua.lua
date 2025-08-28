@@ -1,3 +1,5 @@
+-- TODO: Consider switching to emmylua-analyzer-rust
+
 local lsp = {
     settings = {
         Lua = {
@@ -5,7 +7,6 @@ local lsp = {
             hint = { enable = true },
             codeLens = { enable = true },
             telemetry = { enable = false },
-            completion = { callSnippet = "Both" },
         },
     },
 }
