@@ -73,11 +73,24 @@ return {
     config = config,
 
     specs = {
-        "catppuccin/nvim",
-        optional = true,
-        opts = {
-            integrations = {
-                snacks = { enabled = true },
+        {
+            "catppuccin/nvim",
+            optional = true,
+            opts = {
+                integrations = {
+                    snacks = { enabled = true },
+                },
+            },
+        },
+
+        {
+            "akinsho/bufferline.nvim",
+            optional = true,
+            opts = {
+                options = {
+                    close_command = "lua Snacks.bufdelete.delete(%d)",
+                    right_mouse_command = "lua Snacks.bufdelete.delete(%d)",
+                },
             },
         },
     },

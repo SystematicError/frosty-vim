@@ -1,5 +1,3 @@
--- TODO: Modularise snacks integration
-
 local default_opts = {
     options = {
         offsets = {
@@ -12,16 +10,6 @@ local default_opts = {
         },
     },
 }
-
-local function config(_, opts)
-    if Snacks then
-        opts.options = opts.options or {}
-        opts.options.close_command = "lua Snacks.bufdelete.delete(%d)"
-        opts.options.right_mouse_command = opts.options.close_command
-    end
-
-    require("bufferline").setup(opts)
-end
 
 return {
     "akinsho/bufferline.nvim",
@@ -43,5 +31,4 @@ return {
     },
 
     opts = default_opts,
-    config = config,
 }
