@@ -431,6 +431,7 @@
         "plenary.nvim": "plenary.nvim",
         "satellite.nvim": "satellite.nvim",
         "snacks.nvim": "snacks.nvim",
+        "spellwarn.nvim": "spellwarn.nvim",
         "which-key.nvim": "which-key.nvim"
       }
     },
@@ -463,6 +464,22 @@
       "original": {
         "owner": "folke",
         "repo": "snacks.nvim",
+        "type": "github"
+      }
+    },
+    "spellwarn.nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1756861421,
+        "narHash": "sha256-c7pjWmhRqNAuJ2rq4lsrFLEM9Ypdi7eUQ08CCqXl9M0=",
+        "owner": "ravibrock",
+        "repo": "spellwarn.nvim",
+        "rev": "ef6a121b2fec1c4474427c6ccfd489338eb53a5b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ravibrock",
+        "repo": "spellwarn.nvim",
         "type": "github"
       }
     },
