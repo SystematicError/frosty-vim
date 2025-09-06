@@ -204,10 +204,6 @@
       url = "github:lewis6991/satellite.nvim";
       flake = false;
     };
-    "scope.nvim" = {
-      url = "github:tiagovla/scope.nvim";
-      flake = false;
-    };
     "snacks.nvim" = {
       url = "github:folke/snacks.nvim";
       flake = false;
