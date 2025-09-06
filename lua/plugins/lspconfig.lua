@@ -1,5 +1,4 @@
 -- TODO: Lazy load lspconfig
--- TODO: Modularise snacks integration
 
 local default_opts = {
     servers = {},
@@ -51,17 +50,10 @@ local function config(_, opts)
     })
 
     if Snacks then
-        Snacks.toggle.diagnostics({ name = "Diagnostics (Global)" }):map "<leader>uld"
-        Snacks.toggle({
-            name = "Diagnostics (Buffer)",
-            get = function()
-                return vim.diagnostic.is_enabled { bufnr = 0 }
-            end,
-            set = function(state)
-                vim.diagnostic.enable(state, { bufnr = 0 })
-            end,
-        }):map "<leader>ulD"
+        Snacks.toggle.diagnostics():map "<leader>uld"
 
+        -- HACK: Snacks.toggle.inlay_hint (exceptionally) only toggles locally
+        -- TODO: Upstream snacks inlay_hint toggle?
         Snacks.toggle({
             name = "Inlay Hints",
             get = function()

@@ -1,4 +1,3 @@
--- TODO: Modularise snacks integration
 -- TODO: Lazy load lightbulb
 
 local bulb_icons = require("icons").lightbulb
@@ -22,29 +21,9 @@ local default_opts = {
     end,
 }
 
-local function config(_, opts)
-    vim.g.enable_lightbulb = true
-
-    if Snacks then
-        Snacks.toggle({
-            name = "Lightbulb",
-            get = function()
-                return vim.g.enable_lightbulb
-            end,
-            set = function(state)
-                vim.g.enable_lightbulb = state
-            end,
-        }):map "<leader>ull"
-    end
-
-    require("nvim-lightbulb").setup(opts)
-end
-
+-- Config function defined in `plugins/snacks.lua`
 return {
     "kosayoda/nvim-lightbulb",
-
     lazy = false,
-
     opts = default_opts,
-    config = config,
 }

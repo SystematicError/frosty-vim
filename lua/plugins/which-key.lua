@@ -11,7 +11,7 @@ local default_opts = {
         { "<leader>lj", group = "Jumps" },
         { "<leader>s", group = "Session", icon = group_icons.quit },
         { "<leader><tab>", group = "Tabs", icon = group_icons.tabs },
-        { "<leader>u", group = "UI", icon = group_icons.ui },
+        { "<leader>u", group = "UI/UX", icon = group_icons.ui },
         { "<leader>ul", group = "Language Features" },
     },
 }

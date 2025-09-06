@@ -1,5 +1,4 @@
 -- TODO: Lazy load gitsigns
--- TODO: Modularise snacks integration
 
 local default_opts = {
     signs = {},
@@ -11,26 +10,7 @@ for name, sign in pairs(require("icons").git_gutter) do
     default_opts.signs[name] = { text = sign }
 end
 
-local function config(_, opts)
-    local gitsigns = require "gitsigns"
-
-    if Snacks then
-        local gitsigns_config = require("gitsigns.config").config
-
-        Snacks.toggle({
-            name = "Git Line Blame",
-            get = function()
-                return gitsigns_config.current_line_blame
-            end,
-            set = function(state)
-                gitsigns.toggle_current_line_blame(state)
-            end,
-        }):map "<leader>ug"
-    end
-
-    gitsigns.setup(opts)
-end
-
+-- Config function defined in `plugins/snacks.lua`
 return {
     "lewis6991/gitsigns.nvim",
 
@@ -52,7 +32,6 @@ return {
     },
 
     opts = default_opts,
-    config = config,
 
     specs = {
         "catppuccin/nvim",

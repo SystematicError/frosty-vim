@@ -6,6 +6,7 @@ local default_opts = {
     },
 }
 
+-- Config function defined in `plugins/neo-tree.lua`
 return {
     "NeogitOrg/neogit",
     dependencies = {

@@ -1,6 +1,3 @@
--- TODO: Modularise snacks integration
--- TODO: Improve neo-tree config
-
 local icons = require "icons"
 
 local default_opts = {
@@ -39,25 +36,7 @@ local default_opts = {
     },
 }
 
-local function config(_, opts)
-    if Snacks then
-        local events = require "neo-tree.events"
-
-        local function on_move(data)
-            Snacks.rename.on_rename_file(data.source, data.destination)
-        end
-
-        opts.event_handlers = opts.event_handlers or {}
-
-        vim.list_extend(opts.event_handlers, {
-            { event = events.FILE_MOVED, handler = on_move },
-            { event = events.FILE_RENAMED, handler = on_move },
-        })
-    end
-
-    require("neo-tree").setup(opts)
-end
-
+-- Config function defined in `plugins/snacks.lua`
 return {
     "nvim-neo-tree/neo-tree.nvim",
     dependencies = {
@@ -86,15 +65,32 @@ return {
     end,
 
     opts = default_opts,
-    config = config,
 
     specs = {
-        "catppuccin/nvim",
-        optional = true,
-        opts = {
-            integrations = {
-                neotree = true,
+        {
+            "catppuccin/nvim",
+            optional = true,
+            opts = {
+                integrations = {
+                    neotree = true,
+                },
             },
+        },
+
+        {
+            "NeogitOrg/neogit",
+            optional = true,
+            config = function()
+                vim.api.nvim_create_autocmd("BufWinLeave", {
+                    pattern = "NeogitStatus",
+                    group = vim.api.nvim_create_augroup("frosty_neotree_git_update", { clear = true }),
+                    desc = "Update neotree's git icons after neogit updates its status",
+                    callback = function()
+                        local events = require "neo-tree.events"
+                        events.fire_event(events.GIT_EVENT)
+                    end,
+                })
+            end,
         },
     },
 }
