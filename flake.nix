@@ -185,6 +185,10 @@
       url = "github:nvim-treesitter/nvim-treesitter";
       flake = false;
     };
+    "nvim-treesitter-context" = {
+      url = "github:nvim-treesitter/nvim-treesitter-context";
+      flake = false;
+    };
     "nvim-treesitter-textobjects" = {
       url = "github:nvim-treesitter/nvim-treesitter-textobjects";
       flake = false;
