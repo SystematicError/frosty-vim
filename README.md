@@ -8,10 +8,6 @@
 
 Frosty is a modern and fully configured development environment for neovim with a focus on functionality and looks.
 
-Check the [roadmap](https://github.com/SystematicError/frosty-vim/issues/1) for upcoming changes.
-
-**Warning: ⚠️** Major overhaul in progress, expect breaking changes. Refer to commit [0dde40e](https://github.com/SystematicError/frosty-vim/tree/0dde40edfdc186607fb7460d97247b58b390c78a) for last stable version.
-
 ## Installation
 
 ### Nix
@@ -41,7 +37,7 @@ Additionally, further support is provided for the following languages:
 | -------- | ----------------------------------------------------------- | ----------------------------------------------------- |
 | Lua      | [luals](https://github.com/LuaLS/lua-language-server)       | [stylua](https://github.com/JohnnyMorganz/StyLua)     |
 | Nix      | [nil](https://github.com/oxalica/nil)                       | [alejandra](https://github.com/kamadorueda/alejandra) |
-| Python   | [pylsp](https://github.com/python-lsp/python-lsp-server/)   | [ruff](https://github.com/astral-sh/ruff)             |
+| Python   | [basedpyright](https://github.com/detachhead/basedpyright)   | [ruff](https://github.com/astral-sh/ruff)             |
 | Rust     | [rust-analyzer](https://github.com/rust-lang/rust-analyzer) | [rustfmt](https://github.com/rust-lang/rustfmt)       |
 | Shell    | [bashls](https://github.com/bash-lsp/bash-language-server)  | [shfmt](https://github.com/mvdan/sh)                  |
 
