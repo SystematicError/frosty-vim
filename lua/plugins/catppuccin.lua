@@ -52,7 +52,7 @@ local default_opts = {
             },
 
             inlay_hints = {
-                background = false,
+                background = true,
             },
         },
     },
