@@ -40,6 +40,7 @@
       runtimeDeps = with pkgs; [
         wl-clipboard # Replace with `xclip` for X11 support
         ripgrep
+        fd
 
         biome
 
