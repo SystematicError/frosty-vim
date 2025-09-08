@@ -78,6 +78,23 @@ return {
         },
 
         {
+            "akinsho/bufferline.nvim",
+            optional = true,
+            opts = {
+                options = {
+                    offsets = {
+                        {
+                            filetype = "neo-tree",
+                            highlight = "NeoTreeNormal",
+                            text = "",
+                            separator = false,
+                        },
+                    },
+                },
+            },
+        },
+
+        {
             "NeogitOrg/neogit",
             optional = true,
             config = function()
@@ -107,6 +124,17 @@ return {
 
                 require("persistence").setup(opts)
             end,
+        },
+
+        {
+            "lewis6991/satellite.nvim",
+            optional = true,
+            opts_extend = { "excluded_filetypes" },
+            opts = {
+                excluded_filetypes = {
+                    "neo-tree",
+                },
+            },
         },
     },
 }

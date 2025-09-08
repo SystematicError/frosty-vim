@@ -34,11 +34,24 @@ return {
     opts = default_opts,
 
     specs = {
-        "catppuccin/nvim",
-        optional = true,
-        opts = {
-            integrations = {
-                gitsigns = true,
+        {
+            "catppuccin/nvim",
+            optional = true,
+            opts = {
+                integrations = {
+                    gitsigns = true,
+                },
+            },
+        },
+
+        {
+            "lewis6991/satellite.nvim",
+            optional = true,
+            opts_extend = { "excluded_filetypes" },
+            opts = {
+                excluded_filetypes = {
+                    "gitsigns-blame",
+                },
             },
         },
     },

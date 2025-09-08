@@ -185,5 +185,16 @@ return {
                 require("neo-tree").setup(opts)
             end,
         },
+
+        {
+            "lewis6991/satellite.nvim",
+            optional = true,
+            opts_extend = { "excluded_filetypes" },
+            opts = {
+                excluded_filetypes = {
+                    "snacks_dashboard",
+                },
+            },
+        },
     },
 }

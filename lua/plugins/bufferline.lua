@@ -1,16 +1,3 @@
-local default_opts = {
-    options = {
-        offsets = {
-            {
-                filetype = "neo-tree",
-                highlight = "NeoTreeNormal",
-                text = "",
-                separator = false,
-            },
-        },
-    },
-}
-
 return {
     "akinsho/bufferline.nvim",
     dependencies = "nvim-tree/nvim-web-devicons",
@@ -30,5 +17,5 @@ return {
         { "<leader>bD", "<cmd>BufferLinePickClose<cr>", desc = "Pick buffer to delete" },
     },
 
-    opts = default_opts,
+    opts = {},
 }
