@@ -81,9 +81,19 @@
             FROSTY_PACKAGES="${packageList}"
             FROSTY_RUNTIMEPATHS={"${./.}", "${builtins.concatStringsSep "," treesitterParsers}"}
             ${lib.optionalString allowUserConfigEnvVar ''
-              local stat = vim.uv.fs_stat(vim.env.FROSTY_USERCONFIG or "")
-              if stat and stat.type == "file" then
-                FROSTY_USERCONFIG = dofile(vim.env.FROSTY_USERCONFIG)
+              if vim.env.FROSTY_USERCONFIG then
+                local stat = vim.uv.fs_stat(vim.env.FROSTY_USERCONFIG)
+                if stat and stat.type == "file" then
+                  FROSTY_USERCONFIG = dofile(vim.env.FROSTY_USERCONFIG)
+                else
+                  vim.schedule(function()
+                    vim.notify(
+                      "FROSTY_USERCONFIG was provided, but it wasn't a valid file path",
+                      vim.log.levels.WARN,
+                      { title = "Frosty" }
+                    )
+                  end)
+                end
               end''}
             dofile("${./.}/init.lua")
           '';
