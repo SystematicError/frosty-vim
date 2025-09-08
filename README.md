@@ -12,7 +12,7 @@ Frosty is a modern and fully configured development environment for Neovim, with
 
 ### Nix
 
-Make sure that the `flake` and `nix-command` [experimental features](https://nixos.org/manual/nix/unstable/contributing/experimental-features.html) have been enabled.
+Make sure that the `flake` and `nix-command` [experimental features](https://nixos.org/manual/nix/unstable/development/experimental-features.html) have been enabled.
 
 To try frosty without installing:
 
