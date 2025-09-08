@@ -5,7 +5,6 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     flake-utils.url = "github:numtide/flake-utils";
   };
-
   outputs = {
     self,
     nixpkgs,
@@ -218,6 +217,10 @@
     };
     "snacks.nvim" = {
       url = "github:folke/snacks.nvim";
+      flake = false;
+    };
+    "spellwarn.nvim" = {
+      url = "github:ravibrock/spellwarn.nvim";
       flake = false;
     };
     "which-key.nvim" = {
