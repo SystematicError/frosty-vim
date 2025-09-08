@@ -1,27 +1,27 @@
-local function config()
-    -- TODO: Are all these enabled lines needed?
-    local opts = {
-        indent = { enabled = true },
-        input = { enabled = true },
-        picker = { enabled = true },
-        rename = { enable = true },
-        statuscolumn = { enabled = true },
-        terminal = { enabled = true },
-        words = { enable = true },
+-- TODO: Are all these enabled lines needed?
+local default_opts = {
+    indent = { enabled = true },
+    input = { enabled = true },
+    picker = { enabled = true },
+    rename = { enable = true },
+    statuscolumn = { enabled = true },
+    terminal = { enabled = true },
+    words = { enable = true },
 
-        notifier = {
-            enabled = true,
-            style = "fancy",
+    notifier = {
+        enabled = true,
+        style = "fancy",
+    },
+
+    dashboard = {
+        enabled = true,
+        preset = {
+            header = "█████\n    ██\n      ██\n        ██\n        ████\n        ████\n        ██  ██\n        ██    ██\n          ██      ████",
         },
+    },
+}
 
-        dashboard = {
-            enabled = true,
-            preset = {
-                header = "█████\n    ██\n      ██\n        ██\n        ████\n        ████\n        ██  ██\n        ██    ██\n          ██      ████",
-            },
-        },
-    }
-
+local function config(_, opts)
     Snacks.toggle.option("wrap", { name = "Line Wrap", global = true }):map "<leader>uw"
 
     -- HACK: Equivalent to `Snacks.toggle.words` but renamed
@@ -67,6 +67,7 @@ return {
         { "[r", function() Snacks.words.jump(-vim.v.count1, true) end, desc = "Previous reference" },
     },
 
+    opts = default_opts,
     config = config,
 
     -- Some snacks dependent integrations are defined in the respective plugins' config functions
