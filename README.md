@@ -6,7 +6,7 @@
 
 ## What is it?
 
-Frosty is a modern and fully configured development environment for neovim with a focus on functionality and looks.
+Frosty is a modern and fully configured development environment for Neovim, with a focus on functionality and looks. Its designed to be best used as a Nix package, whilst still being compatible on systems without it.
 
 ## Installation
 
@@ -16,13 +16,13 @@ Make sure that the `flake` and `nix-command` [experimental features](https://nix
 
 To try frosty without installing:
 
-```console
+```bash
 nix run github:SystematicError/frosty-vim
 ```
 
 ### Non-nix
 
-```console
+```bash
 git clone https://github.com/SystematicError/frosty-vim ~/.config/nvim --depth 1
 ```
 
@@ -30,7 +30,7 @@ git clone https://github.com/SystematicError/frosty-vim ~/.config/nvim --depth 1
 
 These are the defaults, the config can be tweaked to add further support as needed.
 
-Syntax highlighting and treesitter based functionality for 300+ languages are provided via parsers from [nixpkgs](https://search.nixos.org/packages?channel=unstable&query=vimPlugins.nvim-treesitter-parsers).
+Syntax highlighting and Treesitter based functionality for 300+ languages are provided via parsers from [nixpkgs](https://search.nixos.org/packages?channel=unstable&query=vimPlugins.nvim-treesitter-parsers).
 Additionally, further support is provided for the following languages:
 
 | Language | Language Server                                             | Formatter                                             |
@@ -42,3 +42,36 @@ Additionally, further support is provided for the following languages:
 | Shell    | [bashls](https://github.com/bash-lsp/bash-language-server)  | [shfmt](https://github.com/mvdan/sh)                  |
 
 \+ Languages supported by the [Biome toolchain](https://biomejs.dev/internals/language-support/)
+
+## Customising the Nix package
+
+The `flake.nix` file defines how the Frosty package gets built. Stuff like runtime dependencies and Treesitter parsers are defined there.
+
+Frosty can also load a custom userconfig file through the `FROSTY_USERCONFIG` environment variable, without needing to modify the flake itself! Here's an example:
+
+```lua
+-- File path: `~/frosty.lua`
+
+-- Send a notification after starting up
+vim.schedule(function()
+    vim.notify "Hello from the userconfig!"
+end)
+
+-- The userconfig file should return a `LazySpec` (https://lazy.folke.io/spec)
+return {
+    "alec-gibson/nvim-tetris",
+    lazy = false,
+    config = false,
+}
+
+-- The :Tetris command should now be available if the userconfig loads correctly
+```
+
+Now, running the command given below will load the userconfig:
+
+```bash
+FROSTY_USERCONFIG="$HOME/frosty.lua" nvim
+```
+
+> [!NOTE]
+> Fetching extra plugins via the userconfig file will require you to have `git` installed. After fetching a new plugin, Lazy might throw an error, but you can safely ignore this and restart Neovim.
