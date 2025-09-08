@@ -92,5 +92,21 @@ return {
                 })
             end,
         },
+
+        {
+            "folke/persistence.nvim",
+            optional = true,
+            config = function(_, opts)
+                vim.api.nvim_create_autocmd("User", {
+                    group = vim.api.nvim_create_augroup("frosty_neotree_dont_persist", { clear = true }),
+                    pattern = "PersistenceSavePre",
+                    callback = function()
+                        vim.cmd "Neotree close"
+                    end,
+                })
+
+                require("persistence").setup(opts)
+            end,
+        },
     },
 }

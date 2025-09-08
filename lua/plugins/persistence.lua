@@ -1,5 +1,4 @@
--- TODO: Don't persist neo-tree
-
+-- Config function defined in `plugins/neo-tree.lua`
 return {
     "folke/persistence.nvim",
 
