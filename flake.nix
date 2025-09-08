@@ -17,15 +17,15 @@
       lib = nixpkgs.lib;
 
       packageList = pkgs.linkFarm "frosty-packages" (
-        builtins.map (name: {
+        map (name: {
           inherit name;
           path = inputs.${name}.outPath;
         })
         (builtins.attrNames (lib.filterAttrs (_: value: !builtins.hasAttr "_type" value) inputs))
       );
 
-      allTreesitterParsers = pkgs.linkFarm "frosty-treesitter-runtime" (
-        builtins.map (drv: {
+      allTreesitterParsers = pkgs.linkFarm "frosty-treesitter-parsers" (
+        map (drv: {
           name = "parser/${lib.removeSuffix "-grammar" (lib.strings.getName drv.name)}.so";
           path = "${drv.outPath}/parser";
         })
@@ -60,6 +60,11 @@
         shfmt
       ];
 
+      runtimeDepsPath = pkgs.symlinkJoin {
+        name = "frosty-runtime-dependencies";
+        paths = map (drv: "${drv}/bin") runtimeDeps;
+      };
+
       includeBlinkLib = true;
       allowUserConfigEnvVar = true;
 
@@ -84,15 +89,7 @@
           '';
         }))
         .overrideAttrs (old: {
-          generatedWrapperArgs =
-            old.generatedWrapperArgs
-            or []
-            ++ [
-              "--prefix"
-              "PATH"
-              ":"
-              (lib.makeBinPath runtimeDeps)
-            ];
+          generatedWrapperArgs = old.generatedWrapperArgs or [] ++ ["--prefix" "PATH" ":" runtimeDepsPath];
         });
     in {
       packages = {
