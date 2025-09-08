@@ -5,10 +5,12 @@ local map = vim.keymap.set
 
 map("n", "<leader>L", "<cmd>Lazy<cr>", { desc = "Lazy" })
 
-map("n", "<leader>n", "<cmd>ene<cr>", { desc = "New file" })
 map({ "n", "i", "x", "s" }, "<c-s>", "<cmd>w<cr>", { desc = "Save file" })
 
-map("n", "<esc>", "<cmd>noh<cr>", { desc = "Clear search highlights" })
+map("n", "<leader>q", "<cmd>quit<cr>", { desc = "Quit window" })
+map("n", "<leader>Q", "<cmd>quitall<cr>", { desc = "Quit all windows" })
+
+map("n", "<esc>", "<cmd>nohlsearch<cr>", { desc = "Clear search highlights" })
 
 map("n", "<c-s-c>", 'V"+y', { desc = "Copy to system clipboard" })
 map("v", "<c-s-c>", '"+ygv', { desc = "Copy to system clipboard" })
@@ -42,6 +44,8 @@ map("n", "<tab>", "<cmd>bnext<cr>", { desc = "Next buffer" })
 map("n", "<s-tab>", "<cmd>bprevious<cr>", { desc = "Previous buffer" })
 map("n", "]b", "<cmd>bnext<cr>", { desc = "Next buffer" })
 map("n", "[b", "<cmd>bprevious<cr>", { desc = "Previous buffer" })
+map("n", "<leader>n", "<cmd>enew<cr>", { desc = "New buffer" })
+map("n", "<leader>bb", "<cmd>enew<cr>", { desc = "New buffer" })
 map("n", "<leader>bl", "<cmd>e #<cr>", { desc = "Last buffer" })
 map("n", "<leader>bd", "<cmd>bd<cr>", { desc = "Delete buffer" })
 map("n", "<leader>x", "<cmd>bd<cr>", { desc = "Delete buffer" })
@@ -56,6 +60,3 @@ map("n", "<leader><tab><tab>", "<cmd>tabnew<cr>", { desc = "New tab" })
 map("n", "<leader><tab>l", "<cmd>tabnext #<cr>", { desc = "Last tab" })
 map("n", "<leader><tab>d", "<cmd>tabclose<cr>", { desc = "Delete tab" })
 map("n", "<leader><tab>o", "<cmd>tabonly<cr>", { desc = "Delete other tabs" })
-
-map("n", "<leader>q", "<cmd>q<cr>", { desc = "Quit window" })
-map("n", "<leader>Q", "<cmd>qa<cr>", { desc = "Quit all windows" })
