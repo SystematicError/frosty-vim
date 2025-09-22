@@ -1,6 +1,5 @@
 -- TODO: Lazy load treesitter
 -- TODO: Add more treesitter textobjects
--- TODO: Add incremental search
 
 local default_opts = {
     -- Flake bundles parsers using `treesitterParsers`
@@ -13,6 +12,17 @@ local default_opts = {
     },
 
     indent = { enable = true },
+
+    incremental_selection = {
+        enable = true,
+
+        keymaps = {
+            init_selection = "<c-space>",
+            node_incremental = "<c-space>",
+            scope_incremental = "<c-s-space>",
+            node_decremental = "<bs>",
+        },
+    },
 
     textobjects = {
         select = {
