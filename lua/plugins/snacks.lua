@@ -4,9 +4,15 @@ local default_opts = {
     input = { enabled = true },
     picker = { enabled = true },
     rename = { enable = true },
-    statuscolumn = { enabled = true },
     terminal = { enabled = true },
     words = { enable = true },
+
+    statuscolumn = {
+        enabled = true,
+        folds = {
+            open = true,
+        },
+    },
 
     notifier = {
         enabled = true,

@@ -38,14 +38,21 @@ local default_opts = {
     },
 }
 
+local function config(_, opts)
+    vim.o.foldmethod = "expr"
+    vim.o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+
+    require("nvim-treesitter.configs").setup(opts)
+end
+
 return {
     "nvim-treesitter/nvim-treesitter",
     dependencies = "nvim-treesitter/nvim-treesitter-textobjects",
-    main = "nvim-treesitter.configs",
 
     lazy = false,
 
     opts = default_opts,
+    config = config,
 
     specs = {
         "catppuccin/nvim",

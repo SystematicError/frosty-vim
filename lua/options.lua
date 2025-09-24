@@ -4,7 +4,9 @@ local opt = vim.opt
 opt.cmdheight = 0
 opt.confirm = true
 opt.expandtab = true
-opt.fillchars = { eob = " " }
+opt.fillchars = { eob = " ", foldopen = "", foldclose = "", fold = " ", foldsep = " " }
+opt.foldlevel = 99
+opt.foldtext = ""
 opt.ignorecase = true
 opt.laststatus = 3
 opt.lazyredraw = true
