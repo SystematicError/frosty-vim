@@ -38,9 +38,10 @@
       treesitterParsers = [allTreesitterParsers];
 
       runtimeDeps = with pkgs; [
-        wl-clipboard # Replace with `xclip` for X11 support
-        ripgrep
         fd
+        git
+        ripgrep
+        wl-clipboard # Replace with `xclip` for X11 support
 
         biome
 
