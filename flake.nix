@@ -45,6 +45,8 @@
 
         biome
 
+        jdt-language-server
+
         lua-language-server
         stylua
 
@@ -179,6 +181,10 @@
     };
     "nvim-highlight-colors" = {
       url = "github:brenoprata10/nvim-highlight-colors";
+      flake = false;
+    };
+    "nvim-jdtls" = {
+      url = "github:mfussenegger/nvim-jdtls";
       flake = false;
     };
     "nvim-lightbulb" = {
