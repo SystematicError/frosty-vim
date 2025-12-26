@@ -74,4 +74,4 @@ FROSTY_USERCONFIG="$HOME/frosty.lua" nvim
 ```
 
 > [!NOTE]
-> Fetching extra plugins via the userconfig file will require you to have `git` installed. After fetching a new plugin, Lazy might throw an error, but you can safely ignore this and restart Neovim.
+> When fetching extra plugins via the userconfig file, Lazy might throw an error, but you can safely ignore this and restart Neovim.
