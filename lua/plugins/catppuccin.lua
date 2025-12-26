@@ -64,7 +64,7 @@ local function config(_, opts)
 end
 
 local function bufferline_opts(_, opts)
-    opts.highlights = require("catppuccin.groups.integrations.bufferline").get_theme()
+    opts.highlights = require("catppuccin.special.bufferline").get_theme()
 end
 
 return {

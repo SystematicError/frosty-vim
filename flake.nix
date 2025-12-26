@@ -196,7 +196,7 @@
       flake = false;
     };
     "nvim-treesitter" = {
-      url = "github:nvim-treesitter/nvim-treesitter";
+      url = "github:nvim-treesitter/nvim-treesitter/master"; # Hotfix
       flake = false;
     };
     "nvim-treesitter-context" = {
