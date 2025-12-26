@@ -41,7 +41,6 @@
         fd
         git
         ripgrep
-        wl-clipboard # Replace with `xclip` for X11 support
 
         biome
 
